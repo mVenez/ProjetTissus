@@ -1,3 +1,4 @@
-02/03:
+02/03, Veneziano:
 - Crée repository GitHub du projet
-- 
+- Crée les fichiers journal, reponses, readme et conception
+- Definition de la classe Vecteur3D, écriture des premières methodes et tests de compilation separée pour la future modularization

@@ -1,1 +1,6 @@
-
+[Question P1.1]
+Les vecteurs sont des objets d'une classe Vecteur3D, avec trois attributs qui en representent les trois cordonnées dans l'espace.
+À ce moment là trois methodes sont definies: 
+- set_coord() assigne une valeur à une coordonnée choisie, 
+- affiche() affiche d'une maniere simple les coordonnées du vecteur, 
+- compare() permet de verifier l'egalité entre deux vecteurs. Pour cela il a acces aux attributs privés d'un autre objet vecteur, comme ils sont de la meme classe.
