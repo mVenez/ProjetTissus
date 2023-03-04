@@ -7,6 +7,14 @@ public:
     bool compare(Vecteur3D v)const;
     Vecteur3D addition(Vecteur3D autre) const;
     Vecteur3D soustraction(Vecteur3D autre) const;
+    Vecteur3D oppose() const;
+    Vecteur3D mult(double) const;
+    double prod_scal(Vecteur3D autre) const;
+    Vecteur3D prod_vect(Vecteur3D) const;
+    double norme() const;
+    double norme2() const;
+    Vecteur3D unitaire() const;
+    
 private:
     double x;
     double y;

@@ -2,15 +2,7 @@
 #include "Vecteur3D.h"
 using namespace std;
 
-int main() {
-    Vecteur3D vect1;
-    Vecteur3D vect2;
-    Vecteur3D vect3;
-
-    /* Cette partie sera revue dans 2 semaines
-    * (constructeurs, surcharge des opérateurs).
-    */
-    // v1 = (1.0, 2.0, -0.1)
+void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     vect1.set_coord(0, 1.0);
     vect1.set_coord(1, 2.0);
     vect1.set_coord(2, -0.1);
@@ -43,5 +35,14 @@ int main() {
         cout << "égal au";
     }
     cout << " vecteur 3." << endl;
-        return 0;
+}
+
+int main() {
+    Vecteur3D vect1;
+    Vecteur3D vect2;
+    Vecteur3D vect3;
+
+    test1(vect1, vect2, vect3);
+
+    return 0;
 }
