@@ -1,4 +1,6 @@
 02/03, Veneziano:
-- Crée repository GitHub du projet
-- Crée les fichiers journal, reponses, readme et conception
+- Creation repository GitHub du projet
+- Creation les fichiers journal, reponses, readme et conception
 - Definition de la classe Vecteur3D, écriture des premières methodes et tests de compilation separée pour la future modularization
+04/03, Veneziano:
+- Ajouté toutes les methodes indiqué de la semaine 2
