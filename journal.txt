@@ -42,6 +42,12 @@ Hermione: finir le reste du projet
 - Definition de la classe Vecteur3D, écriture des premières methodes et tests de compilation separée pour la future modularization
 04/03, Veneziano:
 - Ajouté toutes les methodes indiqué de la semaine 2
+05/03, Thoré Maël:
+travail sur la class Vecteur3D :
+-correction methodes compare() qui considère maintenant comme égale deux coordonées dont la différence est inférieur à 1e-10
+-prise en compte du cas vecteur nul dans la methode unitaire()
+ajout valeur par défaut x y et z à 0
+ajout d’une batterie de test pour toutes les méthodes de manipulation/calcul avec des Vecteur3D
 
 --------------------------------------------------
 ## Semaine 3 :

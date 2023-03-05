@@ -9,10 +9,16 @@ void Vecteur3D::set_coord(int coordinate, double value) {
     else if (coordinate == 2) {z = value;}
     else {cout << "La coordonnée choisie n'existe pas" << endl;}
 }
-void Vecteur3D::affiche() const {cout << x << ' ' << y << ' ' << z << endl;};
+void Vecteur3D::affiche() const {
+    cout << x << ' ' << y << ' ' << z;
+}
 
-bool Vecteur3D::compare(Vecteur3D v) const {
-    return (x == v.x && y == v.y && z == v.z);
+bool Vecteur3D::compare(Vecteur3D v, double epsilon) const { // epsilon = 1e-10 par défaut défini dans le .h
+    return (
+        abs(x - v.x) <= epsilon && 
+        abs(y - v.y) <= epsilon && 
+        abs(z - v.z) <= epsilon
+        );
 }
 
 Vecteur3D Vecteur3D::addition(Vecteur3D autre) const {
@@ -31,20 +37,16 @@ Vecteur3D Vecteur3D::soustraction(Vecteur3D autre) const {
     return resultat;
 }
 
-Vecteur3D Vecteur3D::oppose() const {
-    Vecteur3D resultat;
-    resultat.set_coord(0, - x);
-    resultat.set_coord(1, - y);
-    resultat.set_coord(2, - z);
-    return resultat;
-}
-
 Vecteur3D Vecteur3D::mult(double lambda) const {
     Vecteur3D resultat;
     resultat.set_coord(0, lambda * x);
     resultat.set_coord(1, lambda * y);
     resultat.set_coord(2, lambda * z);
     return resultat;
+}
+
+Vecteur3D Vecteur3D::oppose() const {
+    return mult(-1);
 }
 
 double Vecteur3D::prod_scal(Vecteur3D autre) const {
@@ -70,6 +72,7 @@ double Vecteur3D::norme2() const {
 Vecteur3D Vecteur3D::unitaire() const {
     Vecteur3D resultat;
     double n(norme());
+    if (n == 0) {cout << "Le vecteur est nul" << endl; return resultat;} // retourne le vecteur nul (0,0,0
     resultat.set_coord(0, x / n);
     resultat.set_coord(1, y / n);
     resultat.set_coord(2, z / n);

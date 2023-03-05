@@ -4,11 +4,11 @@ class Vecteur3D {
 public:
     void set_coord(int coordinate, double value);
     void affiche() const;
-    bool compare(Vecteur3D v)const;
+    bool compare(Vecteur3D v, double epsilon = 1e-10)const;
     Vecteur3D addition(Vecteur3D autre) const;
     Vecteur3D soustraction(Vecteur3D autre) const;
+        Vecteur3D mult(double) const;
     Vecteur3D oppose() const;
-    Vecteur3D mult(double) const;
     double prod_scal(Vecteur3D autre) const;
     Vecteur3D prod_vect(Vecteur3D) const;
     double norme() const;
@@ -16,7 +16,8 @@ public:
     Vecteur3D unitaire() const;
     
 private:
-    double x;
-    double y;
-    double z;
+    // vecteur nul par défaut
+    double x = 0;
+    double y = 0;
+    double z = 0;
 };
