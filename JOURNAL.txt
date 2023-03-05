@@ -48,6 +48,7 @@ travail sur la class Vecteur3D :
 -prise en compte du cas vecteur nul dans la methode unitaire()
 ajout valeur par défaut x y et z à 0
 ajout d’une batterie de test pour toutes les méthodes de manipulation/calcul avec des Vecteur3D
+update réponse.txt question P1.1
 
 --------------------------------------------------
 ## Semaine 3 :

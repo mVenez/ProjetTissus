@@ -4,3 +4,7 @@ La classe mets à disposition du public les méthodes suivantes :
 - set_coord() assigne une valeur à une coordonnée choisie, 
 - affiche() affiche d'une maniere simple les coordonnées du vecteur, 
 - compare() permet de tester l'egalité entre deux vecteurs (à 1e-10 près). Pour cela il a acces aux attributs privés d'un autre objet vecteur, comme ils sont de la meme classe.
+- addition(), soustraction(), mult(), oppose(), prod_scal(), prod_vect(), norme(), norme2() sont des opération de base sur les vecteurs 
+- unitaire(), renvoie le vecteur unitaire associé au vecteur, (renvoie le vecteur nul si vecteur nul en entrée)
+Toutes ces méthodes sont public car elle on pour but d’être utilisé en dehors du .h
+En effet, ici, il n’y à pas de méthodes qui servent uniquement au fonctionnement interne de la class
