@@ -12,7 +12,7 @@ void Vecteur3D::set_coord(int coordinate, double value) {
 void Vecteur3D::affiche() const {cout << x << ' ' << y << ' ' << z << endl;};
 
 bool Vecteur3D::compare(Vecteur3D v) const {
-    return (x == v.x and y == v.y and z == v.z);
+    return (x == v.x && y == v.y && z == v.z);
 }
 
 Vecteur3D Vecteur3D::addition(Vecteur3D autre) const {

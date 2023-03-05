@@ -29,7 +29,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
         cout << "différent du";
     }
     cout << " vecteur 2," << endl << "et est ";
-    if (not vect1.compare(vect3)) {
+    if ( !vect1.compare(vect3)) {
         cout << "différent du";
     } else {
         cout << "égal au";

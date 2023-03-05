@@ -1,1 +1,10 @@
 tester les nouvelles methodes (de addition à unitaire)
+
+Maël : j’ai modifié le journal.txt en reprennant l’exemple donnée par le prof de "bon journal" 
+j’ai gardé tout ce que tu avait mis dans journal.txt à "semaine 2"
+
+j’ai aussi remplacé :
+and --> &&
+or --> ||
+not --> !
+ça permet une plus grande stabilité du code, parceque tout les compilateur n’accepte pas and, or et not
