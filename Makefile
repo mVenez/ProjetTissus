@@ -1,14 +1,18 @@
-
 CXX = g++
 CC = $(CXX)
-CXXFLAGS = -std=c++11 -Wall
+CXXFLAGS = -std=c++17 -pedantic -Wall #J'ai changé avec c++17, si on a des problèmes il suffit de retourner à 11
 LDLIBS = -lm
 
 all: testVecteur3D
-testVecteur3D: testVecteur3D.o Vecteur3D.o
-Vecteur3D.o: Vecteur3D.cc
+	@echo "Executable construit"
+	
+Vecteur3D.o: Vecteur3D.cc Vecteur3D.h
+
 testVecteur3D.o: testVecteur3D.cc Vecteur3D.h
 
-clean: 
+testVecteur3D: testVecteur3D.o Vecteur3D.o
+
+clean:
 	rm -f *.o
 	rm testVecteur3D
+	@echo "Fichiers de construction et executable eliminés"
