@@ -53,6 +53,8 @@ update réponse.txt question P1.1
 --------------------------------------------------
 ## Semaine 3 :
 
+06/03, Veneziano:
+- Mise à jour du Makefile
 
 
 --------------------------------------------------
