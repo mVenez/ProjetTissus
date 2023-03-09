@@ -8,3 +8,13 @@ La classe mets à disposition du public les méthodes suivantes :
 - unitaire(), renvoie le vecteur unitaire associé au vecteur, (renvoie le vecteur nul si vecteur nul en entrée)
 Toutes ces méthodes sont public car elle on pour but d’être utilisé en dehors du .h
 En effet, ici, il n’y à pas de méthodes qui servent uniquement au fonctionnement interne de la class
+
+[Question P4.1]
+Non, à ce moment là on n'a pas ajouté un constructeur de copie car, ne sachant encore pas des possibles applications de la classe, on considère le constructeur de copie de default suffisant.
+On a testé la copie de default et elle ne donne pas de problèmes pour le moment.
+
+[Question P4.2]
+a - Il y a plusiers methodes de implementer ça. 
+On pourrait ajouter les trois attributs necessaires et modifier le constructeur, qui accepterait un parametre en plus ("Est-ce qu'on input des coordonnées cartesiennes ou spheriques?") et lors de la construction genererait tous le 6 attributs.
+On pourrait aussi garder les 3 attributs, qui auront un nom generique, et écrire une methode traduire() qui permetterait de changer entre coordonnées cartesiennes et spheriques. 
+b - Une grande difficulté serait la definition des methodes. À ce moment là toutes les methodes marchent avec des coordonnées cartesiennes. On devrait écrire des methodes jumelles qui feraint le même travail mais en spherique.
