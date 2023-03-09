@@ -3,6 +3,9 @@
 #include "Vecteur3D.h"
 using namespace std;
 
+Vecteur3D::Vecteur3D(double x , double y , double z ) 
+    : x(x), y(y), z(z) {}
+
 void Vecteur3D::set_coord(int coordinate, double value) {
     if (coordinate == 0) {x = value;}
     else if (coordinate == 1) {y = value;}

@@ -2,6 +2,7 @@
 
 class Vecteur3D {
 public:
+    Vecteur3D(double x = 0, double y = 0, double z = 0);
     void set_coord(int coordinate, double value);
     void affiche() const;
     bool compare(Vecteur3D v, double epsilon = 1e-10)const;
@@ -16,8 +17,7 @@ public:
     Vecteur3D unitaire() const;
     
 private:
-    // vecteur nul par défaut
-    double x = 0;
-    double y = 0;
-    double z = 0;
+    double x;
+    double y;
+    double z;
 };
