@@ -271,7 +271,19 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
 
     
 }
-
+void test2() {
+    Vecteur3D vect1;
+    Vecteur3D vect2(2, 5.5, 4);
+    Vecteur3D vect3(vect2);
+    if(vect2.compare(vect3)) cout << "MARCHE" << endl;
+    vect1.affiche();
+    vect2.affiche();
+    vect3.affiche();
+    Vecteur3D vect4;
+    cout << endl;
+    vect4 = vect1.addition(vect2);
+    vect4.affiche();
+}
 
 
 int main() {
@@ -279,7 +291,7 @@ int main() {
     Vecteur3D vect2;
     Vecteur3D vect3;
 
-    test1(vect1, vect2, vect3);
-
+    //test1(vect1, vect2, vect3);
+    test2();
     return 0;
 }
