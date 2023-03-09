@@ -16,3 +16,8 @@ clean:
 	rm -f *.o
 	rm testVecteur3D
 	@echo "Fichiers de construction et executable eliminés"
+
+wclean:
+	del -f *.o
+	del testVecteur3D.exe
+	@echo "Fichiers de construction et executable eliminés"

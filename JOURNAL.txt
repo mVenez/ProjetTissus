@@ -42,7 +42,7 @@ Hermione: finir le reste du projet
 - Definition de la classe Vecteur3D, écriture des premières methodes et tests de compilation separée pour la future modularization
 04/03, Veneziano:
 - Ajouté toutes les methodes indiqué de la semaine 2
-05/03, Thoré Maël:
+05/03, Maël:
 travail sur la class Vecteur3D :
 -correction methodes compare() qui considère maintenant comme égale deux coordonées dont la différence est inférieur à 1e-10
 -prise en compte du cas vecteur nul dans la methode unitaire()
@@ -53,8 +53,8 @@ update réponse.txt question P1.1
 --------------------------------------------------
 ## Semaine 3 :
 
-06/03, Veneziano:
-- Mise à jour du Makefile
+06/03, Veneziano & Maël:
+- Mise à jour du Makefile (petit message fancy et mise en place d’un make clean et make wclean (pour unix et windows))
 
 
 --------------------------------------------------
