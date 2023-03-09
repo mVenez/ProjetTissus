@@ -1,1 +1,3 @@
-rien on est trop fort
+P4
+class Masse
+class Ressort

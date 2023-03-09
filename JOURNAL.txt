@@ -55,7 +55,8 @@ update réponse.txt question P1.1
 
 06/03, Veneziano & Maël:
 - Mise à jour du Makefile (petit message fancy et mise en place d’un make clean et make wclean (pour unix et windows))
-
+09/03, Veneziano:
+- Constructeurs, test du constructeur de copie de default, réponse aux questions P4.1-2.
 
 --------------------------------------------------
 ## Semaine 4 :
