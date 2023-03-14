@@ -1,6 +1,6 @@
 CXX = g++
 CC = $(CXX)
-CXXFLAGS = -std=c++17 -pedantic -Wall #J'ai changé avec c++17, si on a des problèmes il suffit de retourner à 11
+CXXFLAGS = -std=c++11 -pedantic -Wall #Je suis retourné à c++11
 LDLIBS = -lm
 
 all: testVecteur3D
