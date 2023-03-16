@@ -8,6 +8,8 @@ all: testVecteur3D
 	
 Vecteur3D.o: Vecteur3D.cc Vecteur3D.h
 
+Masse.o: Masse.cc Masse.h
+
 testVecteur3D.o: testVecteur3D.cc Vecteur3D.h
 
 testVecteur3D: testVecteur3D.o Vecteur3D.o

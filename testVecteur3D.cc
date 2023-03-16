@@ -291,7 +291,7 @@ int main() {
     Vecteur3D vect2;
     Vecteur3D vect3;
 
-    //test1(vect1, vect2, vect3);
+    test1(vect1, vect2, vect3);
     test2();
     return 0;
 }
