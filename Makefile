@@ -4,7 +4,7 @@ CXXFLAGS = -std=c++11 -pedantic -Wall #Je suis retourné à c++11
 LDLIBS = -lm
 
 all: testVecteur3D
-	@echo "Executable construit"
+	@echo "Wow Mais qui donc à fais ce merveilleux code ? Il fonctionne super bien, je doit être codé par des beau gosse absolu, l’Executable est construit trop fort"
 	
 Vecteur3D.o: Vecteur3D.cc Vecteur3D.h
 
