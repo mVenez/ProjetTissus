@@ -2,8 +2,59 @@
 #include "Vecteur3D.h"
 using namespace std;
 
+void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3);
+
+void test2() {
+    // un vecteur en 3D :
+Vecteur3D vect1(1.0, 2.0, -0.1);
+
+// un autre vecteur en 3D
+Vecteur3D vect2(2.6, 3.5,  4.1);
+
+Vecteur3D vect3(vect1);  // copie de V1
+Vecteur3D vect4;         // le vecteur nul
+
+cout << "Vecteur 1 : " << vect1 << endl;
+cout << "Vecteur 2 : " << vect2 << endl;
+cout << "Vecteur 3 : " << vect3 << endl;
+cout << "Vecteur 4 : " << vect4 << endl;
+
+cout << "Le vecteur 1 est ";
+if (vect1 == vect2) {
+    cout << "égal au";
+} else {
+    cout << "différent du";
+}
+cout << " vecteur 2," << endl << "et est ";
+if (vect1 != vect3) {
+    cout << "différent du";
+} else {
+    cout << "égal au";
+}
+cout << " vecteur 3." << endl;
+}
+
+void test3() {
+    Vecteur3D vec1(0,0,0);
+    Vecteur3D vec2(-vec1);
+    if (vec1 == vec2) { cout << "ok" << endl;}
+    else { cout << "not ok " << endl;}
+
+}
+
+int main() {
+    Vecteur3D vect1;
+    Vecteur3D vect2;
+    Vecteur3D vect3;
+    //test3();
+    test1(vect1, vect2, vect3);
+    //test2();
+    return 0;
+}
+
+
 void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
-    // v1 = (1.0, 2.0, -0.1)
+     // v1 = (1.0, 2.0, -0.1)
     vect1.set_coord(0, 1.0);
     vect1.set_coord(1, 2.0);
     vect1.set_coord(2, -0.1);
@@ -45,7 +96,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ") + (";
     vect2.affiche();
     cout << ") = ";
-    vect3 = vect1.addition(vect2);
+    vect3 = vect1 + vect2;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -55,7 +106,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ") + (";
     vect1.affiche();
     cout << ") = ";
-    vect3 = vect2.addition(vect1);
+    vect3 = vect2 + vect1;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -66,7 +117,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ") + (";
     vect_nul.affiche();
     cout << ") = ";
-    vect3 = vect1.addition(vect_nul);
+    vect3 = vect1 + vect_nul;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -76,7 +127,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ") + (";
     vect1.affiche();
     cout << ") = ";
-    vect3 = vect_nul.addition(vect1);
+    vect3 = vect_nul + vect1;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -88,7 +139,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ") - (";
     vect2.affiche();
     cout << ") = ";
-    vect3 = vect1.soustraction(vect2);
+    vect3 = vect1 - vect2;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -98,7 +149,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ") - (";
     vect1.affiche();
     cout << ") = ";
-    vect3 = vect1.soustraction(vect1);
+    vect3 = vect1 - vect1;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -108,7 +159,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ") - (";
     vect_nul.affiche();
     cout << ") = ";
-    vect3 = vect1.soustraction(vect_nul);
+    vect3 = vect1 - vect_nul;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -117,7 +168,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << "-(";
     vect1.affiche();
     cout << ") = ";
-    vect3 = vect1.oppose();
+    vect3 = -vect1;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -125,7 +176,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << "--(";
     vect1.affiche();
     cout << ") = ";
-    vect3 = vect3.oppose();
+    vect3 = -vect3;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -133,7 +184,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << "-(";
     vect_nul.affiche();
     cout << ") = ";
-    vect3 = vect_nul.oppose();
+    vect3 = -vect_nul;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -142,7 +193,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << "3 * (";
     vect1.affiche();
     cout << ") = ";
-    vect3 = vect1.mult(3.0);
+    vect3 = vect1 * 3.0;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -150,7 +201,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << "0 * (";
     vect1.affiche();
     cout << ") = ";
-    vect3 = vect1.mult(0.0);
+    vect3 = vect1 * 0;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -158,7 +209,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << "1 * (";
     vect1.affiche();
     cout << ") = ";
-    vect3 = vect1.mult(1.0);
+    vect3 = vect1 * 1;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -166,7 +217,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << "-1 * (";
     vect1.affiche();
     cout << ") = ";
-    vect3 = vect1.mult(-1.0);
+    vect3 = vect1 * (-1);
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -177,21 +228,21 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ") * (";
     vect2.affiche();
     cout << ") = ";
-    cout << vect1.prod_scal(vect2) << endl;
+    cout << vect1 * vect2 << endl;
     //produit scalaire avec lui même
     cout << "(";
     vect1.affiche();
     cout << ") * (";
     vect1.affiche();
     cout << ") = ";
-    cout << vect1.prod_scal(vect1) << endl;
+    cout << vect1 * vect1 << endl;
     //produit scalaire avec vecteur nul
     cout << "(";
     vect1.affiche();
     cout << ") * (";
     vect_nul.affiche();
     cout << ") = ";
-    cout << vect1.prod_scal(vect_nul) << endl;
+    cout << vect1 * vect_nul << endl;
 
     //test prod_vect()
     cout << "(";
@@ -199,7 +250,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ") ^ (";
     vect2.affiche();
     cout << ") = ";
-    vect3 = vect1.prod_vect(vect2);
+    vect3 = vect1 ^ vect2;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -209,7 +260,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ") ^ (";
     vect1.affiche();
     cout << ") = ";
-    vect3 = vect1.prod_vect(vect1);
+    vect3 = vect1 ^ vect1;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -219,7 +270,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ") ^ (";
     vect_nul.affiche();
     cout << ") = ";
-    vect3 = vect1.prod_vect(vect_nul);
+    vect3 = vect1 ^ vect_nul;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -250,7 +301,7 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << "unitaire(";
     vect1.affiche();
     cout << ") = ";
-    vect3 = vect1.unitaire();
+    vect3 = ~vect1;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
@@ -263,35 +314,10 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << "unitaire(";
     vect_nul.affiche();
     cout << ") = ";
-    vect3 = vect_nul.unitaire();
+    vect3 = ~vect_nul;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;
 
 
-    
-}
-void test2() {
-    Vecteur3D vect1;
-    Vecteur3D vect2(2, 5.5, 4);
-    Vecteur3D vect3(vect2);
-    if(vect2.compare(vect3)) cout << "MARCHE" << endl;
-    vect1.affiche();
-    vect2.affiche();
-    vect3.affiche();
-    Vecteur3D vect4;
-    cout << endl;
-    vect4 = vect1.addition(vect2);
-    vect4.affiche();
-}
-
-
-int main() {
-    Vecteur3D vect1;
-    Vecteur3D vect2;
-    Vecteur3D vect3;
-
-    test1(vect1, vect2, vect3);
-    test2();
-    return 0;
 }
