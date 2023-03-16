@@ -1,3 +1,5 @@
 P4
 class Masse
 class Ressort
+
+question p4.3 sur les operateurs
