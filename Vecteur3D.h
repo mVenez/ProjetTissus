@@ -3,7 +3,7 @@
 class Vecteur3D {
 public:
     //constructeur
-    Vecteur3D(double x = 0, double y = 0, double z = 0);
+    explicit Vecteur3D(double x = 0, double y = 0, double z = 0);
     void set_coord(int coordinate, double value);   //cette methode pourrait etre eliminé dans le future
 
     //methodes auxiliaires aux operateurs
