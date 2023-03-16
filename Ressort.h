@@ -1,3 +1,4 @@
+#pragma once
 #include<iostream>
 #include "Masse.h"
 #include "Vecteur3D.h"
