@@ -8,11 +8,11 @@ all: testVecteur3D testMasse testRessort
 	
 Vecteur3D.o: Vecteur3D.cc Vecteur3D.h
 
-Masse.o: Masse.cc Masse.h constantes.h Vecteur3D.h
+Masse.o: Masse.cc Masse.h Constantes.h Vecteur3D.h 
 
 Ressort.o: Ressort.cc Ressort.h
 
-constantes.o: Constantes.cc Constantes.h
+Constantes.o: Constantes.cc Constantes.h
 
 testVecteur3D.o: testVecteur3D.cc Vecteur3D.h
 
@@ -20,7 +20,7 @@ testVecteur3D: testVecteur3D.o Vecteur3D.o
 
 testMasse: testMasse.o Masse.o Vecteur3D.o Constantes.o
 
-testRessort: testRessort.o Ressort.o Masse.o Vecteur3D.o Constante.o
+testRessort: testRessort.o Ressort.o Masse.o Vecteur3D.o Constantes.o
 
 clean:
 	rm -f *.o
