@@ -10,7 +10,8 @@ public:
     }
 private:
     double masse;
+    double coefficient_frottement;
     Vecteur3D position;
     Vecteur3D vitesse;
-
+    Vecteur3D force_subie; // l’accelération quoi, mais bon jsp pourquoi il faut l’appeler comme ça.
 };
