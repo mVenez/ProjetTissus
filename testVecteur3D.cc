@@ -2,7 +2,7 @@
 #include "Vecteur3D.h"
 using namespace std;
 
-void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3);
+//void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3);
 
 void test2() {
     // un vecteur en 3D :
@@ -47,13 +47,13 @@ int main() {
     Vecteur3D vect2;
     Vecteur3D vect3;
     //test3();
-    test1(vect1, vect2, vect3);
+    //test1(vect1, vect2, vect3);
     //test2();
     return 0;
 }
 
 
-void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
+/*void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
      // v1 = (1.0, 2.0, -0.1)
     vect1.set_coord(0, 1.0);
     vect1.set_coord(1, 2.0);
@@ -320,4 +320,4 @@ void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
     cout << ")" << endl;
 
 
-}
+}*/

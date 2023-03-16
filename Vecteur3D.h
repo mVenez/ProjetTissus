@@ -39,6 +39,7 @@ private:
     double z;
 };
 
+//operateurs externes
 std::ostream& operator<<(std::ostream&, const Vecteur3D&);
 Vecteur3D operator+(Vecteur3D, const Vecteur3D&);
 Vecteur3D operator-(Vecteur3D, const Vecteur3D&);
