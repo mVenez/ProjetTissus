@@ -2,58 +2,26 @@
 #include "Vecteur3D.h"
 using namespace std;
 
-//void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3);
+void testOperateursMethodes();
 
-void test2() {
-    // un vecteur en 3D :
-Vecteur3D vect1(1.0, 2.0, -0.1);
+void testAffichageEgalite();
 
-// un autre vecteur en 3D
-Vecteur3D vect2(2.6, 3.5,  4.1);
-
-Vecteur3D vect3(vect1);  // copie de V1
-Vecteur3D vect4;         // le vecteur nul
-
-cout << "Vecteur 1 : " << vect1 << endl;
-cout << "Vecteur 2 : " << vect2 << endl;
-cout << "Vecteur 3 : " << vect3 << endl;
-cout << "Vecteur 4 : " << vect4 << endl;
-
-cout << "Le vecteur 1 est ";
-if (vect1 == vect2) {
-    cout << "égal au";
-} else {
-    cout << "différent du";
-}
-cout << " vecteur 2," << endl << "et est ";
-if (vect1 != vect3) {
-    cout << "différent du";
-} else {
-    cout << "égal au";
-}
-cout << " vecteur 3." << endl;
-}
-
-void test3() {
-    Vecteur3D vec1(0,0,0);
-    Vecteur3D vec2(-vec1);
-    if (vec1 == vec2) { cout << "ok" << endl;}
-    else { cout << "not ok " << endl;}
-
-}
 
 int main() {
-    Vecteur3D vect1;
-    Vecteur3D vect2;
-    Vecteur3D vect3;
-    //test3();
-    //test1(vect1, vect2, vect3);
-    //test2();
+    testOperateursMethodes();
+    testAffichageEgalite();
     return 0;
 }
 
 
-/*void test1(Vecteur3D vect1, Vecteur3D vect2, Vecteur3D vect3) {
+void testOperateursMethodes() {
+    cout << endl;
+    cout << "=================== test des methodes et des operateurs ===================" << endl;
+
+    Vecteur3D vect1;
+    Vecteur3D vect2;
+    Vecteur3D vect3;
+
      // v1 = (1.0, 2.0, -0.1)
     vect1.set_coord(0, 1.0);
     vect1.set_coord(1, 2.0);
@@ -189,10 +157,18 @@ int main() {
     vect3.affiche();
     cout << ")" << endl;
 
-    //test mult()
+    //test operator* de multiplication par scalaire
     cout << "3 * (";
     vect1.affiche();
     cout << ") = ";
+    vect3 = vect1 * 3.0;
+    cout << "(";
+    vect3.affiche();
+    cout << ")" << endl;
+    //dans l'autre sens
+    cout << "(";
+    vect1.affiche();
+    cout << ") * 3 = ";
     vect3 = vect1 * 3.0;
     cout << "(";
     vect3.affiche();
@@ -229,6 +205,13 @@ int main() {
     vect2.affiche();
     cout << ") = ";
     cout << vect1 * vect2 << endl;
+    //dans l'autre sens
+    cout << "(";
+    vect2.affiche();
+    cout << ") * (";
+    vect1.affiche();
+    cout << ") = ";
+    cout << vect2* vect1 << endl;
     //produit scalaire avec lui même
     cout << "(";
     vect1.affiche();
@@ -320,4 +303,37 @@ int main() {
     cout << ")" << endl;
 
 
-}*/
+}
+
+void testAffichageEgalite() {
+    cout << endl;
+    cout << "=================== test des operateurs d'affichage et d'égalité ===================" << endl;
+
+    // un vecteur en 3D :
+Vecteur3D vect1(1.0, 2.0, -0.1);
+
+// un autre vecteur en 3D
+Vecteur3D vect2(2.6, 3.5,  4.1);
+
+Vecteur3D vect3(vect1);  // copie de V1
+Vecteur3D vect4;         // le vecteur nul
+
+cout << "Vecteur 1 : " << vect1 << endl;
+cout << "Vecteur 2 : " << vect2 << endl;
+cout << "Vecteur 3 : " << vect3 << endl;
+cout << "Vecteur 4 : " << vect4 << endl;
+
+cout << "Le vecteur 1 est ";
+if (vect1 == vect2) {
+    cout << "égal au";
+} else {
+    cout << "différent du";
+}
+cout << " vecteur 2," << endl << "et est ";
+if (vect1 != vect3) {
+    cout << "différent du";
+} else {
+    cout << "égal au";
+}
+cout << " vecteur 3." << endl;
+}
