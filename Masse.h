@@ -3,6 +3,7 @@
 #include<vector>
 #include "Constantes.h"
 #include "Vecteur3D.h"
+//#include "Ressort.h"
 
 class Masse{
 public:
