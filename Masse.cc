@@ -43,9 +43,9 @@ Vecteur3D Masse::acceleration() const{
 
 void Masse::mise_a_jour_forces(){
     Vecteur3D force_rappel;
-    //for(Ressort* ressort : ressorts_){
-    //    force_rappel = force_rappel.addition(ressort->force_rappel());
-    //}
+    for(Ressort* ressort : ressorts_){
+        force_rappel = force_rappel + (ressort->force_rappel());
+    }
     Vecteur3D frottement = vitesse_ * (-coefficient_frottement_);
 }
 

@@ -67,8 +67,10 @@ update réponse.txt question P1.1
 YO MAEL ECRIS CE QUE T'AS FAIT
 
 17/03, Veneziano:
-- Implementation des operateurs dans le reste du code
+- Implementation des operateurs dans le reste du code, modifications à testVecteur3D.cc
 - Petites modifications au Makefile
+- Dependance entre Masse.h et Ressort.h
+
 --------------------------------------------------
 ## Semaine 5 :
 

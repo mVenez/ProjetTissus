@@ -3,8 +3,8 @@
 #include<vector>
 #include "Constantes.h"
 #include "Vecteur3D.h"
-//#include "Ressort.h"
 
+class Ressort; // forward declare en place de #include, car on utilise seulement un pointeur. Il faut tester si une methode dans Masse.cc qui utilise ressort marche bien et peut acceder aux attributs et  methodes necessaires
 class Masse{
 public:
     Masse(double masse, double coefficient_frottement = 0, Vecteur3D position = Vecteur3D(0,0,0), Vecteur3D vitesse = Vecteur3D(0,0,0), Vecteur3D force_subie=g);
@@ -27,7 +27,7 @@ private:
     Vecteur3D position_;
     Vecteur3D vitesse_;
     Vecteur3D force_subie_; // l’accelération multiplié par la masse
-    //std::vector<Ressort*> ressorts_;
+    std::vector<Ressort*> ressorts_;
 };
 
 std::ostream& operator<<(std::ostream& sortie, Masse const& masse);
