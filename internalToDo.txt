@@ -3,3 +3,7 @@ class Masse
 class Ressort
 
 question p4.3 sur les operateurs
+les autres questions
+
+j'ai substitué les operateurs l'espère avoir bien copiè les formules
+aussi j'ai ajouté des int main() dans testMasse et testRessort sinon ca donne erreur

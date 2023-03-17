@@ -61,8 +61,14 @@ update réponse.txt question P1.1
 --------------------------------------------------
 ## Semaine 4 :
 
+16/03, Veneziano:
+- Surcharge des operateurs de Vecteur3D.cc, test
+- Elimination des methodes obsoletes
+YO MAEL ECRIS CE QUE T'AS FAIT
 
-
+17/03, Veneziano:
+- Implementation des operateurs dans le reste du code
+- Petites modifications au Makefile
 --------------------------------------------------
 ## Semaine 5 :
 
