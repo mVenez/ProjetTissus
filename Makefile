@@ -10,6 +10,8 @@ Vecteur3D.o: Vecteur3D.cc Vecteur3D.h
 
 Masse.o: Masse.cc Masse.h Constantes.h Vecteur3D.h 
 
+testMasse.o : testMasse.cc
+
 Ressort.o: Ressort.cc Ressort.h
 
 Constantes.o: Constantes.cc Constantes.h
@@ -25,9 +27,13 @@ testRessort: testRessort.o Ressort.o Masse.o Vecteur3D.o Constantes.o
 clean:
 	rm -f *.o
 	rm testVecteur3D
+	rm testMasse
+	rm testRessort
 	@echo "Fichiers de construction et executable eliminés"
 
 wclean:
 	del -f *.o
 	del testVecteur3D.exe
+	del testMasse.exe
+	del testRessort.exe
 	@echo "Fichiers de construction et executable eliminés"

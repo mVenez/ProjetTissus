@@ -34,11 +34,11 @@ Vecteur3D Masse::force_subie() const{
 }
 
 void Masse::ajoute_force(Vecteur3D const& df){
-    force_subie_ = force_subie_.addition(df);
+    force_subie_ += (df);
 }
 
 Vecteur3D Masse::acceleration() const{
-    return force_subie_.mult(1/masse_);
+    return force_subie_ * (1/masse_);
 }
 
 void Masse::mise_a_jour_forces(){
@@ -46,7 +46,7 @@ void Masse::mise_a_jour_forces(){
     //for(Ressort* ressort : ressorts_){
     //    force_rappel = force_rappel.addition(ressort->force_rappel());
     //}
-    Vecteur3D frottement = vitesse_.mult(-coefficient_frottement_);
+    Vecteur3D frottement = vitesse_ * (-coefficient_frottement_);
 }
 
 ostream& operator<<(ostream& sortie, Masse const& masse){
