@@ -15,14 +15,6 @@ public:
     //norme et norme au carré
     double norme() const;
     double norme2() const;
-
-    //methodes obsoletes
-    Vecteur3D addition(Vecteur3D) const; //OBSOLETE 
-    Vecteur3D soustraction(Vecteur3D) const; //OBSOLETE
-    Vecteur3D mult(double) const; //operator* OBSOLETE
-    Vecteur3D oppose() const; //OBSOLETE
-    double prod_scal(Vecteur3D) const; //operator* OBSOLETE
-    Vecteur3D unitaire() const; //OBSOLETE
     
     //operateurs internes
     bool operator==(const Vecteur3D&) const;
