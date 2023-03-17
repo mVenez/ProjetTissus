@@ -5,5 +5,7 @@ class Ressort
 question p4.3 sur les operateurs
 les autres questions
 
+apparement les fichiers de test font partie du projet et testVecteur3D est très moche, je vais le modifier
+
 j'ai substitué les operateurs l'espère avoir bien copiè les formules
 aussi j'ai ajouté des int main() dans testMasse et testRessort sinon ca donne erreur
