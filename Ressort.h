@@ -10,6 +10,6 @@ private:
     double const k;
     double const l0;
     double longueur;
-    Masse masse1;
+    Masse masse1;  //changer avec des references aux masses
     Masse masse2;
 };
