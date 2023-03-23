@@ -2,12 +2,8 @@ P4
 class Masse
 class Ressort
 
-question p4.3 sur les operateurs
-les autres questions
-
-j'ai substitué les operateurs l'espère avoir bien copiè les formules
-aussi j'ai ajouté des int main() dans testMasse et testRessort sinon ca donne erreur
-
-IMPORTANT: j'ai reussi à faire compiler meme avec les ressort utilisés dans Masse.h, mais il faut controler que les methodes et attributs de Ressort marche bien lorsque on les utilise dans Masse.
+voir les autres questions
 
 faire le testmasse avec mise à jour forces () 
+
+revoir si besoin l’implémentation de l’association des ressorts au masse
