@@ -9,3 +9,5 @@ j'ai substitué les operateurs l'espère avoir bien copiè les formules
 aussi j'ai ajouté des int main() dans testMasse et testRessort sinon ca donne erreur
 
 IMPORTANT: j'ai reussi à faire compiler meme avec les ressort utilisés dans Masse.h, mais il faut controler que les methodes et attributs de Ressort marche bien lorsque on les utilise dans Masse.
+
+faire le testmasse avec mise à jour forces () 
