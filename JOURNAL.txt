@@ -73,7 +73,15 @@ YO MAEL ECRIS CE QUE T'AS FAIT
 
 --------------------------------------------------
 ## Semaine 5 :
-
+23/03, Veneziano:
+- Modifications à testVecteur3D.cc, multiplication par un scalaire amelioré
+- testRessort.cc, première écriture
+- Affichage du ressort
+23/03, Maël:
+- Finalisation des classes Ressort et Masse
+- testMasse
+23/03, Veneziano & Maël:
+- Conception et realisation de la dependance masse-ressort
 
 
 --------------------------------------------------
