@@ -6,10 +6,13 @@ void testOperateursMethodes();
 
 void testAffichageEgalite();
 
+void testOperationsAvecVecteurOppose();
+
 
 int main() {
     testOperateursMethodes();
     testAffichageEgalite();
+    testOperationsAvecVecteurOppose();
     return 0;
 }
 
@@ -336,4 +339,14 @@ if (vect1 != vect3) {
     cout << "égal au";
 }
 cout << " vecteur 3." << endl;
+}
+
+void testOperationsAvecVecteurOppose() {
+    cout << endl;
+    cout << "=================== test des operations avec des vecteurs opposés ===================" << endl;
+
+    Vecteur3D vec1(1,1,1);
+    Vecteur3D vec2(2,2,2);
+    cout << "- (" << vec1 << ") + " << vec2 << " = ";
+    cout << -vec1 + vec2 << endl; //affiche 1 1 1 comme prevu
 }
