@@ -7,7 +7,7 @@
 class Ressort; // forward declare en place de #include, car on utilise seulement un pointeur. Il faut tester si une methode dans Masse.cc qui utilise ressort marche bien et peut acceder aux attributs et  methodes necessaires
 class Masse{
 public:
-    Masse(double masse, double coefficient_frottement = 0, Vecteur3D position = Vecteur3D(0,0,0), Vecteur3D vitesse = Vecteur3D(0,0,0), Vecteur3D force_subie=g);
+    Masse(double masse, double coefficient_frottement = 0, Vecteur3D position = Vecteur3D(0,0,0), Vecteur3D vitesse = Vecteur3D(0,0,0), Vecteur3D acceleration=g);
     
     double masse() const;
     double coefficient_frottement() const;
