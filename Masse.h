@@ -25,11 +25,7 @@ public:
     void ajoute_force(Vecteur3D const& df);
     Vecteur3D acceleration() const;
     void mise_a_jour_forces();
-
-    // opérateurs
-    bool operator==(Masse const& masse) const;
-    bool operator!=(Masse const& masse) const;
-    
+   
 private:
     double masse_;
     double coefficient_frottement_;

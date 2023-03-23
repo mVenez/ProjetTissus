@@ -5,10 +5,10 @@
 
 class Ressort{
 public:
-    Ressort(const Masse&, const Masse& , const double, const double);
-    Ressort(const Ressort& autre); // copie profonde
+    Ressort(Masse&, Masse& , const double, const double);
+    Ressort(const Ressort& autre); // on empêche la copie
     ~Ressort();
-    Vecteur3D force_rappel(Masse const& masse) const;
+    Vecteur3D force_rappel(Masse* masse) const;
     void affiche() const;
 private:
     double const k_;
