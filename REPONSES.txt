@@ -18,3 +18,6 @@ a - Il y a plusiers methodes de implementer ça.
 On pourrait ajouter les trois attributs necessaires et modifier le constructeur, qui accepterait un parametre en plus ("Est-ce qu'on input des coordonnées cartesiennes ou spheriques?") et lors de la construction genererait tous le 6 attributs.
 On pourrait aussi garder les 3 attributs, qui auront un nom generique, et écrire une methode traduire() qui permetterait de changer entre coordonnées cartesiennes et spheriques. 
 b - Une grande difficulté serait la definition des methodes. À ce moment là toutes les methodes marchent avec des coordonnées cartesiennes. On devrait écrire des methodes jumelles qui feraint le même travail mais en spherique.
+
+[Question P4.3]
+Pour transformer affiche() et compare() en operateur nous avons surchargé respectivement operator<< et operator==, le premier avec une surcharge externe e le deuxieme avec une surcharge externe.
