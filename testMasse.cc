@@ -4,7 +4,7 @@
 #include "Vecteur3D.h"
 using namespace std;
 
-void test(){
+void test1(){
     // test constructeur
     cout << "Test constructeur" << endl;
     Masse masse1(1.5);// test valeur par defaut
@@ -32,14 +32,29 @@ void test(){
     masse1.ajoute_force(Vecteur3D(-1,-2,-3));
     cout << "force_subie : " << masse1.force_subie() << endl;
 
-    // test mise_a_jour_forces()
-    cout << endl;
-    cout << "Test mise_a_jour_forces()" << endl;
-    // coder le test avec les ressorts
+}
 
+void test2(){
+    // test mise_a_jour_forces()
+
+    //les masses sont à 10m de distance
+    Masse masse1(1.5, 0.3, Vecteur3D(5,0,0));
+    Masse masse2(1.5, 0.3, Vecteur3D(-5,0,0));
+    
+
+
+    cout << endl;
+    cout << "force_subie : " << masse1.force_subie() << endl;
+    cout << "Test mise_a_jour_forces()" << endl;
+    Ressort ressort1(masse1, masse2, 3, 1);
+    vector<Ressort*> liste_ressort(1, &ressort1);
+    masse1.set_ressort(liste_ressort);
+    masse1.mise_a_jour_forces();
+    cout << "force_subie : " << masse1.force_subie() << endl;
 }
 
 int main() {
-    test();
+    test1();
+    test2();
     return 0;
 }

@@ -7,3 +7,5 @@ voir les autres questions
 faire le testmasse avec mise à jour forces () 
 
 revoir si besoin l’implémentation de l’association des ressorts au masse
+
+à voir si il y a un moyen plus simple pour coder l’opérateur d’égalité des masses

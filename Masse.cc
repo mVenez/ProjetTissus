@@ -5,14 +5,16 @@
 #include "Vecteur3D.h"
 using namespace std;
 
-
-Masse::Masse(double masse, double coefficient_frottement, Vecteur3D position, Vecteur3D vitesse, Vecteur3D acceleration)
-    : masse_(masse), coefficient_frottement_(coefficient_frottement), position_(position), vitesse_(vitesse), force_subie_(masse * acceleration) {
-        if (masse <= 0){
-            throw std::invalid_argument("La masse doit être positive");
-        }
+// constructeur
+Masse::Masse(double masse, double coefficient_frottement, Vecteur3D position, Vecteur3D vitesse, Vecteur3D acceleration, std::vector<Ressort*> liste_ressort)
+    : masse_(masse), coefficient_frottement_(coefficient_frottement), position_(position), vitesse_(vitesse), force_subie_(masse * acceleration), liste_ressort_(liste_ressort) {
+    if (masse <= 0){
+        throw invalid_argument("La masse doit être positive");
     }
+}
 
+
+// getters
 double Masse::masse() const{
     return masse_;
 }
@@ -33,6 +35,17 @@ Vecteur3D Masse::force_subie() const{
     return force_subie_;
 }
 
+
+// setters
+void Masse::set_ressort(Ressort* ressort){
+    liste_ressort_.push_back(ressort);
+}
+void Masse::set_ressort(std::vector<Ressort*> liste_ressort){
+    liste_ressort_ = liste_ressort;
+}
+
+
+// méthodes
 void Masse::ajoute_force(Vecteur3D const& df){
     force_subie_ += (df);
 }
@@ -43,10 +56,21 @@ Vecteur3D Masse::acceleration() const{
 
 void Masse::mise_a_jour_forces(){
     Vecteur3D force_rappel;
-    for(Ressort* ressort : ressorts_){
-        force_rappel = force_rappel + (ressort->force_rappel());
+    for(Ressort* ressort : liste_ressort_){
+        force_rappel = force_rappel + (ressort->force_rappel(*this));
     }
     Vecteur3D frottement = vitesse_ * (-coefficient_frottement_);
+    force_subie_ = force_rappel + frottement;
+}
+
+
+// opérateurs
+
+bool Masse::operator==(Masse const& masse) const{
+    return (masse_ == masse.masse() && coefficient_frottement_ == masse.coefficient_frottement() && position_ == masse.position() && vitesse_ == masse.vitesse() && force_subie_ == masse.force_subie());
+}
+bool Masse::operator!=(Masse const& masse) const{
+    return !(*this == masse);
 }
 
 ostream& operator<<(ostream& sortie, Masse const& masse){

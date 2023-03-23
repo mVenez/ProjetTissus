@@ -6,7 +6,7 @@
 class Ressort{
 public:
     Ressort(const Masse&, const Masse& masse2, const double k, const double l0);
-    Vecteur3D force_rappel() const;
+    Vecteur3D force_rappel(Masse const& masse) const;
     void affiche() const;
 private:
     double const k;
