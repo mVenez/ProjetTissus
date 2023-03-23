@@ -5,15 +5,17 @@
 
 class Ressort{
 public:
-    Ressort(const Masse&, const Masse& masse2, const double k, const double l0);
+    Ressort(const Masse&, const Masse& , const double, const double);
+    Ressort(const Ressort& autre); // copie profonde
+    ~Ressort();
     Vecteur3D force_rappel(Masse const& masse) const;
     void affiche() const;
 private:
-    double const k;
-    double const l0;
-    double longueur;
-    Masse* masse1;  
-    Masse* masse2;
+    double const k_;
+    double const l0_;
+    double longueur_; //pas utilisé? controler la methode force_rappel()
+    Masse* masse1_;  
+    Masse* masse2_;
 };
 
-std::ostream& operator<<(std::ostream& out, const Ressort& res);
+std::ostream& operator<<(std::ostream&, const Ressort& );
