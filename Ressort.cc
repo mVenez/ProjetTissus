@@ -12,12 +12,12 @@ Ressort::~Ressort() {delete masse1_, delete masse2_;}
 
 Vecteur3D Ressort::force_rappel(Masse const& masse) const{
     Vecteur3D force_rappel;
-    Vecteur3D vecteur_rappel = masse1->position() - (masse2->position());
+    Vecteur3D vecteur_rappel = masse1_->position() - (masse2_->position());
     double longueur = vecteur_rappel.norme();
-    force_rappel = ~vecteur_rappel * (-k * (longueur - l0));
-    if(masse == *masse1){
+    force_rappel = ~vecteur_rappel * (-k_ * (longueur - l0_));
+    if(masse == *masse1_){
         return force_rappel;
-    }else if(masse != *masse2){
+    }else if(masse != *masse2_){
         return -force_rappel;
     }else{
         throw invalid_argument("La masse n'est pas reliée au ressort");
