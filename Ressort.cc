@@ -15,7 +15,6 @@ Ressort::Ressort(Masse& masse1,Masse& masse2, const double k, const double l0)
         masse1.set_ressort(this);
         masse2.set_ressort(this);
     }
-Ressort::Ressort(const Ressort& autre) = delete; // on empêche la copie
 Ressort::~Ressort() {delete masse1_, delete masse2_;}
 
 
