@@ -67,6 +67,9 @@ Vecteur3D& Vecteur3D::operator*=(const double& lambda) {
 Vecteur3D operator*(Vecteur3D vec, const double& lambda) {
     return (vec *= lambda);
 }
+Vecteur3D operator*(const double& lambda, Vecteur3D vec) {
+    return (vec * lambda);
+}
 
 //produit scalaire
 double Vecteur3D::operator*=(const Vecteur3D& autre) {

@@ -172,7 +172,7 @@ void testOperateursMethodes() {
     cout << "(";
     vect1.affiche();
     cout << ") * 3 = ";
-    vect3 = vect1 * 3.0;
+    vect3 = 3.0 * vect1;
     cout << "(";
     vect3.affiche();
     cout << ")" << endl;

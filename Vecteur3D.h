@@ -37,5 +37,6 @@ std::ostream& operator<<(std::ostream&, const Vecteur3D&);
 Vecteur3D operator+(Vecteur3D, const Vecteur3D&);
 Vecteur3D operator-(Vecteur3D, const Vecteur3D&);
 Vecteur3D operator*(Vecteur3D, const double&); //multiplication par un scalaire
+Vecteur3D operator*(const double&, Vecteur3D); //multiplication par un scalaire dans l'autre sens
 double operator*(Vecteur3D, const Vecteur3D&); //produit scalaire
 Vecteur3D operator^(const Vecteur3D&, const Vecteur3D&); // produit vectoriel
