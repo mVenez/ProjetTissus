@@ -82,7 +82,8 @@ YO MAEL ECRIS CE QUE T'AS FAIT
 - testMasse
 23/03, Veneziano & Maël:
 - Conception et realisation de la dependance masse-ressort
-
+24/04, Veneziano:
+- Amelioration de l'affichage
 
 --------------------------------------------------
 ## Semaine 6 :

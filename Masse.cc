@@ -46,6 +46,17 @@ void Masse::set_ressort(std::vector<Ressort*> liste_ressort){
 
 
 // méthodes
+ostream& Masse::affiche(ostream& out) const{
+    out << "Masse : " << masse_ << "kg" << endl;
+    out << "Coefficient de frottement : " << coefficient_frottement_ << endl;
+    out << "Position : " << position_ << endl;
+    out << "Vitesse : " << vitesse_ << endl;
+    out << "Force subie : " << force_subie_ << endl;
+    out << liste_ressort_.size() << " ressorts : " << endl;
+    return out;
+}
+
+
 void Masse::ajoute_force(Vecteur3D const& df){
     force_subie_ += (df);
 }
@@ -66,11 +77,7 @@ void Masse::mise_a_jour_forces(){
 
 // opérateurs
 
-ostream& operator<<(ostream& sortie, Masse const& masse){
-    sortie << "Masse : " << masse.masse() << "kg" << endl;
-    sortie << "Coefficient de frottement : " << masse.coefficient_frottement() << endl;
-    sortie << "Position : " << masse.position() << endl;
-    sortie << "Vitesse : " << masse.vitesse() << endl;
-    sortie << "Force subie : " << masse.force_subie() << endl;
-    return sortie;
+ostream& operator<<(ostream& out, Masse const& masse){
+    masse.affiche(out);
+    return out;
 }

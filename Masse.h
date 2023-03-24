@@ -11,7 +11,7 @@ public:
     Masse(double masse, double coefficient_frottement = 0, Vecteur3D position = Vecteur3D(0,0,0), Vecteur3D vitesse = Vecteur3D(0,0,0), Vecteur3D acceleration=g, std::vector<Ressort*> liste_ressort = std::vector<Ressort*>());
     Masse(Masse const& masse) = delete; // copie interdite
     
-    // getters
+    // getters (à revoir)
     double masse() const;
     double coefficient_frottement() const;
     Vecteur3D position() const;
@@ -23,6 +23,7 @@ public:
     void set_ressort(std::vector<Ressort*> liste_ressort); // pour définir une nouvelle liste de ressorts
 
     // méthodes
+    std::ostream& affiche(std::ostream&) const;
     void ajoute_force(Vecteur3D const& df);
     Vecteur3D acceleration() const;
     void mise_a_jour_forces();
