@@ -52,7 +52,11 @@ ostream& Masse::affiche(ostream& out) const{
     out << "Position : " << position_ << endl;
     out << "Vitesse : " << vitesse_ << endl;
     out << "Force subie : " << force_subie_ << endl;
-    //out << liste_ressort_.size() << " ressorts : " << endl;
+    out << liste_ressort_.size() << " ressorts ";
+    if (!liste_ressort_.empty()) {
+        out << " :" << endl;
+        for (auto ressort : liste_ressort_) {out << ressort << endl;}
+    } else {out << endl;}
     return out;
 }
 
