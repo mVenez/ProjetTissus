@@ -9,7 +9,7 @@ public:
     Ressort(const Ressort& autre) = delete; // on empêche la copie
     ~Ressort();
     Vecteur3D force_rappel(Masse* masse) const;
-    void affiche() const;
+    std::ostream& affiche(std::ostream& out) const;
 private:
     double const k_;
     double const l0_;

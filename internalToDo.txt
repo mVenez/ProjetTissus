@@ -13,3 +13,5 @@ quand on affiche une masse ca doit donner la liste des ressort liés et aussi le
 
 J'ai ouvert le laptop une fois rentré chez moi et bon j'ecris ça maintenant sinon je oublie:
     eliminer constructeur de copie de Masse
+
+c'est peut etre pas mieux de créer une methode affiche() dans Masse et avoir les getters des choses qui sont strictement nécessaires?

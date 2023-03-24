@@ -39,11 +39,11 @@ void testOperateursMethodes() {
     vect3.set_coord(0, 1.00000000001); // v1 presque égal à v3
 
     cout << "Vecteur 1 : ";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << endl;
 
     cout << "Vecteur 2 : ";
-    vect2.affiche();
+    vect2.affiche(cout);
     cout << endl;
 
     //test compare()
@@ -63,246 +63,246 @@ void testOperateursMethodes() {
 
     //test addition()
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") + (";
-    vect2.affiche();
+    vect2.affiche(cout);
     cout << ") = ";
     vect3 = vect1 + vect2;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //dans l’autre sens
     cout << "(";
-    vect2.affiche();
+    vect2.affiche(cout);
     cout << ") + (";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     vect3 = vect2 + vect1;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //avec vecteur nul
     Vecteur3D vect_nul;
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") + (";
-    vect_nul.affiche();
+    vect_nul.affiche(cout);
     cout << ") = ";
     vect3 = vect1 + vect_nul;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //dans l’autre sens
     cout << "(";
-    vect_nul.affiche();
+    vect_nul.affiche(cout);
     cout << ") + (";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     vect3 = vect_nul + vect1;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
 
 
     //test soustraction()
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") - (";
-    vect2.affiche();
+    vect2.affiche(cout);
     cout << ") = ";
     vect3 = vect1 - vect2;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //soustraction avec lui même
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") - (";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     vect3 = vect1 - vect1;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //soustraction avec vecteur nul
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") - (";
-    vect_nul.affiche();
+    vect_nul.affiche(cout);
     cout << ") = ";
     vect3 = vect1 - vect_nul;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
 
     //test oppose()
     cout << "-(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     vect3 = -vect1;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //opposé de l’opposé
     cout << "--(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     vect3 = -vect3;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //opposé de vecteur nul
     cout << "-(";
-    vect_nul.affiche();
+    vect_nul.affiche(cout);
     cout << ") = ";
     vect3 = -vect_nul;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
 
     //test operator* de multiplication par scalaire
     cout << "3 * (";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     vect3 = vect1 * 3.0;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //dans l'autre sens
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") * 3 = ";
     vect3 = 3.0 * vect1;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //multiplication par 0
     cout << "0 * (";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     vect3 = vect1 * 0;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //multiplication par 1
     cout << "1 * (";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     vect3 = vect1 * 1;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //multiplication par -1
     cout << "-1 * (";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     vect3 = vect1 * (-1);
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
 
     //test prod_scal()
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") * (";
-    vect2.affiche();
+    vect2.affiche(cout);
     cout << ") = ";
     cout << vect1 * vect2 << endl;
     //dans l'autre sens
     cout << "(";
-    vect2.affiche();
+    vect2.affiche(cout);
     cout << ") * (";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     cout << vect2* vect1 << endl;
     //produit scalaire avec lui même
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") * (";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     cout << vect1 * vect1 << endl;
     //produit scalaire avec vecteur nul
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") * (";
-    vect_nul.affiche();
+    vect_nul.affiche(cout);
     cout << ") = ";
     cout << vect1 * vect_nul << endl;
 
     //test prod_vect()
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") ^ (";
-    vect2.affiche();
+    vect2.affiche(cout);
     cout << ") = ";
     vect3 = vect1 ^ vect2;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //produit vectoriel avec lui même
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") ^ (";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     vect3 = vect1 ^ vect1;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //produit vectoriel avec vecteur nul
     cout << "(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") ^ (";
-    vect_nul.affiche();
+    vect_nul.affiche(cout);
     cout << ") = ";
     vect3 = vect1 ^ vect_nul;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
 
     //test norme()
     cout << "||(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ")|| = ";
     cout << vect1.norme() << endl;
     //norme de vecteur nul
     cout << "||(";
-    vect_nul.affiche();
+    vect_nul.affiche(cout);
     cout << ")|| = ";
     cout << vect_nul.norme() << endl;
 
     //test norme2()
     cout << "||(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ")||^2 = ";
     cout << vect1.norme2() << endl;
     //norme2 de vecteur nul
     cout << "||(";
-    vect_nul.affiche();
+    vect_nul.affiche(cout);
     cout << ")||^2 = ";
     cout << vect_nul.norme2() << endl;
 
     //test unitaire()
     cout << "unitaire(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ") = ";
     vect3 = ~vect1;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
     //controle norme du vecteur unitaire
     cout << "||unitaire(";
-    vect1.affiche();
+    vect1.affiche(cout);
     cout << ")|| = ";
     cout << vect3.norme() << endl;
     //unitaire de vecteur nul
     cout << "unitaire(";
-    vect_nul.affiche();
+    vect_nul.affiche(cout);
     cout << ") = ";
     vect3 = ~vect_nul;
     cout << "(";
-    vect3.affiche();
+    vect3.affiche(cout);
     cout << ")" << endl;
 
 

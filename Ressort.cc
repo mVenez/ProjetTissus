@@ -33,18 +33,19 @@ Vecteur3D Ressort::force_rappel(Masse* masse) const{
     }
 }
 
-void Ressort::affiche() const {
-    cout << "Ressort " << this << " : " << endl;
-    cout << "Constante de raideur : " <<  k_ << endl;
-    cout << "Longeur à repos : " << l0_ << endl;
-    cout << endl;
-    cout << "Masse depart : Masse " << masse1_ << " : " << endl;
-    cout << *masse1_ << endl;
-    cout << "Masse arrivée : Masse " << masse2_ << " : " << endl;
-    cout << *masse2_ << endl;
+ostream& Ressort::affiche(ostream& out) const {
+    out << "Ressort " << this << " : " << endl;
+    out << "Constante de raideur : " <<  k_ << endl;
+    out << "Longeur à repos : " << l0_ << endl;
+    out << endl;
+    out << "Masse depart : Masse " << masse1_ << " : " << endl;
+    out << *masse1_ << endl;
+    out << "Masse arrivée : Masse " << masse2_ << " : " << endl;
+    out << *masse2_ << endl;
+    return out;
 }
 
 ostream& operator<<(ostream& out, const Ressort& res) {
-    res.affiche();
+    res.affiche(out);
     return out;
 }

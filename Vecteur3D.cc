@@ -12,11 +12,12 @@ void Vecteur3D::set_coord(int coordinate, double value) {
     else if (coordinate == 2) {z = value;}
     else {cout << "La coordonnée choisie n'existe pas" << endl;}
 }
-void Vecteur3D::affiche() const {
-    cout << x << ' ' << y << ' ' << z;
+ostream& Vecteur3D::affiche(ostream& out) const {
+    out << x << ' ' << y << ' ' << z;
+    return out;
 }
 ostream& operator<<(ostream& out, const Vecteur3D& vec) {
-    vec.affiche();
+    vec.affiche(out);
     return out;
 }
 

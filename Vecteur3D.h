@@ -8,7 +8,7 @@ public:
     void set_coord(int coordinate, double value);   //cette methode pourrait etre utile dans le future
 
     //methodes auxiliaires aux operateurs
-    void affiche() const;   // operator<<
+    std::ostream& affiche(std::ostream&) const;   // operator<<
     bool compare(Vecteur3D v, double epsilon = 1e-10)const; // operator==
     Vecteur3D prod_vect(Vecteur3D) const; //operator^
 
