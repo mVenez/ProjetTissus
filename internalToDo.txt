@@ -1,3 +1,6 @@
+À faire pour terminer le travail de la semaine 5:
+    test intensif ressorts (detruire des objets pendant le test, valeurs negatives pas possibles)
+
 class Masse
 class Ressort -> changer set_ressort en add_ressort?
 
