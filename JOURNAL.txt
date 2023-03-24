@@ -93,6 +93,8 @@ update réponse.txt question P1.1
 - Amelioration de l'affichage
 24/03, Veneziano & Maël:
 - Correction d’une erreur dans la gestion des pointeur (on ne peut pas faire de delete sur un pointeur qui n’a pas été alloué)
+24/03, Maël:
+- Réponse question P5.1
 
 --------------------------------------------------
 ## Semaine 6 :
