@@ -1,18 +1,10 @@
 class Masse
-class Ressort
-
-voir les autres questions (P5.1)
+class Ressort -> changer set_ressort en add_ressort?
 
 à voir si il y a un moyen plus simple pour coder l’opérateur d’égalité des masses
-
-ajouter tirets aux attributs de vecteur3d
 
 revoir si besoin l’implémentation de l’association des ressorts au masse
 
 quand on affiche une masse ca doit donner la liste des ressort liés et aussi le nombre
 
-J'ai ouvert le laptop une fois rentré chez moi et bon j'ecris ça maintenant sinon je oublie:
-    eliminer constructeur de copie de Masse
-    c’est faaaait oui
-
-c'est peut etre pas mieux de créer une methode affiche() dans Masse et avoir les getters des choses qui sont strictement nécessaires?
+on pourrait peut etre poser epsilon des petites variations(test egalité double) dans constantes

@@ -37,4 +37,5 @@ private:
     std::vector<Ressort*> liste_ressort_;
 };
 
+//operateurs
 std::ostream& operator<<(std::ostream& sortie, Masse const& masse);

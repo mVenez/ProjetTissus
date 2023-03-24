@@ -23,7 +23,6 @@ b - Une grande difficulté serait la definition des methodes. À ce moment là t
 Pour transformer affiche() et compare() en operateur nous avons surchargé respectivement operator<< et operator==, le premier avec une surcharge externe et le deuxieme avec une surcharge externe. De plus pour nous avons 
 
 [Question P5.1]
-Nous avons choisi d’implémenté les ressorts de la manière suivante :
 Nous avons choisi d’implémenter les ressorts de la manière suivante :
 Lors de la création d’un ressort, celui-ci prend en paramètre deux masses, une raideur et une longueur à vide.
 Le constructeur vérifie que la raideur et la longueur à vide soient positive puis ajoute un pointeur vers le ressort en train d’être construit dans les deux masses auxquelles il est liées.
