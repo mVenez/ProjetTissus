@@ -42,7 +42,7 @@ Hermione: finir le reste du projet
 - Definition de la classe Vecteur3D, écriture des premières methodes et tests de compilation separée pour la future modularization
 04/03, Veneziano:
 - Ajouté toutes les methodes indiqué de la semaine 2
-05/03, Maël:
+05/03, Maël Thoré:
 travail sur la class Vecteur3D :
 -correction methodes compare() qui considère maintenant comme égale deux coordonées dont la différence est inférieur à 1e-10
 -prise en compte du cas vecteur nul dans la methode unitaire()
@@ -53,7 +53,7 @@ update réponse.txt question P1.1
 --------------------------------------------------
 ## Semaine 3 :
 
-06/03, Veneziano & Maël:
+06/03, Veneziano & Maël Thoré:
 - Mise à jour du Makefile (petit message fancy et mise en place d’un make clean et make wclean (pour unix et windows))
 09/03, Veneziano:
 - Constructeurs, test du constructeur de copie de default, réponse aux questions P4.1-2.
@@ -64,8 +64,13 @@ update réponse.txt question P1.1
 16/03, Veneziano:
 - Surcharge des operateurs de Vecteur3D.cc, test
 - Elimination des methodes obsoletes
-YO MAEL ECRIS CE QUE T'AS FAIT
-
+16/03, Maël Thoré:
+- Création de la classe Masse
+- Création de la classe Ressort
+- Coder toutes les méthodes de la semaine 4&5 pour la classe Masse et Ressort
+17/03, Maël Thoré:
+- Début des test de la classe Masse
+- Début des test de la classe Ressort
 17/03, Veneziano:
 - Implementation des operateurs dans le reste du code, modifications à testVecteur3D.cc
 - Petites modifications au Makefile
@@ -77,11 +82,13 @@ YO MAEL ECRIS CE QUE T'AS FAIT
 - Modifications à testVecteur3D.cc, multiplication par un scalaire amelioré
 - testRessort.cc, première écriture
 - Affichage du ressort
-23/03, Maël:
-- Finalisation des classes Ressort et Masse
-- testMasse
 23/03, Veneziano & Maël:
 - Conception et realisation de la dependance masse-ressort
+- Modification du constructeur de la classe ressort pour automatiquement ajouté aux masses les ressorts qui les concernent
+23/03, Maël:
+- Finalisation des classes Ressort et Masse
+- Test de la classe Masse terminé
+- Correction de bugs
 24/04, Veneziano:
 - Amelioration de l'affichage
 
