@@ -7,7 +7,6 @@ class Ressort{
 public:
     Ressort(Masse&, Masse& , const double, const double);
     Ressort(const Ressort& autre) = delete; // on empêche la copie
-    ~Ressort();
     Vecteur3D force_rappel(Masse* masse) const;
     std::ostream& affiche(std::ostream& out) const;
 private:

@@ -15,8 +15,6 @@ Ressort::Ressort(Masse& masse1,Masse& masse2, const double k, const double l0)
         masse1.set_ressort(this);
         masse2.set_ressort(this);
     }
-Ressort::~Ressort() {delete masse1_, delete masse2_;}
-
 
 Vecteur3D Ressort::force_rappel(Masse* masse) const{
     Vecteur3D force_rappel;
