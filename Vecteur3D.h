@@ -5,7 +5,7 @@ class Vecteur3D {
 public:
     //constructeur
     explicit Vecteur3D(double x = 0, double y = 0, double z = 0);
-    void set_coord(int coordinate, double value);   //cette methode pourrait etre utile dans le future
+    void set_coord(int coordinate, double value);   //coordinate = 0(x), 1(y), 2(z)
 
     //methodes auxiliaires aux operateurs
     std::ostream& affiche(std::ostream&) const;   // operator<<
@@ -27,9 +27,9 @@ public:
     Vecteur3D operator~() const; //vecteur unitaire
 
 private:
-    double x;
-    double y;
-    double z;
+    double x_;
+    double y_;
+    double z_;
 };
 
 //operateurs externes
