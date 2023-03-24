@@ -20,4 +20,12 @@ On pourrait aussi garder les 3 attributs, qui auront un nom generique, et écrir
 b - Une grande difficulté serait la definition des methodes. À ce moment là toutes les methodes marchent avec des coordonnées cartesiennes. On devrait écrire des methodes jumelles qui feraint le même travail mais en spherique.
 
 [Question P4.3]
-Pour transformer affiche() et compare() en operateur nous avons surchargé respectivement operator<< et operator==, le premier avec une surcharge externe e le deuxieme avec une surcharge externe.
+Pour transformer affiche() et compare() en operateur nous avons surchargé respectivement operator<< et operator==, le premier avec une surcharge externe et le deuxieme avec une surcharge externe. De plus pour nous avons 
+
+[Question P5.1]
+Nous avons choisi d’implémenté les ressorts de la manière suivante :
+Nous avons choisi d’implémenter les ressorts de la manière suivante :
+Lors de la création d’un ressort, celui-ci prend en paramètre deux masses, une raideur et une longueur à vide.
+Le constructeur vérifie que la raideur et la longueur à vide soient positive puis ajoute un pointeur vers le ressort en train d’être construit dans les deux masses auxquelles il est liées.
+Avec ce choix d’implémentation, nous voulons principalement nous concentrer sur les masses, et que les ressorts s’adapte automatiquement, par exemple si l’on supprime les deux masses liées à un ressort celui-ci n’a plus de raison d’être et doit donc être supprimé automatiquement.
+Nous avons, comme pour les masses, interdit la copie, car pour le moment nous ne voyons pas de cas où il serait utile de copier un ressort.
