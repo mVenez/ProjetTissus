@@ -6,8 +6,8 @@ using namespace std;
 
 Ressort::Ressort(Masse& masse1,Masse& masse2, const double k, const double l0)
     : masse1_(&masse1), masse2_(&masse2), k_(k) , l0_(l0) {
-        if(k_ < 0){
-            throw invalid_argument("La constante de raideur doit être positive");
+        if(k_ <= 0){
+            throw invalid_argument("La constante de raideur doit être  strictement positive");
         }
         if(l0_ < 0){
             throw invalid_argument("La longueur à repos doit être positive");
