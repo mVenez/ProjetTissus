@@ -9,6 +9,7 @@ class Masse{
 public:
     // constructeur
     Masse(double masse, double coefficient_frottement = 0, Vecteur3D position = Vecteur3D(0,0,0), Vecteur3D vitesse = Vecteur3D(0,0,0), Vecteur3D acceleration=g, std::vector<Ressort*> liste_ressort = std::vector<Ressort*>());
+    Masse(Masse const& masse) = delete; // copie interdite
     
     // getters
     double masse() const;
