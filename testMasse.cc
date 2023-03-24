@@ -28,7 +28,7 @@ void test1(){
     masse1.ajoute_force(Vecteur3D(1,2,3));
     cout << "force_subie : " << masse1.force_subie() << endl;
     // test ajoute_force() opposée
-    cout << "Test ajoute_force() opposée";
+    cout << "Test ajoute_force() opposée" << endl;
     masse1.ajoute_force(Vecteur3D(-1,-2,-3));
     cout << "force_subie : " << masse1.force_subie() << endl;
 

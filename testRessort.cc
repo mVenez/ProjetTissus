@@ -19,7 +19,7 @@ void test1(){
     Ressort ressort1(masse1, masse2, 3, 1);
     cout << ressort1;
 
-    cout << "==== On lie masse1 et masse2 avec un deuxième ressort ====" << endl;
+    cout << "==== On lie masse2 et masse3 avec un deuxième ressort ====" << endl;
     Ressort ressort2(masse2 , masse3, 4, 5);
     cout << ressort2;
 
@@ -30,7 +30,7 @@ void test1(){
 
     cout << "==== Nous modifions la masse2 et on verifie que les ressort soient mis à jour ====" << endl;
     masse2.ajoute_force(Vecteur3D(42,42,0));
-    cout << masse2;
+    cout << masse2 << endl;
     cout << ressort1;
     cout << ressort2;
 
