@@ -5,6 +5,8 @@
 using namespace std;
 
 void test1(){
+    cout << "=================== Test 1 ===================" << endl;
+
     // test constructeur
     cout << "Test constructeur" << endl;
     Masse masse1(1.5);// test valeur par defaut
@@ -31,19 +33,17 @@ void test1(){
     cout << "Test ajoute_force() opposée" << endl;
     masse1.ajoute_force(Vecteur3D(-1,-2,-3));
     cout << "force_subie : " << masse1.force_subie() << endl;
+    cout << endl;
 
 }
 
 void test2(){
     // test mise_a_jour_forces()
-
+    cout << "=================== Test mise à jour des forces ===================" << endl;
     //les masses sont à 10m de distance
     Masse masse1(1.5, 0.3, Vecteur3D(5,0,0));
     Masse masse2(1.5, 0.3, Vecteur3D(-5,0,0));
     
-
-
-    cout << endl;
     cout << "force_subie : " << masse1.force_subie() << endl;
     cout << "Test mise_a_jour_forces()" << endl;
     Ressort ressort1(masse1, masse2, 3, 1);

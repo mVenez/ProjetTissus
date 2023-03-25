@@ -46,9 +46,9 @@ Hermione: finir le reste du projet
 travail sur la class Vecteur3D :
 -correction methodes compare() qui considère maintenant comme égale deux coordonées dont la différence est inférieur à 1e-10
 -prise en compte du cas vecteur nul dans la methode unitaire()
-ajout valeur par défaut x y et z à 0
-ajout d’une batterie de test pour toutes les méthodes de manipulation/calcul avec des Vecteur3D
-update réponse.txt question P1.1
+-ajout valeur par défaut x y et z à 0
+-ajout d’une batterie de test pour toutes les méthodes de manipulation/calcul avec des Vecteur3D
+-update réponse.txt question P1.1
 
 --------------------------------------------------
 ## Semaine 3 :
@@ -95,6 +95,8 @@ update réponse.txt question P1.1
 - Correction d’une erreur dans la gestion des pointeur (on ne peut pas faire de delete sur un pointeur qui n’a pas été alloué)
 24/03, Maël:
 - Réponse question P5.1
+25/03, Veneziano:
+- Derniers tests sur les ressorts et modification de la methode Ressort::mise_a_jour_forces()
 
 --------------------------------------------------
 ## Semaine 6 :

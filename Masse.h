@@ -4,7 +4,7 @@
 #include "Constantes.h"
 #include "Vecteur3D.h"
 
-class Ressort; // forward declare en place de #include, car on utilise seulement un pointeur. Il faut tester si une methode dans Masse.cc qui utilise ressort marche bien et peut acceder aux attributs et  methodes necessaires
+class Ressort; // forward declare en place de #include, car on utilise seulement un pointeur.
 class Masse{
 public:
     // constructeur
@@ -33,7 +33,7 @@ private:
     double coefficient_frottement_;
     Vecteur3D position_;
     Vecteur3D vitesse_;
-    Vecteur3D force_subie_; // l’accelération multiplié par la masse
+    Vecteur3D force_subie_; // la somme des forces subies (F=ma)
     std::vector<Ressort*> liste_ressort_;
 };
 

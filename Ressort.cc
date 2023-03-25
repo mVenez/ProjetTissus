@@ -27,7 +27,7 @@ Vecteur3D Ressort::force_rappel(Masse* masse) const{
     }else if(masse == masse2_){//égalité de pointeur
         return -force_rappel;
     }else{
-        throw invalid_argument("La masse n'est pas reliée au ressort");
+        throw invalid_argument("La masse n'est pas reliée au ressort"); // ici on pourrait renvoyer le vecteur nul, ça depend de la façon dans laquelle on construit le tissu
     }
 }
 

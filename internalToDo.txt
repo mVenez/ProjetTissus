@@ -1,6 +1,3 @@
-À faire pour terminer le travail de la semaine 5:
-    test intensif ressorts (detruire des objets pendant le test, valeurs negatives pas possibles)
-    on n'a pas consideré le poids dans mise_a_jour_forces()
 class Masse
 class Ressort -> changer set_ressort en add_ressort?
 
@@ -8,6 +5,8 @@ class Ressort -> changer set_ressort en add_ressort?
 
 revoir si besoin l’implémentation de l’association des ressorts au masse
 
-quand on affiche une masse ca doit donner la liste des ressort liés et aussi le nombre
-
 on pourrait peut etre poser epsilon des petites variations(test egalité double) dans constantes
+
+À noter: détruire une masse donne un erreur car l'addresse de la masse dans les ressorts pointe tousjours vers la masse (qui n'existe plus).
+    Il suffirait probablement de écrire un destructeur des masses tel que pour chaque ressort attaché il detache le ressort.
+    Ceci voudrait dire écrire une methode detache() pour les ressorts, qui prend une masse en parametre, check laquelle des deux masse c'est et puis annulle le pointeur (nullptr)
