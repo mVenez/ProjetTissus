@@ -69,13 +69,14 @@ Vecteur3D Masse::acceleration() const{
     return force_subie_ * (1/masse_);
 }
 
-void Masse::mise_a_jour_forces(){       //ON N'A PAS CONSIDERE LE POIDS
+void Masse::mise_a_jour_forces(){
     Vecteur3D force_rappel;
     for(Ressort* ressort : liste_ressort_){
         force_rappel = force_rappel + (ressort->force_rappel(this));
     }
     Vecteur3D frottement = vitesse_ * (-coefficient_frottement_);
-    force_subie_ = force_rappel + frottement;
+    Vecteur3D poids = masse_ * g;
+    force_subie_ = force_rappel + frottement  + poids;
 }
 
 
