@@ -1,6 +1,6 @@
 À faire pour terminer le travail de la semaine 5:
     test intensif ressorts (detruire des objets pendant le test, valeurs negatives pas possibles)
-
+    on n'a pas consideré le poids dans mise_a_jour_forces()
 class Masse
 class Ressort -> changer set_ressort en add_ressort?
 

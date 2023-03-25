@@ -69,7 +69,7 @@ Vecteur3D Masse::acceleration() const{
     return force_subie_ * (1/masse_);
 }
 
-void Masse::mise_a_jour_forces(){
+void Masse::mise_a_jour_forces(){       //ON N'A PAS CONSIDERE LE POIDS
     Vecteur3D force_rappel;
     for(Ressort* ressort : liste_ressort_){
         force_rappel = force_rappel + (ressort->force_rappel(this));
