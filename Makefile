@@ -38,6 +38,9 @@ clean:
 	rm testVecteur3D
 	rm testMasse
 	rm testRessort
+	rm testIntegrateur1
+	rm testIntegrateur2
+	rm testIntegrateur3
 	@echo "Fichiers de construction et executable eliminés"
 
 wclean:
@@ -45,4 +48,7 @@ wclean:
 	del testVecteur3D.exe
 	del testMasse.exe
 	del testRessort.exe
+	del testIntegrateur1.exe
+	del testIntegrateur2.exe
+	del testIntegrateur3.exe
 	@echo "Fichiers de construction et executable eliminés"
