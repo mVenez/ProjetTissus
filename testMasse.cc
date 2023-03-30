@@ -53,8 +53,17 @@ void test2(){
     cout << "force_subie : " << masse1.force_subie() << endl;
 }
 
+void test3() {
+    Masse masse1(1,0.3);
+    cout << masse1 << endl;
+    masse1.set_position(Vecteur3D(2,2,2));
+    masse1.set_vitesse(Vecteur3D(5,5,5));
+    cout << masse1 << endl;
+}
+
 int main() {
-    test1();
-    test2();
+    //test1();
+    //test2();
+    test3();
     return 0;
 }
