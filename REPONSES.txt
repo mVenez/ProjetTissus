@@ -28,3 +28,8 @@ Lors de la création d’un ressort, celui-ci prend en paramètre deux masses, u
 Le constructeur vérifie que la raideur et la longueur à vide soient positive puis ajoute un pointeur vers le ressort en train d’être construit dans les deux masses auxquelles il est liées.
 Avec ce choix d’implémentation, nous voulons principalement nous concentrer sur les masses, et que les ressorts s’adapte automatiquement, par exemple si l’on supprime les deux masses liées à un ressort celui-ci n’a plus de raison d’être et doit donc être supprimé automatiquement.
 Nous avons, comme pour les masses, interdit la copie, car pour le moment nous ne voyons pas de cas où il serait utile de copier un ressort.
+
+[Question P7.1]
+
+[Question P7.2]
+on à la relation : IntegrateurEulerCromer est-un Integrateur
