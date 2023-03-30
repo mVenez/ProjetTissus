@@ -43,7 +43,12 @@ void Masse::set_ressort(Ressort* ressort){
 void Masse::set_ressort(std::vector<Ressort*> liste_ressort){
     liste_ressort_ = liste_ressort;
 }
-
+void Masse::set_position(const Vecteur3D& nouvelle_position) {
+    position_ = nouvelle_position;
+}
+void Masse::set_vitesse(const Vecteur3D& nouvelle_vitesse) {
+    position_ = nouvelle_vitesse;
+}
 
 // méthodes
 ostream& Masse::affiche(ostream& out) const{
