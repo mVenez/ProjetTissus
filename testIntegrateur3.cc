@@ -26,14 +26,14 @@ void test_ressorts_et_poids_cas_simple(){
     cout << "=========================" << endl;
 
 
-    for(int i = 1; i <= 10; i++){
+    for(int i = 1; i <= 10; ++i){
         integrateur.evolue(masseA);
-        integrateur.evolue(masseB);
-        integrateur.evolue(masseC);
+        //integrateur.evolue(masseB);
+        //integrateur.evolue(masseC);
         cout << "Situation à t = " << i*pas_de_temps << "s : " << endl;
         cout << "Masse A : " << endl << masseA << endl;
-        cout << "Masse B : " << endl << masseB << endl;
-        cout << "Masse C : " << endl << masseC << endl;
+        //cout << "Masse B : " << endl << masseB << endl;
+        //cout << "Masse C : " << endl << masseC << endl;
         cout << "=========================" << endl;
     }
 }
