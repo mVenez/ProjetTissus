@@ -4,9 +4,11 @@
 using namespace std;
 
 void test();
+void test2();
 
 int main() {
-    test();
+    //test();
+    test2();
     return 0;
 }
 
@@ -26,11 +28,11 @@ void test() {
 
     cout << "========================================" << endl;
     for (int i = 1; i <= 5; i++){
-        //masse1.ajoute_force(-g * masse1.masse());
+        masse1.ajoute_force(-g * masse1.masse());
         integrateur.evolue(masse1);
-        //masse2.ajoute_force(-g * masse2.masse());
+        masse2.ajoute_force(-g * masse2.masse());
         integrateur.evolue(masse2);
-        //masse3.ajoute_force(-g * masse3.masse());
+        masse3.ajoute_force(-g * masse3.masse());
         integrateur.evolue(masse3);
         cout << "t = 0." << i << " : " << endl;
         cout << masse1 << endl;
@@ -38,5 +40,19 @@ void test() {
         cout << masse3 << endl;
 
         cout << "========================================" << endl;
+    }
+}
+
+void test2() {
+
+    Masse masse1(2, 0.3);
+    Masse masse2(2, 0.3, Vecteur3D(2,0,0));
+    Ressort ressort(masse1, masse2, 3, 1);
+    IntegrateurEulerCromer integrateur(0.1);
+
+    for (int i(1); i <= 300; ++i) {
+        masse1.ajoute_force(-g * masse1.masse());
+        integrateur.evolue(masse1);
+        cout << masse1.position() << endl;
     }
 }

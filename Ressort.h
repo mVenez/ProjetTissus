@@ -6,7 +6,7 @@
 class Ressort{
 public:
     //constructeurs
-    Ressort(Masse&, Masse& , const double, const double);
+    Ressort(Masse& masse1, Masse& masse2, const double k, const double l0);
     Ressort(const Ressort& autre) = delete; // on empêche la copie
 
     //methodes
