@@ -14,6 +14,8 @@ testMasse.o : testMasse.cc
 
 Ressort.o: Ressort.cc Ressort.h Masse.h
 
+IntgrateurEulerCromer.o: IntgrateurEulerCromer.cc IntgrateurEulerCromer.h
+
 Constantes.o: Constantes.cc Constantes.h
 
 testVecteur3D.o: testVecteur3D.cc Vecteur3D.h
