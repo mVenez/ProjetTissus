@@ -3,10 +3,19 @@
 
 class Integrateur {
 public:
-    virtual void evolue (Masse& , double ) const;
+    //constructeur
+    Integrateur(double dt = 0.01) : dt_(dt) {}
+
+    //méthodes
+    virtual void evolue (Masse& masse, double dt = dt_) const;
+protected:
+    double dt_;
 };
 
 class IntegrateurEulerCromer : public Integrateur {
 public:
-    virtual void evolue (Masse& , double ) const override;
+    //constructeur
+    IntegrateurEulerCromer(double dt) : Integrateur(dt) {}
+
+    virtual void evolue (Masse& masse, double dt = dt_) const override;
 };
