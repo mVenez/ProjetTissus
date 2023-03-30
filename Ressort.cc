@@ -35,11 +35,11 @@ ostream& Ressort::affiche(ostream& out) const {
     out << "Ressort " << this << " : " << endl;
     out << "Constante de raideur : " <<  k_ << endl;
     out << "Longeur à repos : " << l0_ << endl;
-    out << endl;
+    out << "Masse associées au ressort :" << endl << "{"<< endl;
     out << "Masse depart : Masse " << masse1_ << " : " << endl;
     out << *masse1_ << endl;
     out << "Masse arrivée : Masse " << masse2_ << " : " << endl;
-    out << *masse2_ << endl;
+    out << *masse2_ << "}" << endl;
     return out;
 }
 

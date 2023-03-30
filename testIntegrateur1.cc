@@ -7,7 +7,7 @@ void test_chute_libre(){
     IntegrateurEulerCromer integrateur(0.01);
     cout << "Situation de départ : " << endl << masse << endl;
     cout << "=========================" << endl;
-    for (int i = 1; i <= 10; i++){
+    for (int i = 1; i <= 100; i++){
         integrateur.evolue(masse);
         cout << "Situation après " << i << " pas de temps : " << endl << masse << endl;
         cout << "=========================" << endl;
