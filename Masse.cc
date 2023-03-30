@@ -47,7 +47,7 @@ void Masse::set_position(const Vecteur3D& nouvelle_position) {
     position_ = nouvelle_position;
 }
 void Masse::set_vitesse(const Vecteur3D& nouvelle_vitesse) {
-    position_ = nouvelle_vitesse;
+    vitesse_ = nouvelle_vitesse;
 }
 
 // méthodes
