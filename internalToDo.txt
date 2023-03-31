@@ -22,3 +22,10 @@ En plus regarde combien elle est jolie cette oscillation amortie dans le pdf
 Oke position et vitesses de testIntegrateur2 sont exactement les memes, mais je ne comprends pas pourquoi on a à achaque t la force totale qui correspond pas avec celle du prof.
 Qu'est-ce que j'ai fait pour le faire marcher: lorsqu'on commence le loop on met à jour les forces des trois masses, puis pour chaque masse on force l'accelleration verticale = 0 et on evolue(); 
 T'as raison, c'est peut etre mieux de separer dans Masse les attributs pour le Poids et pour la somme des ressorts et du frottement.
+
+===== TROUVE L'ERREUR =====
+La force appliqué aux masses ne correspond pas parce que avec la façon dans laquelle j'ai codé l'integrateur on met à jour les forces apres le mouvement.
+Mais chappi il veut qu'on affiche les forces comme elles étaient au debut du mouvement. DONC:
+- dans evolue(), mise_a_jour_forces() doit etre enlevé de la fin de la methode, sinon on affiche les forces telles qu'elles sont à la fin du mouvement
+
+YOOOOO ÇA MARCHEEEEEEEE OLLEEEEEE GOOGLE DONNE MOI UN JOB
