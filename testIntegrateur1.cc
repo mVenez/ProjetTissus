@@ -8,6 +8,7 @@ void test_chute_libre(){
     cout << "Situation de départ : " << endl << masse << endl;
     cout << "=========================" << endl;
     for (int i = 1; i <= 100; ++i){
+        masse.mise_a_jour_forces();
         integrateur.evolue(masse);
         cout << "Situation après " << i << " pas de temps : " << endl << masse << endl;
         cout << "=========================" << endl;

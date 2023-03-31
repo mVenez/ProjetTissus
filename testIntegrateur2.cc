@@ -32,10 +32,10 @@ void test() {
         masse2.mise_a_jour_forces();
         masse3.mise_a_jour_forces();
         masse1.ajoute_force(-g * masse1.masse());
-        integrateur.evolue(masse1);
         masse2.ajoute_force(-g * masse2.masse());
-        integrateur.evolue(masse2);
         masse3.ajoute_force(-g * masse3.masse());
+        integrateur.evolue(masse1);
+        integrateur.evolue(masse2);
         integrateur.evolue(masse3);
         cout << "t = 0." << i << " : " << endl;
         cout << masse1 << endl;
