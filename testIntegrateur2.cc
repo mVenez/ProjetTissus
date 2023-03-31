@@ -7,8 +7,8 @@ void test();
 void test2();
 
 int main() {
-    //test();
-    test2();
+    test();
+    //test2();
     return 0;
 }
 
@@ -28,6 +28,9 @@ void test() {
 
     cout << "========================================" << endl;
     for (int i = 1; i <= 5; i++){
+        masse1.mise_a_jour_forces();
+        masse2.mise_a_jour_forces();
+        masse3.mise_a_jour_forces();
         masse1.ajoute_force(-g * masse1.masse());
         integrateur.evolue(masse1);
         masse2.ajoute_force(-g * masse2.masse());

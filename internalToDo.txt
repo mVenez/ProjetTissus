@@ -17,3 +17,8 @@ PROBLÈME mouvement des masses integrateur
 j'ai inversé l'ordre de mise_a_jour_forces() dans l'integrateur. Le test 1 de chute libre marche nickel et maintenant j'arrive à ne pas faire bouger le long de z une masse connecté à un ressort.
 (ce qui est très bien). demain je vais à nouveau travailler sur le test2 mais au moins on n'a pas de la merde absolue.
 En plus regarde combien elle est jolie cette oscillation amortie dans le pdf
+
+===== UPDATE À VENDREDI =====
+Oke position et vitesses de testIntegrateur2 sont exactement les memes, mais je ne comprends pas pourquoi on a à achaque t la force totale qui correspond pas avec celle du prof.
+Qu'est-ce que j'ai fait pour le faire marcher: lorsqu'on commence le loop on met à jour les forces des trois masses, puis pour chaque masse on force l'accelleration verticale = 0 et on evolue(); 
+T'as raison, c'est peut etre mieux de separer dans Masse les attributs pour le Poids et pour la somme des ressorts et du frottement.
