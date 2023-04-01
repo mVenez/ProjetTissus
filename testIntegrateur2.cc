@@ -1,6 +1,8 @@
 #include "Integrateur.h"
 #include "Ressort.h"
 #include <iostream>
+#include <fstream>
+
 using namespace std;
 
 void test();
@@ -13,6 +15,7 @@ int main() {
 }
 
 void test() {
+    ofstream write("./test.txt");
     Masse masse1(1, 0.3);
     Masse masse2(1, 0.3, Vecteur3D(2,0,0));
     Masse masse3(1, 0.3, Vecteur3D(0,2,0));
@@ -25,29 +28,39 @@ void test() {
     cout << masse1 << endl;
     cout << masse2 << endl;
     cout << masse3 << endl;
+    write << masse1.position() << endl;
+    write << masse2.position() << endl;
+    write << masse3.position() << endl;
 
     cout << "========================================" << endl;
     for (int i = 1; i <= 5; i++){
         masse1.mise_a_jour_forces();
         masse2.mise_a_jour_forces();
         masse3.mise_a_jour_forces();
+
         masse1.ajoute_force(-g * masse1.masse());
         masse2.ajoute_force(-g * masse2.masse());
         masse3.ajoute_force(-g * masse3.masse());
+
         integrateur.evolue(masse1);
         integrateur.evolue(masse2);
         integrateur.evolue(masse3);
+
         cout << "t = 0." << i << " : " << endl;
         cout << masse1 << endl;
         cout << masse2 << endl;
         cout << masse3 << endl;
+        write << masse1.position() << endl;
+        write << masse2.position() << endl;
+        write << masse3.position() << endl;
+
 
         cout << "========================================" << endl;
     }
 }
 
 void test2() {
-
+    ofstream write("./test.txt");
     Masse masse1(2, 0.3);
     Masse masse2(2, 0.3, Vecteur3D(2,0,0));
     Ressort ressort(masse1, masse2, 3, 1);
@@ -57,5 +70,6 @@ void test2() {
         masse1.ajoute_force(-g * masse1.masse());
         integrateur.evolue(masse1);
         cout << masse1.position() << endl;
+        write << masse1.position() << endl;
     }
 }

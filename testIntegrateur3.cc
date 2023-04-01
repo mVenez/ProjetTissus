@@ -3,10 +3,12 @@
 #include "Vecteur3D.h"
 #include "Ressort.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 void test_ressorts_et_poids_cas_simple(){
-    double pas_de_temps = 0.01;
+    ofstream write("test.txt");
+    double pas_de_temps = 0.1;
 
     Masse masseA(0.33, 0.3, Vecteur3D(0, 0, -3), Vecteur3D(0, 0, 0));
     Masse masseB(1, 0.3, Vecteur3D(-0.5, 0, 0), Vecteur3D(0, 0, 0));
@@ -26,12 +28,14 @@ void test_ressorts_et_poids_cas_simple(){
     cout << "=========================" << endl;
 
 
-    for(int i = 1; i <= 10; ++i){
+    for(int i = 1; i <= 250; ++i){
+        masseA.mise_a_jour_forces();
         integrateur.evolue(masseA);
         //integrateur.evolue(masseB);
         //integrateur.evolue(masseC);
         cout << "Situation à t = " << i*pas_de_temps << "s : " << endl;
         cout << "Masse A : " << endl << masseA << endl;
+        write << masseA.position() << endl;
         //cout << "Masse B : " << endl << masseB << endl;
         //cout << "Masse C : " << endl << masseC << endl;
         cout << "=========================" << endl;
