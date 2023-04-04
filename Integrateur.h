@@ -8,6 +8,7 @@ public:
 
     //méthodes
     virtual void evolue (Masse& masse) const;
+    
 protected:
     double dt_;
 };
@@ -17,5 +18,6 @@ public:
     //constructeur
     IntegrateurEulerCromer(double dt);
 
+    //méthodes
     virtual void evolue (Masse& masse) const override;
 };

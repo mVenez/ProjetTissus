@@ -18,7 +18,6 @@ private:
     Masse* masse2_;
     double const k_;
     double const l0_;
-    //double longueur_; //pas utilisé? controler la methode force_rappel()
 };
 
 //operateurs
