@@ -15,7 +15,7 @@ int main() {
 }
 
 void test() {
-    ofstream write("./test.txt");
+    ofstream write("./plot.txt");
     Masse masse1(1, 0.3);
     Masse masse2(1, 0.3, Vecteur3D(2,0,0));
     Masse masse3(1, 0.3, Vecteur3D(0,2,0));
@@ -60,7 +60,7 @@ void test() {
 }
 
 void test2() {
-    ofstream write("./test.txt");
+    ofstream write("./plot.txt");
     Masse masse1(2, 0.3);
     Masse masse2(2, 0.3, Vecteur3D(2,0,0));
     Ressort ressort(masse1, masse2, 3, 1);

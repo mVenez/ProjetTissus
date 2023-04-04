@@ -4,7 +4,7 @@
 using namespace std;
 
 void test_chute_libre(){
-    ofstream write("./test.txt");
+    ofstream write("./plot.txt");
     Masse masse(0.127, 0, Vecteur3D(0, 0, 1), Vecteur3D(1, 0, 2));
     IntegrateurEulerCromer integrateur(0.01);
     cout << "Situation de départ : " << endl << masse << endl;

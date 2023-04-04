@@ -7,7 +7,7 @@
 using namespace std;
 
 void test_ressorts_et_poids_cas_simple(){
-    ofstream write("test.txt");
+    ofstream write("plot.txt");
     double pas_de_temps = 0.1;
 
     Masse masseA(0.33, 0.3, Vecteur3D(0, 0, -3), Vecteur3D(0, 0, 0));
