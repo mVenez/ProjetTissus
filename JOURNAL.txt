@@ -107,11 +107,10 @@ travail sur la class Vecteur3D :
 31/03, Veneziano:
 - Correction de la methode evolue() de Integrateur. testIntegrateur2 reussi.
 
-
-
 --------------------------------------------------
 ## Semaine 7 :
-
+04/04, Veneziano & Maël:
+- Conception classe Tissu
 
 
 --------------------------------------------------
