@@ -13,7 +13,6 @@ Integrateur::Integrateur(double dt) : dt_(dt) {
 }
 
 void Integrateur::evolue(Masse& masse) const {
-    //masse.mise_a_jour_forces();
     masse.set_position(masse.position() + (dt_ * masse.vitesse()));
     masse.set_vitesse(masse.vitesse() + (dt_ * masse.acceleration()));
 }
@@ -25,7 +24,6 @@ IntegrateurEulerCromer::IntegrateurEulerCromer(double dt) : Integrateur(dt) {}
 
 
 void IntegrateurEulerCromer::evolue(Masse& masse) const{
-    //masse.mise_a_jour_forces();
     masse.set_vitesse(masse.vitesse() + (dt_ * masse.acceleration()));
     masse.set_position(masse.position() + (dt_ * masse.vitesse()));
 }
