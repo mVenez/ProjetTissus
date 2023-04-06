@@ -10,6 +10,7 @@ public:
     // constructeur
     Masse(double masse, double coefficient_frottement = 0, Vecteur3D position = Vecteur3D(0,0,0), Vecteur3D vitesse = Vecteur3D(0,0,0), Vecteur3D acceleration=g, std::vector<Ressort*> liste_ressort = std::vector<Ressort*>());
     Masse(Masse const& masse) = delete; // copie interdite
+    Masse& operator=(Masse const& masse) = delete; //on interdit l’affectation par copie car la copie est interdite
     
     // getters
     double masse() const;
