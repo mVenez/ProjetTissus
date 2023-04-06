@@ -61,7 +61,8 @@ void Masse::set_vitesse(const Vecteur3D& nouvelle_vitesse) {
 
 // méthodes
 ostream& Masse::affiche(ostream& out) const{
-    out << "Masse : " << masse_ << "kg" << endl;
+    out << "Masse : " << this << " {" << endl;
+    out << "Masse de la masse : " << masse_ << "kg" << endl;
     out << "Coefficient de frottement : " << coefficient_frottement_ << endl;
     out << "Position : " << position_ << endl;
     out << "Vitesse : " << vitesse_ << endl;
@@ -71,6 +72,7 @@ ostream& Masse::affiche(ostream& out) const{
         out << " :" << endl;
         for (auto ressort : liste_ressort_) {out << ressort << endl;}
     } else {out << endl;}
+    out << "}" << endl;
     return out;
 }
 
