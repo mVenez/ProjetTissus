@@ -48,6 +48,7 @@ clean:
 	rm testIntegrateur2
 	rm testIntegrateur3
 	rm testTissu1
+	rm testTissu2
 	@echo "Fichiers de construction et executable eliminés"
 
 wclean:
@@ -58,4 +59,6 @@ wclean:
 	del testIntegrateur1.exe
 	del testIntegrateur2.exe
 	del testIntegrateur3.exe
+	del testTissu1.exe
+	del testTissu2.exe
 	@echo "Fichiers de construction et executable eliminés"
