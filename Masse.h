@@ -4,7 +4,7 @@
 #include "Constantes.h"
 #include "Vecteur3D.h"
 
-class Ressort; // forward declare en place de #include, car on utilise seulement un pointeur.
+class Ressort;
 class Masse{
 public:
     // constructeur

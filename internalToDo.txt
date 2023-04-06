@@ -1,5 +1,6 @@
 A FAIRE:
 - classe Tissu
+- methode check()? on pourrait creer des methodes de check dans les classes et les appeller
 
 CHOSES OPTIONELLES
 - class Ressort -> changer set_ressort en add_ressort?
@@ -10,11 +11,4 @@ CHOSES OPTIONELLES
 A NOTER: détruire une masse donne un erreur car l'addresse de la masse dans les ressorts pointe tousjours vers la masse (qui n'existe plus).
     Il suffirait probablement de écrire un destructeur des masses tel que pour chaque ressort attaché il detache le ressort.
     Ceci voudrait dire écrire une methode detache() pour les ressorts, qui prend une masse en parametre, check laquelle des deux masse c'est et puis annulle le pointeur (nullptr)
-
-===== TROUVE L'ERREUR =====
-La force appliqué aux masses ne correspond pas parce que avec la façon dans laquelle j'ai codé l'integrateur on met à jour les forces apres le mouvement.
-Mais chappi il veut qu'on affiche les forces comme elles étaient au debut du mouvement. DONC:
-- dans evolue(), mise_a_jour_forces() doit etre enlevé de la fin de la methode, sinon on affiche les forces telles qu'elles sont à la fin du mouvement
-
-YOOOOO ÇA MARCHEEEEEEEE OLLEEEEEE GOOGLE DONNE MOI UN JOB
 
