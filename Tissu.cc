@@ -54,15 +54,17 @@ ostream& Tissu::affiche(ostream& out) const {
     for (auto masse : vector_masse_) {
         out << "Masse " << &masse << " : " << endl;
         masse->affiche(out);
+        out << endl;
     }
-    out << "}" << endl;
+    out << "}" << endl << endl;
     out << "Les ressorts sont : {" << endl;
     for (auto ressort : vector_ressort_) {
         out << "Ressort " << &ressort << " : " << endl;
         ressort->affiche(out, false);
+        out << endl;
     }
     out << "}" << endl;
-    out << "======================" << endl;
+    out << "======================" << endl << endl;
     return out;
 }
 
