@@ -30,6 +30,8 @@ public:
     void ajoute_force(Vecteur3D const& df);
     Vecteur3D acceleration() const;
     void mise_a_jour_forces();
+    void check_attache() const; //check si la masse n'est connecté à aucun ressort et si elle figure dans tous les ressorts liés
+    void check_ressort(const Ressort*) const; //check si un certain ressort est dans liste_ressorts_
    
 private:
     double masse_;

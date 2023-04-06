@@ -1,4 +1,5 @@
 #include<iostream>
+#include <algorithm>
 #include "Masse.h"
 #include "Ressort.h"
 #include "Constantes.h"
@@ -84,9 +85,16 @@ void Masse::mise_a_jour_forces(){
     force_subie_ = force_rappel + frottement + poids;
 }
 
+void Masse::check_attache() const {
+    if (liste_ressort_.empty()) throw runtime_error("La masse n'est lié à aucun ressort");
+    for (auto ressort : liste_ressort_) ressort->check_masse_connectee(this);
+}
+
+void Masse::check_ressort(const Ressort* ptr_res) const {
+    if (!(binary_search(liste_ressort_.begin(), liste_ressort_.end(), ptr_res))) throw runtime_error("Le ressort n'est pas attaché à la masse choisie");
+}
 
 // opérateurs
-
 ostream& operator<<(ostream& out, Masse const& masse){
     masse.affiche(out);
     return out;
