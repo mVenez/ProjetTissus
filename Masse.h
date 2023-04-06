@@ -37,13 +37,13 @@ public:
     void check_ressort(const Ressort*) const; //check si un certain ressort est dans liste_ressorts_
    
 private:
-    bool fixe_; // si la masse est fixe ou non
     double masse_;
     double coefficient_frottement_;
     Vecteur3D position_;
     Vecteur3D vitesse_;
     Vecteur3D force_subie_; // la somme des forces subies (F=ma)
     std::vector<Ressort*> liste_ressort_;
+    bool fixe_; // si la masse est fixe ou non
 };
 
 //operateurs
