@@ -20,6 +20,8 @@ Constantes.o: Constantes.cc Constantes.h
 
 testVecteur3D.o: testVecteur3D.cc Vecteur3D.h
 
+Tissu.o : Tissu.cc Tissu.h Masse.h Ressort.h Integrateur.h
+
 testVecteur3D: testVecteur3D.o Vecteur3D.o
 
 testMasse: testMasse.o Masse.o Vecteur3D.o Constantes.o Ressort.o
