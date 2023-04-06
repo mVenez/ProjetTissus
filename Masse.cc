@@ -82,6 +82,9 @@ ostream& Masse::affiche(ostream& out) const{
 
 
 void Masse::ajoute_force(Vecteur3D const& df){
+    if (fixe_) {
+        throw runtime_error("La masse est fixe");
+    }
     force_subie_ += (df);
 }
 
@@ -90,6 +93,10 @@ Vecteur3D Masse::acceleration() const{
 }
 
 void Masse::mise_a_jour_forces(){
+    if (fixe_) {
+        force_subie_ = Vecteur3D(0,0,0);
+        return;
+    }
     Vecteur3D force_rappel;
     for(Ressort* ressort : liste_ressort_){
         force_rappel += (ressort->force_rappel(this));
