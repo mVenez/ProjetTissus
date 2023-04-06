@@ -33,3 +33,7 @@ Nous avons, comme pour les masses, interdit la copie, car pour le moment nous ne
 
 [Question P7.2]
 on à la relation : IntegrateurEulerCromer est-un Integrateur
+
+[Question P8.1] Lesquelles des méthodes précédentes avez-vous implémentées ?
+Les avez-vous mises en public ou private ? Précisez pour chacune et expliquez pourquoi.
+en gros pour l’instant c’est public mais on va le mettre en private quand on aura des joli constructeur
