@@ -4,6 +4,7 @@
 #include "Vecteur3D.h"
 using namespace std;
 
+//constructeurs
 Ressort::Ressort(Masse& masse1,Masse& masse2, const double k, const double l0)
     : masse1_(&masse1), masse2_(&masse2), k_(k) , l0_(l0) {
         if(k_ <= 0){
@@ -12,10 +13,18 @@ Ressort::Ressort(Masse& masse1,Masse& masse2, const double k, const double l0)
         if(l0_ < 0){
             throw invalid_argument("La longueur à repos doit être positive");
         }
-        masse1.set_ressort(this);
-        masse2.set_ressort(this);
+        masse1_->set_ressort(this);
+        masse2_->set_ressort(this);
     }
 
+//destructeur
+Ressort::~Ressort(){
+    masse1_->unset_ressort(this);
+    masse2_->unset_ressort(this);
+}
+
+
+//méthodes
 Vecteur3D Ressort::force_rappel(Masse* masse) const{
     Vecteur3D force_rappel;
     Vecteur3D vecteur_rappel = masse1_->position() - (masse2_->position());
@@ -43,6 +52,7 @@ ostream& Ressort::affiche(ostream& out) const {
     return out;
 }
 
+//opérateurs
 ostream& operator<<(ostream& out, const Ressort& res) {
     res.affiche(out);
     return out;
