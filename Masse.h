@@ -8,7 +8,7 @@ class Ressort;
 class Masse{
 public:
     // constructeur
-    Masse(double masse, double coefficient_frottement = 0, Vecteur3D position = Vecteur3D(0,0,0), Vecteur3D vitesse = Vecteur3D(0,0,0), Vecteur3D acceleration=g, std::vector<Ressort*> liste_ressort = std::vector<Ressort*>());
+    Masse(double masse, double coefficient_frottement = 0, Vecteur3D position = Vecteur3D(0,0,0), Vecteur3D vitesse = Vecteur3D(0,0,0), Vecteur3D acceleration=g, std::vector<Ressort*> liste_ressort = std::vector<Ressort*>(), bool fixe = false);
     Masse(Masse const& masse) = delete; // copie interdite
     Masse& operator=(Masse const& masse) = delete; //on interdit l’affectation par copie car la copie est interdite
     
@@ -20,6 +20,7 @@ public:
     Vecteur3D force_subie() const;
 
     // setters
+    void fixe(bool fixe = true);
     void set_ressort(Ressort* ressort); // pour ajouter un ressort a la liste de ressorts
     void set_ressort(std::vector<Ressort*> liste_ressort); // pour définir une nouvelle liste de ressorts
     void unset_ressort(Ressort* ressort); // pour supprimer un ressort de la liste de ressorts
@@ -36,6 +37,7 @@ public:
     void check_ressort(const Ressort*) const; //check si un certain ressort est dans liste_ressorts_
    
 private:
+    bool fixe_; // si la masse est fixe ou non
     double masse_;
     double coefficient_frottement_;
     Vecteur3D position_;
