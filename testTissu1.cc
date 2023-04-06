@@ -25,7 +25,11 @@ void test() {
     tissu.connecte(masse2, masse3, 5.5, 1.25);
     tissu.check();
     cout << "Situation de départ: " << endl;
-    cout << tissu << endl;
+
+    cout << masse1 << endl;
+    cout << masse2 << endl;
+    cout << masse3 << endl;
+
     cout << "========================================" << endl;
     
     for (int i = 1; i <= 5; i++){
@@ -35,7 +39,10 @@ void test() {
         masse3.ajoute_force(-g * masse3.masse());
         tissu.evolue(integrateur);
         cout << "t = 0." << i << " : " << endl;
-        cout << tissu << endl;
+        cout << masse1 << endl;
+        cout << masse2 << endl;
+        cout << masse3 << endl;        
+
         write << masse1.position() << endl;
         write << masse2.position() << endl;
         write << masse3.position() << endl;

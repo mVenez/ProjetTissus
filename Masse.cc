@@ -112,7 +112,11 @@ void Masse::check_attache() const {
 }
 
 void Masse::check_ressort(const Ressort* ptr_res) const {
-    if (!(binary_search(liste_ressort_.begin(), liste_ressort_.end(), ptr_res))) throw runtime_error("Le ressort n'est pas attaché à la masse choisie");
+    bool trouve(false);
+    for (auto ressort : liste_ressort_) {
+        if (ressort == ptr_res) {trouve = true;}
+    }
+    if (!trouve) throw runtime_error("Le ressort n'est pas attaché à la masse choisie");
 }
 
 // opérateurs
