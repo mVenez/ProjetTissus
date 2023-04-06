@@ -16,6 +16,8 @@ void test_ressorts_et_poids_cas_simple(){
     Masse masseA(0.33, 0.3, Vecteur3D(0, 0, -3), Vecteur3D(0, 0, 0));
     Masse masseB(1, 0.3, Vecteur3D(-0.5, 0, 0), Vecteur3D(0, 0, 0));
     Masse masseC(1, 0.3, Vecteur3D(0.5, 0, 0), Vecteur3D(0, 0, 0));
+    masseB.fixe();
+    masseC.fixe();
     vector<Masse*> liste_masse = {&masseA, &masseB, &masseC};
     Tissu tissu(liste_masse);
 
@@ -26,22 +28,15 @@ void test_ressorts_et_poids_cas_simple(){
     IntegrateurEulerCromer integrateur(pas_de_temps);
 
     cout << "Situation de départ : " << endl;
-    cout << "Masse A : " << endl << masseA << endl;
-    cout << "Masse B : " << endl << masseB << endl;
-    cout << "Masse C : " << endl << masseC << endl;
-    cout << "=========================" << endl;
+    cout << tissu << endl;
 
 
     for(int i = 1; i <= 250; ++i){
-        masseA.mise_a_jour_forces();
-        integrateur.evolue(masseA);
-        //integrateur.evolue(masseB);
-        //integrateur.evolue(masseC);
+        tissu.mise_a_jour_forces();
+        tissu.evolue(integrateur);
         cout << "Situation à t = " << i*pas_de_temps << "s : " << endl;
         cout << "Masse A : " << endl << masseA << endl;
         write << masseA.position() << endl;
-        //cout << "Masse B : " << endl << masseB << endl;
-        //cout << "Masse C : " << endl << masseC << endl;
         cout << "=========================" << endl;
     }
 }
