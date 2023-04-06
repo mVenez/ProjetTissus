@@ -61,8 +61,8 @@ ostream& Ressort::affiche(ostream& out, bool affichage_masses_complet) const {
 
 void Ressort::check_masses() const {
     if (masse1_ == masse2_) throw runtime_error("Le ressort est attaché aux deux extremités à la même masse");
-    masse1_->check_ressort(this);
-    masse2_->check_ressort(this);
+    //masse1_->check_ressort(this);
+    //masse2_->check_ressort(this);
 }
 void Ressort::check_masse_connectee(const Masse* masse) const {
     if (masse != masse1_ && masse!= masse2_ ) throw runtime_error("La masse n'est pas connecté au ressort choisi");
