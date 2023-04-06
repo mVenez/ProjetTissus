@@ -18,6 +18,10 @@ Tissu::~Tissu() {
 
 
 //methodes
+void Tissu::ajoute_masse(Masse* m) {
+    vector_masse_.push_back(m);
+}
+
 void Tissu::connecte(Masse& masse1, Masse& masse2, double k, double l0) {
     Ressort* ressort = new Ressort(masse1, masse2, k, l0);
     vector_ressort_.push_back(ressort);
