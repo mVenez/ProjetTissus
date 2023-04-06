@@ -104,6 +104,9 @@ travail sur la class Vecteur3D :
 - Ecriture de la classe Integrateur et de la sousclasse IntegrateurEulerCromer;
 30/03, Veneziano:
 - testIntegrateur2, premiers affichages echoués. Simulation et plot d'un oscillateur harmonique amorti reussi.
+30/03, Maël:
+- écriture testIntegrateur1, tout fonctionne
+- écriture testIntegrateur3, tout fonctionne
 31/03, Veneziano:
 - Correction de la methode evolue() de Integrateur. testIntegrateur2 reussi.
 
