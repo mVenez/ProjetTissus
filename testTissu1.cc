@@ -25,9 +25,11 @@ void test() {
     tissu.connecte(masse2, masse3, 5.5, 1.25);
     tissu.check();
     cout << "Situation de départ: " << endl;
+
     cout << masse1 << endl;
     cout << masse2 << endl;
     cout << masse3 << endl;
+
     cout << "========================================" << endl;
     
     for (int i = 1; i <= 5; i++){
@@ -40,6 +42,7 @@ void test() {
         cout << masse1 << endl;
         cout << masse2 << endl;
         cout << masse3 << endl;        
+
         write << masse1.position() << endl;
         write << masse2.position() << endl;
         write << masse3.position() << endl;
