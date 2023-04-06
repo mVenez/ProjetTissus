@@ -20,7 +20,11 @@ public:
     void mise_a_jour_forces() const;    //met à jour toutes les masses
     void evolue(const Integrateur& integrateur) const;  //intègre toutes les masses
     void check() const; //check total du tissu
+    std::ostream& affiche(std::ostream& out) const;   //affiche les masses et les ressorts du tissu
 private:
     std::vector<Masse*> vector_masse_;
     std::vector<Ressort*> vector_ressort_;
 };
+
+//surcharge de l'operateur << pour afficher un tissu
+std::ostream& operator<<(std::ostream& out, const Tissu& tissu);

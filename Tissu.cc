@@ -4,6 +4,7 @@
 #include "Masse.h"
 #include "Ressort.h"
 #include "Integrateur.h"
+using namespace std;
 
 //constructeurs
 Tissu::Tissu(Masse& masse) : vector_masse_({&masse}) {}
@@ -44,4 +45,19 @@ void Tissu::check() const {
         ressort->check_masses();
     }
 
+}
+
+ostream& Tissu::affiche(ostream& out) const {
+    for (auto masse : vector_masse_) {
+        masse->affiche(out);
+    }
+    for (auto ressort : vector_ressort_) {
+        ressort->affiche(out, false);
+    }
+    return out;
+}
+
+//surcharge de l'operateur << pour afficher un tissu
+ostream& operator<<(ostream& out, const Tissu& tissu) {
+    return tissu.affiche(out);
 }
