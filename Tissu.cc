@@ -29,4 +29,15 @@ void Tissu::mise_a_jour_forces() const {
 
 void Tissu::evolue(const Integrateur& integrateur) const {
     for(auto masse : vector_masse_) integrateur.evolue(*masse);
+
+}
+
+void Tissu::check() const {
+    for (auto masse : vector_masse_) {
+        masse->check_attache();
+    }
+    for (auto ressort : vector_ressort_) {
+        ressort->check_masses();
+    }
+
 }

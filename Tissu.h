@@ -19,7 +19,7 @@ public:
     void connecte(Masse& masse1, Masse& masse2, double k, double l0);    //allocation dynamique d'un nouveau ressort qui lie les deux masses
     void mise_a_jour_forces() const;    //met à jour toutes les masses
     void evolue(const Integrateur& integrateur) const;  //intègre toutes les masses
-
+    void check() const; //check total du tissu
 private:
     std::vector<Masse*> vector_masse_;
     std::vector<Ressort*> vector_ressort_;

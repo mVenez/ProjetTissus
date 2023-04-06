@@ -1,6 +1,7 @@
 A FAIRE:
 - classe Tissu
 - methode check()? on pourrait creer des methodes de check dans les classes et les appeller
+- Pour le mmoment j'utilise des runtime_error dans check(), mais il ya peut etre des options meilleurs
 
 CHOSES OPTIONELLES
 - class Ressort -> changer set_ressort en add_ressort?
