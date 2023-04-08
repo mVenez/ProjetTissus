@@ -29,11 +29,18 @@ Le constructeur vérifie que la raideur et la longueur à vide soient positive p
 Avec ce choix d’implémentation, nous voulons principalement nous concentrer sur les masses, et que les ressorts s’adapte automatiquement, par exemple si l’on supprime les deux masses liées à un ressort celui-ci n’a plus de raison d’être et doit donc être supprimé automatiquement.
 Nous avons, comme pour les masses, interdit la copie, car pour le moment nous ne voyons pas de cas où il serait utile de copier un ressort.
 
-[Question P7.1]
+[Question P7.1].
+Nous avons conçue l’intégrateur de la manière suivante :
+Lors de la création d'un intégrateur, celui-ci prend en paramètre un pas de temps qui a une valeur par défaut de 0.01seconde avec un attribut privé "dt_".
+ensuite l’intégrateur dispose d’une méthode evolue() public qui prend en paramètre une Masse et qui modifie les attributs vitesse et position de la masse en fonction du pas de temps et de la force appliquée à la masse.
+La méthode évolue de l’intégrateur de base mets à jour la position de la masse avec "l’ancienne" vitesse
+Tandis que la sous-classe intégrateurEulerCromer mets à jour la position de la masse en se servant de la "nouvelle" vitesse qui viens d’être mis à jour. Nous avons donc suivit à la lettre le pdf sur les compléments mathématique du projet.
 
 [Question P7.2]
 on à la relation : IntegrateurEulerCromer est-un Integrateur
+l’integrateur d’Euler Cromer hérite de l’attribut pas de temps de la super-class Integrateur et redéfinit la méthode virtuelle evolue() comme indiqué à la question précédente
 
-[Question P8.1] Lesquelles des méthodes précédentes avez-vous implémentées ?
-Les avez-vous mises en public ou private ? Précisez pour chacune et expliquez pourquoi.
-en gros pour l’instant c’est public mais on va le mettre en private quand on aura des joli constructeur
+[Question P8.1]
+Nous avons implémentés la méthode connecte(), pour le momment nous n’avons pas jugé utile d’ajouter la méthode connecte_masse() car les adresse des ressorts de change pas dans notre conception
+Nous avons implémentés une méthode check() qui vérifie qu’il n’y a rien d’incohérent et qui appelle les méthodes check() spécifiques au Masses et au Ressorts.
+Pour le Moment nous avons fait le choix de mettre les différentes méthode en public, Nous imaginons qu’éventuellement par la suite si nous avons un jolie constructeur de tissus qui génères de grosses structure nous n’aurons plus besoin de manipuler la méthode connecte pour faire des tissus "manuellement" et que nous pourrons donc passer certaine méthode en privé car elle ne serviront que dans le fonctionnement interne de la class.

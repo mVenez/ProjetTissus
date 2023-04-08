@@ -113,7 +113,13 @@ travail sur la class Vecteur3D :
 --------------------------------------------------
 ## Semaine 7 :
 04/04, Veneziano & Maël:
-- Conception classe Tissu
+- Conception/codage classe Tissu
+- codage testTissu1/2
+04/04, Maël:
+- reconception du destructeur du tissu, maintenant toutes les masses et ressort sont bien détruit et les pointeur désalloués correctement
+08/04, Maël:
+- Réponses aux questions P7.1-2 et P8.1
+
 
 
 --------------------------------------------------
