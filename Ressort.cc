@@ -1,7 +1,6 @@
 #include<iostream>
 #include "Ressort.h"
 #include "Masse.h"
-#include "Vecteur3D.h"
 using namespace std;
 
 //constructeurs

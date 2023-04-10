@@ -1,11 +1,10 @@
 #pragma once
-#include<iostream>
 #include<vector>
+#include "Dessin.h"
 #include "Constantes.h"
-#include "Vecteur3D.h"
 
 class Ressort;
-class Masse{
+class Masse : public Dessinable {
 public:
     // constructeur
     Masse(double masse, double coefficient_frottement = 0, Vecteur3D position = Vecteur3D(0,0,0), Vecteur3D vitesse = Vecteur3D(0,0,0), Vecteur3D acceleration=g, std::vector<Ressort*> liste_ressort = std::vector<Ressort*>(), bool fixe = false);
@@ -33,6 +32,9 @@ public:
     void ajoute_force(Vecteur3D const& df);
     Vecteur3D acceleration() const;
     void mise_a_jour_forces();
+    virtual void dessine_sur(SupportADessin& support) override;
+
+    //méthodes de check
     void check_attache() const; //check si la masse n'est connecté à aucun ressort et si elle figure dans tous les ressorts liés
     void check_ressort(const Ressort*) const; //check si un certain ressort est dans liste_ressorts_
    

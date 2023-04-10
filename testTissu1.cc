@@ -2,6 +2,8 @@
 #include <fstream>
 #include <vector>
 #include "Tissu.h"
+#include "Masse.h"
+#include "Integrateur.h"
 #include "Constantes.h"
 using namespace std;
 

@@ -1,4 +1,5 @@
 #include "Integrateur.h"
+#include "Masse.h"
 #include <iostream>
 #include <fstream>
 using namespace std;

@@ -66,6 +66,12 @@ ostream& Tissu::affiche(ostream& out) const {
     return out;
 }
 
+void Tissu::dessine_sur(SupportADessin& support) {
+    support.dessine(*this); 
+}
+
+
+
 //surcharge de l'operateur << pour afficher un tissu
 ostream& operator<<(ostream& out, const Tissu& tissu) {
     return tissu.affiche(out);

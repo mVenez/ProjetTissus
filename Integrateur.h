@@ -1,5 +1,5 @@
 #pragma once
-#include "Masse.h"
+class Masse;
 
 class Integrateur {
 public:

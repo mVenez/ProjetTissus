@@ -1,11 +1,12 @@
 #pragma once
 #include<vector>
-#include "Masse.h"
-#include "Ressort.h"
-#include "Integrateur.h"
+#include "Dessin.h"
+class Masse;
+class Ressort;
+class Integrateur;
 
 
-class Tissu {
+class Tissu : public Dessinable {
 public:
     //constructeurs, copie, destructeur
     Tissu(Masse& masse);//constructeur pour initializer un tissu avec une seule masse puis en ajouter après
@@ -21,6 +22,8 @@ public:
     void evolue(const Integrateur& integrateur) const;  //intègre toutes les masses
     void check() const; //check total du tissu
     std::ostream& affiche(std::ostream& out) const;   //affiche les masses et les ressorts du tissu
+    virtual void dessine_sur(SupportADessin& support) override;
+
 private:
     std::vector<Masse*> vector_masse_;
     std::vector<Ressort*> vector_ressort_;

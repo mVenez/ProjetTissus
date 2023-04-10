@@ -8,7 +8,7 @@ using namespace std;
 
 // constructeur
 Masse::Masse(double masse, double coefficient_frottement, Vecteur3D position, Vecteur3D vitesse, Vecteur3D acceleration, std::vector<Ressort*> liste_ressort, bool fixe)
-    : masse_(masse), coefficient_frottement_(coefficient_frottement), position_(position), vitesse_(vitesse), force_subie_(masse * acceleration), liste_ressort_(liste_ressort), fixe_(fixe) {
+    : Dessinable(), masse_(masse), coefficient_frottement_(coefficient_frottement), position_(position), vitesse_(vitesse), force_subie_(masse * acceleration), liste_ressort_(liste_ressort), fixe_(fixe) {
     if (masse <= 0){
         throw invalid_argument("La masse doit être positive");
     }
@@ -104,6 +104,10 @@ void Masse::mise_a_jour_forces(){
     Vecteur3D frottement = vitesse_ * (-coefficient_frottement_);
     Vecteur3D poids = masse_ * g;
     force_subie_ = force_rappel + frottement + poids;
+}
+
+void Masse::dessine_sur(SupportADessin& support) {
+    support.dessine(*this); 
 }
 
 void Masse::check_attache() const {
