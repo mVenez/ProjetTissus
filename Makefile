@@ -3,7 +3,7 @@ CC = $(CXX)
 CXXFLAGS = -std=c++11 -pedantic -Wall
 LDLIBS = -lm
 
-all: testVecteur3D testMasse testRessort testIntegrateur1 testIntegrateur2 testIntegrateur3 testTissu1 testTissu2
+all: testVecteur3D testMasse testRessort testIntegrateur1 testIntegrateur2 testIntegrateur3 testTissu1 testTissu2 Systeme.o Dessinable.o
 	@echo "Wow Mais qui donc à fais ce merveilleux code ? Il fonctionne super bien, je doit être codé par des beau gosse absolu, l’Executable est construit trop fort"
 	
 Vecteur3D.o: Vecteur3D.cc Vecteur3D.h
@@ -22,9 +22,9 @@ testVecteur3D.o: testVecteur3D.cc Vecteur3D.h
 
 Tissu.o : Tissu.cc Tissu.h Masse.h Ressort.h Integrateur.h
 
-Systeme.o : Systeme.cc Systeme.h
+Systeme.o : Systeme.cc Systeme.h Dessinable.h
 
-Dessin.o : Dessin.cc Dessin.h Masse.h Systeme.h Tissu.h
+Dessinable.o : Dessinable.cc Dessinable.h Masse.h Systeme.h Tissu.h
 
 testVecteur3D: testVecteur3D.o Vecteur3D.o
 

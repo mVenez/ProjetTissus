@@ -4,6 +4,8 @@
 #include "Ressort.h"
 #include "Constantes.h"
 #include "Vecteur3D.h"
+#include "SupportADessin.h"
+#include "Dessinable.h"
 using namespace std;
 
 // constructeur

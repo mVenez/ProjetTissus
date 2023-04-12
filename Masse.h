@@ -1,9 +1,10 @@
 #pragma once
 #include<vector>
-#include "Dessin.h"
+#include "Dessinable.h"
 #include "Constantes.h"
 
 class Ressort;
+
 class Masse : public Dessinable {
 public:
     // constructeur
