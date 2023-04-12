@@ -1,7 +1,7 @@
 #pragma once
 #include<vector>
-#include "Dessin.h"
-#include "systeme.h"
+#include "Dessinable.h"
+#include "Systeme.h"
 class Masse;
 class Ressort;
 class Integrateur;
@@ -16,6 +16,10 @@ public:
     Tissu& operator=(const Tissu&) = delete; //affectation aussi interdite car copie interdite
     ~Tissu();   //faut desallouer la memoire sinon segfault
 
+    //getters
+    std::vector<Masse*> vector_masse() const;
+    std::vector<Ressort*> vector_ressort() const;
+    
     //methodes
     void ajoute_masse(Masse* m);    //ajoute une masse au tissu
     void connecte(Masse& masse1, Masse& masse2, double k, double l0);    //allocation dynamique d'un nouveau ressort qui lie les deux masses

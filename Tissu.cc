@@ -4,6 +4,8 @@
 #include "Masse.h"
 #include "Ressort.h"
 #include "Integrateur.h"
+#include "SupportADessin.h"
+#include "Dessinable.h"
 using namespace std;
 
 //constructeurs
@@ -15,6 +17,14 @@ Tissu::Tissu(std::vector<Masse*> vector_masse) : vector_masse_(vector_masse) {}
 //destructeur
 Tissu::~Tissu() {
     for (auto ressort : vector_ressort_) delete ressort;
+}
+
+//getters
+vector<Masse*> Tissu::vector_masse() const {
+    return vector_masse_;
+}
+vector<Ressort*> Tissu::vector_ressort() const {
+    return vector_ressort_;
 }
 
 
