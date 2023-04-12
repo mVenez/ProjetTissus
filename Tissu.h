@@ -1,12 +1,13 @@
 #pragma once
 #include<vector>
 #include "Dessin.h"
+#include "systeme.h"
 class Masse;
 class Ressort;
 class Integrateur;
 
 
-class Tissu : public Dessinable {
+class Tissu : public Dessinable, public Objet {
 public:
     //constructeurs, copie, destructeur
     Tissu(Masse& masse);//constructeur pour initializer un tissu avec une seule masse puis en ajouter après
