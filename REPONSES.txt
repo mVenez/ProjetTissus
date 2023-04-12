@@ -44,3 +44,8 @@ l’integrateur d’Euler Cromer hérite de l’attribut pas de temps de la supe
 Nous avons implémentés la méthode connecte(), pour le momment nous n’avons pas jugé utile d’ajouter la méthode connecte_masse() car les adresse des ressorts de change pas dans notre conception
 Nous avons implémentés une méthode check() qui vérifie qu’il n’y a rien d’incohérent et qui appelle les méthodes check() spécifiques au Masses et au Ressorts.
 Pour le Moment nous avons fait le choix de mettre les différentes méthode en public, Nous imaginons qu’éventuellement par la suite si nous avons un jolie constructeur de tissus qui génères de grosses structure nous n’aurons plus besoin de manipuler la méthode connecte pour faire des tissus "manuellement" et que nous pourrons donc passer certaine méthode en privé car elle ne serviront que dans le fonctionnement interne de la class.
+
+[Question P9.1]
+dessine_sur() est une méthode virtuelle pure, cas elle nécessite une definition dans chacune des sous-classes de Dessinable (à ce stade de notre projet: Masse, Tissu, Systeme).
+
+[Question P9.4]
