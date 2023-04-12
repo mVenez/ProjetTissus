@@ -1,3 +1,4 @@
+#pragma once
 #include "Dessin.h"
 #include <vector>
 
