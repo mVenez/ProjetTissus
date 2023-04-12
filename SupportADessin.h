@@ -13,7 +13,3 @@ public:
     virtual void dessine(Masse const&) = 0;
 
 };
-
-class Dessinable {  //classe mère de Masse, Tissu et Systeme
-    virtual void dessine_sur(SupportADessin&) = 0;
-};
