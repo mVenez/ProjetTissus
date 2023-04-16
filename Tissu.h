@@ -3,10 +3,10 @@
 #include <iostream>
 #include "Dessinable.h"
 #include "Systeme.h"
+#include "Objet.h"
 class Masse;
 class Ressort;
 class Integrateur;
-
 
 class Tissu : public Dessinable, public Objet {
 public:

@@ -2,31 +2,30 @@
 #include "Dessinable.h"
 #include "SupportADessin.h"
 #include "Tissu.h"
+#include "Objet.h"
 #include <vector>
 #include <iostream>
 using namespace std;
 
 //constructeurs
-Systeme::Systeme(vector<Tissu*> liste_tissus) 
-    : Dessinable(), liste_tissus_(liste_tissus) {}
+Systeme::Systeme(vector<Objet*> vector_objet_) 
+    : Dessinable(), vector_objet_(vector_objet_) {}
 
-Systeme::Systeme(Tissu& tissu) 
-    : Dessinable(), liste_tissus_({&tissu}) {}
+Systeme::Systeme(Objet& objet) 
+    : Dessinable(), vector_objet_(vector<Objet*>(1, &objet)) {}
 
 //methodes
 void Systeme::dessine_sur(SupportADessin& support) {
     support.dessine(*this); 
 }
 
-void Systeme::affiche(ostream& out) const {
-    /*vector<Masse*> liste_masses_total;
-    vector<Ressort*> liste_ressorts_total;
-    for (auto obj : vector_objet_) obj->get
-
-    cout << "Le système est constitué de " << liste_masses_total.size() << "masses et de " << liste_ressorts_total.size() << "ressorts : " << endl;
-    for (auto masse: liste_masses_total) {cout << masse;}
-    for (auto ressort: liste_ressorts_total) {cout << ressort;}*/
-    for (objet : vector_objet_) {cout << objet}
+ostream& Systeme::affiche(ostream& out) const {
+    cout << "le système est composé de " << vector_objet_.size() << " objets {" << endl;
+    for (auto objet : vector_objet_) {
+        cout << objet << endl;
+    }
+    cout << "}" << endl;
+    return out;
 }
 
 ostream& operator<<(ostream& out, Systeme const& systeme) {

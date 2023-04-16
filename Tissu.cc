@@ -6,6 +6,7 @@
 #include "Integrateur.h"
 #include "SupportADessin.h"
 #include "Dessinable.h"
+#include "Objet.h"
 using namespace std;
 
 //constructeurs

@@ -76,6 +76,7 @@ void test_unset_ressort() {
     cout << masse2 << endl;
     cout << "on unset ressort2" << endl;
     masse1.unset_ressort(ressort2); //test de unset_ressort direct
+    ressort2 = nullptr; //le ressort à été delete dans la méthode unset_ressort
     cout << masse1 << endl;
     cout << masse2 << endl;
 }

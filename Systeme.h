@@ -1,21 +1,20 @@
 #pragma once
 #include "Dessinable.h"
+#include "Objet.h"
 #include <vector>
 #include <iostream>
-class Tissu;
-class Objet{};
 
 class Systeme : public Dessinable {
 public:
     //constructeurs
-    Systeme(std::vector<Tissu*> liste_tissus);
-    Systeme(Tissu& tissu);
+    Systeme(std::vector<Objet*> vector_objet_);
+    Systeme(Objet& objet);
     Systeme(const Systeme&) = delete; //on interdit la copie
     Systeme& operator=(const Systeme&) = delete; //affectation aussi int
 
     //méthodes
     virtual void dessine_sur(SupportADessin& support) override;
-    void affiche(std::ostream& out) const;
+    std::ostream& affiche(std::ostream& out) const;
 
 private:
     std::vector<Objet*> vector_objet_;
