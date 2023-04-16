@@ -78,17 +78,6 @@ void test_unset_ressort() {
     masse1.unset_ressort(ressort2); //test de unset_ressort direct
     cout << masse1 << endl;
     cout << masse2 << endl;
-    //controle si les ressorts sont bien supprimés
-    /*try{
-        cout << "ressort1 : " << *ressort1 << endl;
-    } catch (const std::exception& e) {
-        cout << "ressort1 : " << e.what() << endl;
-    }*/
-    try{
-        cout << "ressort2 : " << *ressort2 << endl;
-    } catch (const std::exception& e) {
-        cout << "ressort2 : " << e.what() << endl;
-    }
 }
 
 
