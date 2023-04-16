@@ -1,10 +1,8 @@
-A FAIRE:
-- Si j'ai bien compris dans le P9 on transforme les masses, les tissus et les systemes(qui je crois ne sont que des collections des tissus) en sous-classes de la classe Dessinable.
-    La classe SupportADessin par contre est la classe mère des futures classes qui servent à grapher (d'une maniere textuelle ou graphique) le systeme.
-
 CHOSES OPTIONELLES
-- class Ressort -> changer set_ressort en add_ressort?
 - à voir si il y a un moyen plus simple pour coder l’opérateur d’égalité des masses
 - revoir si besoin l’implémentation de l’association des ressorts au masse
 - on pourrait peut etre poser epsilon des petites variations(test egalité double) dans constantes
 - Pour le mmoment j'utilise des runtime_error dans check(), mais il ya peut etre des options meilleurs
+
+
+J'ai oublié de bien tester check(), meme si il semble qu'elle marche bien
