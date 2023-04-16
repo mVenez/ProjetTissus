@@ -22,9 +22,7 @@ public:
     // setters
     void fixe(bool fixe = true);
     void set_ressort(Ressort* ressort); // pour ajouter un ressort a la liste de ressorts
-    void set_ressort(std::vector<Ressort*> liste_ressort); // pour définir une nouvelle liste de ressorts
-    void unset_ressort(Ressort* ressort); // pour supprimer un ressort de la liste de ressorts
-    void unset_ressort(std::vector<Ressort*> liste_ressort); // pour supprimer une liste de ressorts de la liste de ressorts
+    void unset_ressort(Ressort* ressort, bool gestion_suppresion_ressort = true); // pour supprimer un ressort de la liste de ressorts
     void set_position(const Vecteur3D& nouvelle_position);
     void set_vitesse(const Vecteur3D& nouvelle_vitesse);
 

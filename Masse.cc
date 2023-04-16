@@ -43,18 +43,16 @@ Vecteur3D Masse::force_subie() const{
 void Masse::fixe(bool fixe){
     fixe_ = fixe;
 }
-void Masse::set_ressort(Ressort* ressort){
+void Masse::set_ressort(Ressort* ressort){// ajoute un ressort à la liste actuelle de ressorts
     liste_ressort_.push_back(ressort);
 }
-void Masse::set_ressort(std::vector<Ressort*> liste_ressort){
-    liste_ressort_ = liste_ressort;
-}
-void Masse::unset_ressort(Ressort* ressort){
-    liste_ressort_.erase(remove(liste_ressort_.begin(), liste_ressort_.end(), ressort), liste_ressort_.end());
-}
-void Masse::unset_ressort(std::vector<Ressort*> liste_ressort){
-    for (auto ressort : liste_ressort) {
-        unset_ressort(ressort);
+void Masse::unset_ressort(Ressort* ressort, bool gestion_suppresion_ressort){ // bool par défaut à true
+    if (gestion_suppresion_ressort){
+        cout << "============================================== LAALAAAAA JE SUUUPRIIIIME LE REEEESORT =========== " << endl;
+        delete ressort;
+        ressort = nullptr;
+    }else{
+        liste_ressort_.erase(remove(liste_ressort_.begin(), liste_ressort_.end(), ressort), liste_ressort_.end());
     }
 }
 void Masse::set_position(const Vecteur3D& nouvelle_position) {

@@ -47,13 +47,12 @@ void test2(){
     cout << "force_subie : " << masse1.force_subie() << endl;
     cout << "Test mise_a_jour_forces()" << endl;
     Ressort ressort1(masse1, masse2, 3, 1);
-    vector<Ressort*> liste_ressort(1, &ressort1);
-    masse1.set_ressort(liste_ressort);
     masse1.mise_a_jour_forces();
     cout << "force_subie : " << masse1.force_subie() << endl;
 }
 
 void test3() {
+    // test set_position() et set_vitesse()
     Masse masse1(1,0.3);
     cout << masse1 << endl;
     masse1.set_position(Vecteur3D(2,2,2));
@@ -61,9 +60,42 @@ void test3() {
     cout << masse1 << endl;
 }
 
+void test_unset_ressort() {
+    // test unset_ressort()
+    Masse masse1(1,0.3);
+    Masse masse2(1,0.3);
+    cout << "=================== Test unset_ressort() ===================" << endl;
+    Ressort*  ressort1 = new Ressort(masse1, masse2, 3, 1);
+    Ressort*  ressort2 = new Ressort(masse1, masse2, 3, 1);
+    cout << masse1 << endl;
+    cout << masse2 << endl;
+    cout << "on delete ressort1" << endl;
+    delete ressort1; //test de unset_ressort indirect via l’appel de la méthode unset_ressort quand l’on supprime un ressort
+    ressort1 = nullptr;
+    cout << masse1 << endl;
+    cout << masse2 << endl;
+    cout << "on unset ressort2" << endl;
+    masse1.unset_ressort(ressort2); //test de unset_ressort direct
+    cout << masse1 << endl;
+    cout << masse2 << endl;
+    //controle si les ressorts sont bien supprimés
+    /*try{
+        cout << "ressort1 : " << *ressort1 << endl;
+    } catch (const std::exception& e) {
+        cout << "ressort1 : " << e.what() << endl;
+    }*/
+    try{
+        cout << "ressort2 : " << *ressort2 << endl;
+    } catch (const std::exception& e) {
+        cout << "ressort2 : " << e.what() << endl;
+    }
+}
+
+
 int main() {
-    test1();
-    test2();
-    test3();
+    //test1();
+    //test2();
+    //test3();
+    test_unset_ressort();
     return 0;
 }
