@@ -1,5 +1,6 @@
 #pragma once
 #include "Masse.h"
+#include <iostream>
 
 class Ressort{
 public:

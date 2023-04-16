@@ -1,7 +1,9 @@
 #pragma once
 #include "Dessinable.h"
 #include <vector>
+#include <iostream>
 class Tissu;
+class Objet{};
 
 class Systeme : public Dessinable {
 public:
@@ -16,12 +18,8 @@ public:
     void affiche(std::ostream& out) const;
 
 private:
-    std::vector<Tissu*> liste_tissus_;
-};
-/*private:
     std::vector<Objet*> vector_objet_;
-};*/
+};
 
 std::ostream& operator<<(std::ostream& sortie, Systeme const& systeme);
 
-class Objet{};

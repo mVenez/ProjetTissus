@@ -19,12 +19,14 @@ void Systeme::dessine_sur(SupportADessin& support) {
 }
 
 void Systeme::affiche(ostream& out) const {
-    vector<Masse*> liste_masses_total;
+    /*vector<Masse*> liste_masses_total;
     vector<Ressort*> liste_ressorts_total;
-    //ICI IL FAUT AJOUTER TOUTES LES MASSES ET LES RESSORTS AUX DEUX VECTORS
+    for (auto obj : vector_objet_) obj->get
+
     cout << "Le système est constitué de " << liste_masses_total.size() << "masses et de " << liste_ressorts_total.size() << "ressorts : " << endl;
     for (auto masse: liste_masses_total) {cout << masse;}
-    for (auto ressort: liste_ressorts_total) {cout << ressort;}
+    for (auto ressort: liste_ressorts_total) {cout << ressort;}*/
+    for (objet : vector_objet_) {cout << objet}
 }
 
 ostream& operator<<(ostream& out, Systeme const& systeme) {

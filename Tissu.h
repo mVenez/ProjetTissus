@@ -1,5 +1,6 @@
 #pragma once
 #include<vector>
+#include <iostream>
 #include "Dessinable.h"
 #include "Systeme.h"
 class Masse;
