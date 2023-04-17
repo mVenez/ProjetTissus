@@ -18,7 +18,6 @@ Ressort::Ressort(Masse& masse1,Masse& masse2, const double k, const double l0)
 
 //destructeur
 Ressort::~Ressort(){
-    cout << "Destruction du ressort " << this << endl;
     masse1_->unset_ressort(this, false);
     masse2_->unset_ressort(this, false);
 }

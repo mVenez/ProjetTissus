@@ -27,7 +27,7 @@ public:
     void mise_a_jour_forces() const;    //met à jour toutes les masses
     void evolue(const Integrateur& integrateur) const;  //intègre toutes les masses
     void check() const; //check total du tissu
-    std::ostream& affiche(std::ostream& out) const;   //affiche les masses et les ressorts du tissu
+    virtual std::ostream& affiche(std::ostream& out) const override;   //affiche les masses et les ressorts du tissu
     virtual void dessine_sur(SupportADessin& support) override;
 
 private:

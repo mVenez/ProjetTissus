@@ -3,7 +3,7 @@ CC = $(CXX)
 CXXFLAGS = -std=c++11 -pedantic -Wall
 LDLIBS = -lm
 
-all: testVecteur3D testMasse testRessort testIntegrateur1 testIntegrateur2 testIntegrateur3 testTissu1 testTissu2 Systeme.o Dessinable.o Objet.o
+all: testVecteur3D testMasse testRessort testIntegrateur1 testIntegrateur2 testIntegrateur3 testTissu1 testTissu2 exerciceP9 Dessinable.o Objet.o
 	@echo "Wow Mais qui donc à fais ce merveilleux code ? Il fonctionne super bien, je doit être codé par des beau gosse absolu, l’Executable est construit trop fort"
 	
 Vecteur3D.o: Vecteur3D.cc Vecteur3D.h
@@ -44,6 +44,7 @@ testTissu1: testTissu1.o Tissu.o Ressort.o Masse.o Vecteur3D.o Constantes.o Inte
 
 testTissu2: testTissu2.o Tissu.o Ressort.o Masse.o Vecteur3D.o Constantes.o Integrateur.o
 
+exerciceP9: exerciceP9.o Masse.o Tissu.o Systeme.o Vecteur3D.o Constantes.o Integrateur.o Objet.o Ressort.o
 
 clean:
 	rm -f *.o
@@ -55,6 +56,7 @@ clean:
 	rm testIntegrateur3
 	rm testTissu1
 	rm testTissu2
+	rm exerciceP9
 	@echo "Fichiers de construction et executable eliminés"
 
 wclean:
@@ -67,4 +69,6 @@ wclean:
 	del testIntegrateur3.exe
 	del testTissu1.exe
 	del testTissu2.exe
+	del exerciceP9.exe
+
 	@echo "Fichiers de construction et executable eliminés"

@@ -22,7 +22,7 @@ void Systeme::dessine_sur(SupportADessin& support) {
 ostream& Systeme::affiche(ostream& out) const {
     cout << "le système est composé de " << vector_objet_.size() << " objets {" << endl;
     for (auto objet : vector_objet_) {
-        cout << objet << endl;
+        cout << *objet << endl;
     }
     cout << "}" << endl;
     return out;

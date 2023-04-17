@@ -6,3 +6,5 @@ CHOSES OPTIONELLES
 
 
 J'ai oublié de bien tester check(), meme si il semble qu'elle marche bien
+
+REPONDRE À P9.4
