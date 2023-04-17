@@ -20,22 +20,22 @@ void test1(){
     Masse masse3(3, 0.3, Vecteur3D(2,0,0), Vecteur3D(0,0,0), g);
     cout << "==== On lie masse1 et masse2 avec un premier ressort ====" << endl;
     Ressort ressort1(masse1, masse2, 3, 1);
-    cout << ressort1;
+    cout << ressort1 << endl;
 
     cout << "==== On lie masse2 et masse3 avec un deuxième ressort ====" << endl;
     Ressort ressort2(masse2 , masse3, 4, 5);
-    cout << ressort2;
+    cout << ressort2 << endl;
 
     cout << "==== On verifie que la masse2 liste maintenant le deuxieme ressort ====" << endl;
-    cout << ressort1;
-    cout << ressort2;
+    cout << ressort1 << endl;
+    cout << ressort2 << endl;
 
 
     cout << "==== Nous modifions la masse2 et on verifie que les ressort soient mis à jour ====" << endl;
     masse2.ajoute_force(Vecteur3D(42,42,0));
     cout << masse2 << endl;
-    cout << ressort1;
-    cout << ressort2;
+    cout << ressort1 << endl;
+    cout << ressort2 << endl;
 
     cout << "==== On verifie maintenant les forces exercées par les ressorts sur les masses ====" << endl;
     cout << "ressort " << &ressort1 << " sur masse " << &masse1 << " : " << ressort1.force_rappel(&masse1) << endl;
@@ -63,16 +63,16 @@ void test1(){
     Ressort ressort2(masse2 , masse3, 4, 5);
     cout << endl;
 
-    cout << ressort1;
-    cout << ressort2;
+    cout << ressort1 << endl;
+    cout << ressort2 << endl;
 
     cout << "==== BOUM!!! : masse2 est detruite" << endl;
     masse2.~Masse();
     cout << endl;
 
     cout << "==== On affiche la situation après la destruction de masse2 ====" << endl;
-    cout << ressort1;
-    cout << ressort2;
+    cout << ressort1 << endl;
+    cout << ressort2 << endl;
 
 
 }*/

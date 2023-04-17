@@ -40,20 +40,19 @@ Vecteur3D Ressort::force_rappel(Masse* masse) const{
 }
 
 ostream& Ressort::affiche(ostream& out, bool affichage_masses_complet) const {
-    out << "Ressort " << this << " {" << endl;
+    out << "===== Ressort " << this << " =====" << endl;
     out << "Constante de raideur : " <<  k_ << endl;
     out << "Longeur à repos : " << l0_ << endl;
-    out << "Masses associées au ressort :" << endl << "["<< endl;
-    out << "Masse depart : Masse " << masse1_ << " : " << endl;
+    out << "Masses associées au ressort :" << endl;
+    out << "Masse depart : " << masse1_ << endl;
     if(affichage_masses_complet){
-        out << *masse1_ << endl;
+        out << *masse1_;
     }
-    out << "Masse arrivée : Masse " << masse2_ << " : " << endl;
+    out << "Masse arrivée : " << masse2_ << endl;
     if(affichage_masses_complet){
         out << *masse2_;
     }
-    out << "]" << endl;
-    out << "}" << endl;
+    out << "===== Ressort " << this << " =====" << endl ;
     return out;
 }
 

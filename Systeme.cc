@@ -20,11 +20,15 @@ void Systeme::dessine_sur(SupportADessin& support) {
 }
 
 ostream& Systeme::affiche(ostream& out) const {
-    cout << "le système est composé de " << vector_objet_.size() << " objets {" << endl;
+    cout << "=============== Système" << this << " de " << vector_objet_.size() << " objets ===============" << endl;
     for (auto objet : vector_objet_) {
-        cout << *objet << endl;
+        cout << *objet;
+        //if last element no endl
+        if (objet != vector_objet_.back()){
+            cout << endl;
+        }
     }
-    cout << "}" << endl;
+    cout << "=============== Système" << this << " de " << vector_objet_.size() << " objets ===============" << endl;
     return out;
 }
 

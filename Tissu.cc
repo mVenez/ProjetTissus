@@ -59,21 +59,23 @@ void Tissu::check() const {
 }
 
 ostream& Tissu::affiche(ostream& out) const {
-    out << "======================" << endl;
-    out << "Tissu : " << this << endl;
-    out << "Les masses sont : {" << endl;
+    out << "============ Tissu " << this << " ============" << endl;
     for (auto masse : vector_masse_) {
         masse->affiche(out);
-        out << endl;
+        //if last element, no endl
+        if (masse != vector_masse_.back()){
+            out << endl;
+        }
     }
-    out << "}" << endl << endl;
-    out << "Les ressorts sont : {" << endl;
+    out << endl << endl;
     for (auto ressort : vector_ressort_) {
         ressort->affiche(out, false);
-        out << endl;
+        //if last element, no endl
+        if (ressort != vector_ressort_.back()){
+            out << endl;
+        }
     }
-    out << "}" << endl;
-    out << "======================" << endl << endl;
+    out << "============ Tissu " << this << " ============" << endl;
     return out;
 }
 

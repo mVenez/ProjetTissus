@@ -48,7 +48,6 @@ void Masse::set_ressort(Ressort* ressort){// ajoute un ressort à la liste actue
 }
 void Masse::unset_ressort(Ressort* ressort, bool gestion_suppresion_ressort){ // bool par défaut à true
     if (gestion_suppresion_ressort){
-        cout << "============================================== LAALAAAAA JE SUUUPRIIIIME LE REEEESORT =========== " << endl;
         delete ressort;
         ressort = nullptr;
     }else{
@@ -64,7 +63,7 @@ void Masse::set_vitesse(const Vecteur3D& nouvelle_vitesse) {
 
 // méthodes
 ostream& Masse::affiche(ostream& out) const{
-    out << "Masse : " << this << " {" << endl;
+    out << "===== Masse " << this << " =====" << endl;
     out << "Fixe : " << (fixe_ ? "oui" : "non") << endl;
     out << "Masse de la masse : " << masse_ << "kg" << endl;
     out << "Coefficient de frottement : " << coefficient_frottement_ << endl;
@@ -76,7 +75,7 @@ ostream& Masse::affiche(ostream& out) const{
         out << " :" << endl;
         for (auto ressort : liste_ressort_) {out << ressort << endl;}
     } else {out << endl;}
-    out << "}" << endl;
+    out << "===== Masse " << this << " =====" << endl ;
     return out;
 }
 
