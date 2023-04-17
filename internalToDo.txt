@@ -6,5 +6,6 @@ CHOSES OPTIONELLES
 
 
 J'ai oublié de bien tester check(), meme si il semble qu'elle marche bien
+Appeler le check() après le constructeur du systeme?
 
 REPONDRE À P9.4

@@ -117,16 +117,19 @@ travail sur la class Vecteur3D :
 - codage testTissu1/2
 04/04, Maël:
 - reconception du destructeur du tissu, maintenant toutes les masses et ressort sont bien détruit et les pointeur désalloués correctement
+07/04, Veneziano:
+- classes Dessinable et SupportADessin
 08/04, Maël:
 - Réponses aux questions P7.1-2 et P8.1
-
-
-
+10/04, Veneziano:
+- Réorganisation des #include
+- Hierarchie des Dessinables
+12/04, Veneziano:
+- classe Systeme, première version
 --------------------------------------------------
 ## Semaine 8 :
-
-
-
+17/04, Veneziano:
+- exerciceP9 complet
 --------------------------------------------------
 ## Semaine 9 :
 
@@ -153,4 +156,3 @@ travail sur la class Vecteur3D :
 
 --------------------------------------------------
 ## Semaine 14 :
-
