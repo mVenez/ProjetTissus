@@ -10,9 +10,9 @@
 using namespace std;
 
 //constructeurs
-Tissu::Tissu(Masse& masse) : vector_masse_({&masse}) {}
+Tissu::Tissu(Masse& masse) : vector_masse_({&masse}) {check();}
 
-Tissu::Tissu(std::vector<Masse*> vector_masse) : vector_masse_(vector_masse) {}
+Tissu::Tissu(std::vector<Masse*> vector_masse) : vector_masse_(vector_masse) {check();}
 
 
 //destructeur
@@ -32,11 +32,13 @@ vector<Ressort*> Tissu::vector_ressort() const {
 //methodes
 void Tissu::ajoute_masse(Masse* m) {
     vector_masse_.push_back(m);
+    check();
 }
 
 void Tissu::connecte(Masse& masse1, Masse& masse2, double k, double l0) {
     Ressort* ressort = new Ressort(masse1, masse2, k, l0);
     vector_ressort_.push_back(ressort);
+    check();
 }
 
 void Tissu::mise_a_jour_forces() const {

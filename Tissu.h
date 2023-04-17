@@ -24,9 +24,9 @@ public:
     //methodes
     void ajoute_masse(Masse* m);    //ajoute une masse au tissu
     void connecte(Masse& masse1, Masse& masse2, double k, double l0);    //allocation dynamique d'un nouveau ressort qui lie les deux masses
-    void mise_a_jour_forces() const;    //met à jour toutes les masses
-    void evolue(const Integrateur& integrateur) const;  //intègre toutes les masses
-    void check() const; //check total du tissu
+    void mise_a_jour_forces() const override;    //met à jour toutes les masses
+    void evolue(const Integrateur& integrateur) const override;  //intègre toutes les masses
+    void check() const override; //check total du tissu
     virtual std::ostream& affiche(std::ostream& out) const override;   //affiche les masses et les ressorts du tissu
     virtual void dessine_sur(SupportADessin& support) override;
 
