@@ -24,7 +24,8 @@ void test1() {
     Tissu tissu1(liste_masse);
     tissu1.connecte(masseA, masseB, 0.6, 2.5);
     tissu1.connecte(masseA, masseC, 0.6, 2.5);
-
+    tissu1.check();
+    
     Systeme systeme1(tissu1);
     cout << systeme1 << endl;
 }
