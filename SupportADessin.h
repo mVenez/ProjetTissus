@@ -13,3 +13,7 @@ public:
     virtual void dessine(Masse const&) = 0;
 
 };
+
+class TextViewer {
+
+};
