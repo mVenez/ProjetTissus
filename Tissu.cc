@@ -60,7 +60,7 @@ void Tissu::check() const {
 
 ostream& Tissu::affiche(ostream& out) const {
     out << "======================" << endl;
-    out << "Tissu : " << endl;
+    out << "Tissu : " << this << endl;
     out << "Les masses sont : {" << endl;
     for (auto masse : vector_masse_) {
         masse->affiche(out);

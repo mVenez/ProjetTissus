@@ -43,7 +43,7 @@ ostream& Ressort::affiche(ostream& out, bool affichage_masses_complet) const {
     out << "Ressort " << this << " {" << endl;
     out << "Constante de raideur : " <<  k_ << endl;
     out << "Longeur à repos : " << l0_ << endl;
-    out << "Masse associées au ressort :" << endl << "["<< endl;
+    out << "Masses associées au ressort :" << endl << "["<< endl;
     out << "Masse depart : Masse " << masse1_ << " : " << endl;
     if(affichage_masses_complet){
         out << *masse1_ << endl;
