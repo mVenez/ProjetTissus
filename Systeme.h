@@ -1,6 +1,7 @@
 #pragma once
 #include "Dessinable.h"
 #include "Objet.h"
+#include "Integrateur.h"
 #include <vector>
 #include <iostream>
 
@@ -15,10 +16,12 @@ public:
     //méthodes
     virtual void dessine_sur(SupportADessin& support) override;
     std::ostream& affiche(std::ostream& out) const;
+    virtual void evolue(const Integrateur& integrateur) const;
 
 private:
     std::vector<Objet*> vector_objet_;
 };
 
+//operateurs
 std::ostream& operator<<(std::ostream& sortie, Systeme const& systeme);
 
