@@ -130,6 +130,8 @@ travail sur la class Vecteur3D :
 ## Semaine 8 :
 17/04, Veneziano:
 - exerciceP9 complet
+19/04, Veneziano:
+- TextViewer.h et préparation pour le graphisme
 --------------------------------------------------
 ## Semaine 9 :
 
