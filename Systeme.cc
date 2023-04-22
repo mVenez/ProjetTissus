@@ -31,7 +31,7 @@ ostream& Systeme::affiche(ostream& out) const {
             out << endl;
         }
     }
-    out << "=============== Système" << this << " de " << vector_objet_.size();
+    out << "=============== Système " << this << " de " << vector_objet_.size();
     if (vector_objet_.size() == 1) {out << " objet ===============" << endl;}
     return out;
 }

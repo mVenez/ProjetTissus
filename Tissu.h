@@ -2,7 +2,6 @@
 #include<vector>
 #include <iostream>
 #include "Dessinable.h"
-#include "Systeme.h"
 #include "Objet.h"
 class Masse;
 class Ressort;

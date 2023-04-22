@@ -11,7 +11,7 @@ public:
     Systeme(std::vector<Objet*> vector_objet_);
     Systeme(Objet& objet);
     Systeme(const Systeme&) = delete; //on interdit la copie
-    Systeme& operator=(const Systeme&) = delete; //affectation aussi int
+    Systeme& operator=(const Systeme&) = delete; //affectation aussi interdite
 
     //méthodes
     virtual void dessine_sur(SupportADessin& support) override;
