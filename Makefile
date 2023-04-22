@@ -3,7 +3,7 @@ CC = $(CXX)
 CXXFLAGS = -std=c++11 -pedantic -Wall
 LDLIBS = -lm
 
-all: testVecteur3D testMasse testRessort testIntegrateur1 testIntegrateur2 testIntegrateur3 testTissu1 testTissu2 exerciceP9 Dessinable.o Objet.o
+all: testVecteur3D testMasse testRessort testIntegrateur1 testIntegrateur2 testIntegrateur3 testTissu1 testTissu2 exerciceP9 exerciceP10 Objet.o
 	@echo "Wow Mais qui donc à fais ce merveilleux code ? Il fonctionne super bien, je doit être codé par des beau gosse absolu, l’Executable est construit trop fort"
 	
 Vecteur3D.o: Vecteur3D.cc Vecteur3D.h
@@ -28,6 +28,8 @@ Systeme.o : Systeme.cc Systeme.h Dessinable.h Objet.h
 
 Dessinable.o : Dessinable.cc Dessinable.h Masse.h Systeme.h Tissu.h
 
+TextViewer.o : TextViewer.cc Masse.h Tissu.h Systeme.h
+
 testVecteur3D: testVecteur3D.o Vecteur3D.o
 
 testMasse: testMasse.o Masse.o Vecteur3D.o Constantes.o Ressort.o
@@ -46,6 +48,8 @@ testTissu2: testTissu2.o Tissu.o Ressort.o Masse.o Vecteur3D.o Constantes.o Inte
 
 exerciceP9: exerciceP9.o Masse.o Tissu.o Systeme.o Vecteur3D.o Constantes.o Integrateur.o Objet.o Ressort.o
 
+exerciceP10: exerciceP10.o Masse.o Tissu.o Systeme.o Vecteur3D.o Constantes.o Integrateur.o Objet.o Ressort.o TextViewer.o
+
 clean:
 	rm -f *.o
 	rm testVecteur3D
@@ -57,6 +61,7 @@ clean:
 	rm testTissu1
 	rm testTissu2
 	rm exerciceP9
+	rm exerciceP10
 	@echo "Fichiers de construction et executable eliminés"
 
 wclean:
@@ -70,5 +75,6 @@ wclean:
 	del testTissu1.exe
 	del testTissu2.exe
 	del exerciceP9.exe
+	del exerciceP10.exe
 
 	@echo "Fichiers de construction et executable eliminés"
