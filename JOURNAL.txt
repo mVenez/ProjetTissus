@@ -128,8 +128,12 @@ travail sur la class Vecteur3D :
 - classe Systeme, première version
 --------------------------------------------------
 ## Semaine 8 :
+16/04, Maël:
+- reconception/codage de la méthodes unset_ressort() de la classe Masse
 17/04, Veneziano:
 - exerciceP9 complet
+17/04, Maël:
+- update des méthode affiche() de toutes les classes pour avoir un affichage dans le terminal propre et lisible
 19/04, Veneziano:
 - TextViewer.h et préparation pour le graphisme
 --------------------------------------------------
