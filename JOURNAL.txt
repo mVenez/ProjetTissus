@@ -1,37 +1,3 @@
-# PROGRESSION
-
-Format : [fait/à faire] TACHE	Durée (en minutes)
-
-[V] créer le JOURNAL                                    	 1
-[V] lire complètement le descriptif général                  	20
-[V] s'inscrire en binôme                                      	2
-[V] fusionner les deux projets (y compris les fichiers JOURNAL)	30
-[V] Makefile                                               	40
-[V] Vecteur finis (pleinement opérationnels et testés)  	160
-[ ] fichier REPONSES                                         	??
-[ ] Montagnes simples                                          	??
-[ ] Potentiels vecteurs                                       	??
-[ ] Résolution eq. Laplace                                     	??
-[ ] Nuages                                                	??
-[ ] exerciceP10 (simulation textuelle)                         	??
-[ ] Graphisme : cadre général (reprise des exemples tuto)    	??
-[ ] Graphisme : adaptation à ce projet spécifique               ??
-[ ] Montagnes composées                                        	??
-[ ] Déplacement des nuages                                     	??
-[ ] fichier CONCEPTION                                         	??
-[ ] fichier README                                        	??
-[ ] fichier NOMS                                        	??
-
-======================================================================
-# A FAIRE (PROCHAINE ETAPE)
-
-Mettez ici ce que vous pensez devoir être la ou les 2 prochaines étapes
-pour chacun. Par exemple :
-
-Ron: debugger les Vecteurs
-Hermione: finir le reste du projet
-
-======================================================================
 # SUIVI
 
 ## Semaine 2 :
@@ -138,7 +104,9 @@ travail sur la class Vecteur3D :
 - TextViewer.h et préparation pour le graphisme
 --------------------------------------------------
 ## Semaine 9 :
-
+24/04, Veneziano:
+- ExerciceP11 avec TextViewer
+- Debut reorganization structure de la directory du projet
 
 
 --------------------------------------------------
