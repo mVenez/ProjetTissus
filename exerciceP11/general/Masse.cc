@@ -2,7 +2,7 @@
 #include <algorithm>
 #include "Masse.h"
 #include "Ressort.h"
-#include "Constantes.h"
+#include "constantes.h"
 #include "Vecteur3D.h"
 #include "SupportADessin.h"
 #include "Dessinable.h"
