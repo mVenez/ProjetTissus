@@ -14,4 +14,4 @@ SOURCES += \
     TextViewer.cc
 
 HEADERS += \
-    ../general/TextViewer.h
+    TextViewer.h
