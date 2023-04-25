@@ -1,7 +1,6 @@
 #include "Systeme.h"
 #include "Dessinable.h"
 #include "SupportADessin.h"
-#include "Tissu.h"
 #include "Objet.h"
 #include "Integrateur.h"
 #include <vector>
@@ -17,7 +16,7 @@ Systeme::Systeme(Objet& objet)
 
 //methodes
 void Systeme::dessine_sur(SupportADessin& support) {
-    support.dessine(*this); 
+    support.dessine(*this);
 }
 
 ostream& Systeme::affiche(ostream& out) const {

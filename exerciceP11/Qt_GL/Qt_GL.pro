@@ -4,7 +4,7 @@ QMAKE_CXXFLAGS += -std=c++11
 win32:LIBS += -lopengl32
 
 
-TARGET = ex_05_gl
+TARGET = exerciceP11
 
 LIBS += -L../general -lgeneral
 PRE_TARGETDEPS += ../general/libgeneral.a
@@ -20,9 +20,6 @@ HEADERS += \
     glwidget.h \
     vertex_shader.h \
     vue_opengl.h \
-    ../general/dessinable.h \
-    ../general/support_a_dessin.h \
-    ../general/contenu.h
 
 RESOURCES += \
     resource.qrc

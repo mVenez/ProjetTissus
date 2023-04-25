@@ -1,9 +1,11 @@
 #include "vue_opengl.h"
 #include "vertex_shader.h" // Identifiants Qt de nos différents attributs
-#include "contenu.h"
+#include "Masse.h"
+#include "Tissu.h"
+#include "Systeme.h"
 
 // ======================================================================
-void VueOpenGL::dessine(Contenu const& a_dessiner)
+void VueOpenGL::dessine(Masse const& a_dessiner)
 {
    // Dessine le 1er cube (à l'origine)
   dessineCube();
@@ -20,15 +22,9 @@ void VueOpenGL::dessine(Contenu const& a_dessiner)
   matrice.scale(0.25);
   matrice.rotate(45.0, 0.0, 1.0, 0.0);
   dessineCube(matrice);
-
-  // Dessine le 4e cube
-  matrice.setToIdentity();
-  matrice.rotate(a_dessiner.infos(), 1.0, 0.0, 0.0);
-  matrice.translate(0.0, 2.3, 0.0);
-  matrice.scale(0.2);
-  dessineCube(matrice);
 }
-
+void VueOpenGL::dessine(Tissu const&) {};
+void VueOpenGL::dessine(Systeme const&) {};
 // ======================================================================
 void VueOpenGL::init()
 {

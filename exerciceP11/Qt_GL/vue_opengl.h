@@ -2,12 +2,18 @@
 
 #include <QOpenGLShaderProgram> // Classe qui regroupe les fonctions OpenGL liées aux shaders
 #include <QMatrix4x4>
-#include "support_a_dessin.h"
+#include "SupportADessin.h"
+#include "Masse.h"
+#include "Tissu.h"
+#include "Systeme.h"
 
 class VueOpenGL : public SupportADessin {
  public:
   // méthode(s) de dessin (héritée(s) de SupportADessin)
-  virtual void dessine(Contenu const& a_dessiner) override;
+  virtual void dessine(Masse const& a_dessiner) override;
+  virtual void dessine(Tissu const&) override;
+  virtual void dessine(Systeme const&) override;
+
 
   // méthodes de (ré-)initialisation
   void init();

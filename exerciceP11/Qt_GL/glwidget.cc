@@ -37,7 +37,7 @@ void GLWidget::resizeGL(int width, int height)
 void GLWidget::paintGL()
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  c.dessine_sur(vue);
+  //c.dessine_sur(vue);
 }
 
 
@@ -118,7 +118,7 @@ void GLWidget::timerEvent(QTimerEvent* event)
 
   double dt = chronometre.restart() / 1000.0;
 
-  c.evolue(dt);
+  //c.evolue(dt); ICI FAIRE EVOLUER NOTRE MASSE
   update();
 }
 
