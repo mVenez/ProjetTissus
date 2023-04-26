@@ -5,7 +5,7 @@
 #include "Systeme.h"
 
 // ======================================================================
-void VueOpenGL::dessine(Masse const& a_dessiner)
+void VueOpenGL::dessine(Contenu const& a_dessiner)
 {
    // Dessine le 1er cube (à l'origine)
   dessineCube();
@@ -23,6 +23,7 @@ void VueOpenGL::dessine(Masse const& a_dessiner)
   matrice.rotate(45.0, 0.0, 1.0, 0.0);
   dessineCube(matrice);
 }
+void VueOpenGL::dessine(Masse const&) {};
 void VueOpenGL::dessine(Tissu const&) {};
 void VueOpenGL::dessine(Systeme const&) {};
 // ======================================================================

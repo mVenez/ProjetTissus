@@ -13,6 +13,8 @@ class VueOpenGL : public SupportADessin {
   virtual void dessine(Masse const& a_dessiner) override;
   virtual void dessine(Tissu const&) override;
   virtual void dessine(Systeme const&) override;
+  virtual void dessine(Contenu const&) override;
+
 
 
   // méthodes de (ré-)initialisation

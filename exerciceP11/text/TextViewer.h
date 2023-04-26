@@ -17,6 +17,7 @@ public:
     virtual void dessine(Tissu const& tissu) override;
     virtual void dessine(Systeme const& systeme) override;
     virtual void dessine(Masse const& masse) override;
+    virtual void dessine(Contenu const& masse) override; //À ENLEVER
 
 private:
     std::ostream& flot_;

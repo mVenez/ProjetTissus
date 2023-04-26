@@ -3,6 +3,7 @@
 #include <QOpenGLWidget>        // Classe pour faire une fenêtre OpenGL
 #include <QTime>            // Classe pour gérer le temps
 #include "vue_opengl.h"
+#include "contenu.h"
 
 class GLWidget : public QOpenGLWidget
 /* La fenêtre hérite de QOpenGLWidget ;
@@ -11,8 +12,7 @@ class GLWidget : public QOpenGLWidget
 {
 public:
   GLWidget(QWidget* parent = nullptr)
-    : QOpenGLWidget(parent)
-  {}
+    : QOpenGLWidget(parent) {}
   virtual ~GLWidget() = default;
 
 private:
@@ -37,5 +37,5 @@ private:
   QTime chronometre;
 
   // objets à dessiner, faire évoluer
-  //Contenu c;
+  Contenu c;
 };

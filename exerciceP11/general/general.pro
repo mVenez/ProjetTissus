@@ -12,7 +12,8 @@ SOURCES += \
     Ressort.cc \
     Systeme.cc \
     Tissu.cc \
-    Vecteur3D.cc
+    Vecteur3D.cc \
+    contenu.cc
 
 HEADERS += \
     constantes.h \
@@ -24,4 +25,5 @@ HEADERS += \
     SupportADessin.h \
     Systeme.h \
     Tissu.h \
-    Vecteur3D.h
+    Vecteur3D.h \
+    contenu.h
