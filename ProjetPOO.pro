@@ -1,5 +1,6 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-   exerciceP11 \
+   general \
+   exerciceP11 
    

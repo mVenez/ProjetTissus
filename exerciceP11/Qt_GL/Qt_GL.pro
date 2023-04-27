@@ -6,10 +6,10 @@ win32:LIBS += -lopengl32
 
 TARGET = exerciceP11
 
-LIBS += -L../general -lgeneral
-PRE_TARGETDEPS += ../general/libgeneral.a
+LIBS += -L../../general -lgeneral
+PRE_TARGETDEPS += ../../general/libgeneral.a
 
-INCLUDEPATH = ../general
+INCLUDEPATH = ../../general
 
 SOURCES += \
     main_qt_gl.cc \
