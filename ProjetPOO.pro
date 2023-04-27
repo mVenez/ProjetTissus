@@ -2,5 +2,6 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
    general \
-   exerciceP11 
+   exerciceP11 \
+   testTissusComplexes
    
