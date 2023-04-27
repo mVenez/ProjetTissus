@@ -13,7 +13,6 @@ SOURCES += \
     Systeme.cc \
     Tissu.cc \
     Vecteur3D.cc \
-    contenu.cc
 
 HEADERS += \
     constantes.h \
@@ -26,4 +25,3 @@ HEADERS += \
     Systeme.h \
     Tissu.h \
     Vecteur3D.h \
-    contenu.h

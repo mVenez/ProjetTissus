@@ -6,15 +6,15 @@
 #include "Masse.h"
 #include "Tissu.h"
 #include "Systeme.h"
+#include "Objet.h"
 
 class VueOpenGL : public SupportADessin {
  public:
   // méthode(s) de dessin (héritée(s) de SupportADessin)
-  virtual void dessine(Masse const& a_dessiner) override;
+  virtual void dessine(Masse const&) override;
   virtual void dessine(Tissu const&) override;
   virtual void dessine(Systeme const&) override;
-  virtual void dessine(Contenu const&) override;
-
+  virtual void dessine(Objet const& objet) override;
 
 
   // méthodes de (ré-)initialisation

@@ -2,6 +2,7 @@
 #include <QTimerEvent>
 #include <QMatrix4x4>
 #include "glwidget.h"
+#include "Integrateur.h"
 
 // ======================================================================
 void GLWidget::initializeGL()
@@ -37,7 +38,7 @@ void GLWidget::resizeGL(int width, int height)
 void GLWidget::paintGL()
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  c.dessine_sur(vue);
+  c->dessine_sur(vue);
 }
 
 
@@ -116,9 +117,12 @@ void GLWidget::timerEvent(QTimerEvent* event)
 {
   Q_UNUSED(event);
 
-  double dt = chronometre.restart() / 1000.0;
+  //double dt = chronometre.restart() / 1000.0;
+  double dt = 0.1;
+  std::cout << dt << std::endl;
+  IntegrateurEulerCromer integrateur(dt);
 
-  c.evolue(dt); //ICI FAIRE EVOLUER NOTRE MASSE
+  c->evolue(integrateur); //ICI FAIRE EVOLUER NOTRE MASSE
   update();
 }
 

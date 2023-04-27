@@ -3,29 +3,39 @@
 #include "Masse.h"
 #include "Tissu.h"
 #include "Systeme.h"
-
+#include "Objet.h"
+using namespace std;
 // ======================================================================
-void VueOpenGL::dessine(Contenu const& a_dessiner)
-{
-   // Dessine le 1er cube (à l'origine)
-  dessineCube();
 
+void VueOpenGL::dessine(Masse const& masse) {
   QMatrix4x4 matrice;
-  // Dessine le 2e cube
-  matrice.translate(0.0, 1.5, 0.0);
-  matrice.scale(0.25);
+  matrice.translate(masse.position().x(), masse.position().y(), masse.position().z());
   dessineCube(matrice);
+};
 
-  // Dessine le 3e cube
-  matrice.setToIdentity();
-  matrice.translate(0.0, 0.0, 1.5);
-  matrice.scale(0.25);
-  matrice.rotate(45.0, 0.0, 1.0, 0.0);
-  dessineCube(matrice);
+void VueOpenGL::dessine(Tissu const& tissu) {
+    cout << "on commence la boucle sur les masses du tissu" << endl;
+    for (auto masse : tissu.vector_masse()) {
+        cout << "on essaie de dessiner la masse "<< endl;
+        dessine(*masse);
+        cout << "masse dessiné " << endl;
+    }
+};
+
+void VueOpenGL::dessine(Systeme const& systeme) {
+    cout << "on commence la boucle sur le vector_objet du systeme"<< endl;
+    for (auto tissu : systeme.vector_objet()) { cout << tissu << endl; }
+    for (auto tissu : systeme.vector_objet()) {
+        cout << "on essaie de dessiner un objet" << endl;
+        dessine(*tissu);
+        cout << "un objet a été dessiné "<< endl;
+    }
+};
+
+void VueOpenGL::dessine(Objet const& objet) {
+    QMatrix4x4 matrice;
+    dessineCube(matrice);
 }
-void VueOpenGL::dessine(Masse const&) {};
-void VueOpenGL::dessine(Tissu const&) {};
-void VueOpenGL::dessine(Systeme const&) {};
 // ======================================================================
 void VueOpenGL::init()
 {

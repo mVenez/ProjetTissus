@@ -1,6 +1,3 @@
-#include "Systeme.h"
-#include "SupportADessin.h"
-#include "Tissu.h"
 #include "Objet.h"
 #include <vector>
 #include <iostream>

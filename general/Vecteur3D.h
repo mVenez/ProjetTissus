@@ -15,6 +15,11 @@ public:
     //norme et norme au carré
     double norme() const;
     double norme2() const;
+
+    //getters
+    double x() {return x_;}
+    double y() {return y_;}
+    double z() {return z_;}
     
     //operateurs internes
     bool operator==(const Vecteur3D&) const;

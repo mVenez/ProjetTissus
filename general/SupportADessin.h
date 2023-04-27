@@ -2,8 +2,7 @@
 class Tissu;
 class Systeme;
 class Masse;
-class Contenu;
-
+class Objet;
 
 class SupportADessin {
 public:
@@ -19,6 +18,6 @@ public:
     virtual void dessine(Tissu const&) = 0;
     virtual void dessine(Systeme const&) = 0;
     virtual void dessine(Masse const&) = 0;
-    virtual void dessine(Contenu const&) = 0;
+    virtual void dessine(Objet const&) = 0;
 
 };

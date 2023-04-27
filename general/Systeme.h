@@ -13,6 +13,9 @@ public:
     Systeme(const Systeme&) = delete; //on interdit la copie
     Systeme& operator=(const Systeme&) = delete; //affectation aussi interdite
 
+    //getters
+    std::vector<Objet*> vector_objet() const;
+
     //méthodes
     virtual void dessine_sur(SupportADessin& support) override;
     std::ostream& affiche(std::ostream& out) const;

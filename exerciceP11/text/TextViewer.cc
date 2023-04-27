@@ -2,7 +2,6 @@
 #include "Tissu.h"
 #include "Systeme.h"
 #include "Masse.h"
-#include "Contenu.h"
 using namespace std;
 
 TextViewer::TextViewer(ostream& flot)
@@ -17,5 +16,4 @@ void TextViewer::dessine(Systeme const& systeme){
 void TextViewer::dessine(Masse const& masse){
     flot_ << masse;
 }
-void TextViewer::dessine(Contenu const& masse){
-}
+void TextViewer::dessine(Objet const& objet) {}
