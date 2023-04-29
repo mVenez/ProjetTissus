@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include "Vecteur3D.h"
+#include "constantes.h"
 using namespace std;
 
 //constructeur
@@ -26,7 +27,7 @@ ostream& operator<<(ostream& out, const Vecteur3D& vec) {
 }
 
 //égalité et inegalité
-bool Vecteur3D::compare(Vecteur3D v, double epsilon) const { // epsilon = 1e-10 par défaut défini dans le .h
+bool Vecteur3D::compare(Vecteur3D v) const { // epsilon = 1e-10 définit dans constantes.cc
     return (
         abs(x_ - v.x_) <= epsilon && 
         abs(y_ - v.y_) <= epsilon && 
@@ -109,7 +110,7 @@ double Vecteur3D::norme2() const {
 //vecteur unitaire
 Vecteur3D Vecteur3D::operator~() const{
     double n(norme());
-    if (n == 0) {cout << "Le vecteur est nul" << endl; return Vecteur3D(0,0,0) ;} // retourne le vecteur nul (0,0,0)
+    if (abs(n) < epsilon) {cout << "Le vecteur est nul" << endl; return Vecteur3D(0,0,0) ;} // retourne le vecteur nul (0,0,0)
     Vecteur3D resultat(x_/n, y_/n, z_/n);
     return resultat;
 }
