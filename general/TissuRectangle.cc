@@ -18,17 +18,27 @@ TissuRectangle::TissuRectangle(double masse_kg, Vecteur3D Largeur, Vecteur3D Lon
         Largeur -= (Largeur*~Longueur)*~Longueur;
     }
 
-    for(int n = 0; (n*~Largeur).norme() < Largeur.norme(); n++){
-        for(int m = 0; (m*~Longueur).norme() < Longueur.norme(); m++){
-            Masse* masse = new Masse(masse_kg, coef_frottement, Position_origine + n*~Largeur + m*~Longueur, Vecteur3D(0, 0, 0));
+    //on calcul le nombre de masse sur chaque coté du rectangle
+    int nb_masse_largeur = Largeur.norme()*densite_lineique;
+    int nb_masse_longueur = Longueur.norme()*densite_lineique;
+
+    //on crée les masses et les ressorts
+    for(int n = 0; n < nb_masse_largeur; ++n){
+        for(int m = 0; m < nb_masse_longueur; ++m){
+            Masse* masse = new Masse(masse_kg, coef_frottement, Position_origine + n*~Largeur + m*~Longueur);
             ajoute_masse(masse);
-            if(m > 1){
+            if(m >= 1){
                 connecte(*vector_masse_[vector_masse_.size() - 2], *vector_masse_.back(), k, l0);
             }
-            //if(n > 1){
-            //    connecte(*vector_masse_[vector_masse_.size() - 2 - m], *vector_masse_.back(), k, l0);
-            //}
+            if(n >= 1){
+                connecte(*vector_masse_[vector_masse_.size() - nb_masse_longueur - 2], *vector_masse_.back(), k, l0);
+            }
         }
     }
+}
 
-};
+//destructeur
+TissuRectangle::~TissuRectangle() {
+    for (auto masse : vector_masse_) delete masse;
+    Tissu::~Tissu();
+}

@@ -10,7 +10,7 @@ using namespace std;
 TissuChaine::TissuChaine(double masse_kg, double coef_frottement, double k, double l0, std::vector<Vecteur3D>& tableau_position) : Tissu() {
     //on cree les masses
     for (auto position : tableau_position) {
-        Masse* masse = new Masse(masse_kg, coef_frottement, position, Vecteur3D(0, 0, 0));
+        Masse* masse = new Masse(masse_kg, coef_frottement, position);
         ajoute_masse(masse);
     }
     //on cree les ressorts
