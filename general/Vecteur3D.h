@@ -9,7 +9,7 @@ public:
 
     //methodes auxiliaires aux operateurs
     std::ostream& affiche(std::ostream&) const;   // operator<<
-    bool compare(Vecteur3D v, double epsilon = 1e-10)const; // operator==
+    bool compare(Vecteur3D v) const; // operator==
     Vecteur3D prod_vect(Vecteur3D) const; //operator^
 
     //norme et norme au carré

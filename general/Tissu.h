@@ -11,7 +11,7 @@ class Tissu : public Dessinable, public Objet {
 public:
     //constructeurs, copie, destructeur
     Tissu(Masse& masse);//constructeur pour initializer un tissu avec une seule masse puis en ajouter après
-    Tissu(std::vector<Masse*> vector_masse);//constructeur auquel on passe un vecteur de masses directement
+    Tissu(std::vector<Masse*> vector_masse = std::vector<Masse*>());//constructeur auquel on passe un vecteur de masses directement, permet également d’initialiser un tissu "vide"
     Tissu(const Tissu&) = delete; //on interdit la copie
     Tissu& operator=(const Tissu&) = delete; //affectation aussi interdite car copie interdite
     ~Tissu();   //faut desallouer la memoire sinon segfault
@@ -29,7 +29,7 @@ public:
     virtual std::ostream& affiche(std::ostream& out) const override;   //affiche les masses et les ressorts du tissu
     virtual void dessine_sur(SupportADessin& support) override;
 
-private:
+protected:
     std::vector<Masse*> vector_masse_;
     std::vector<Ressort*> vector_ressort_;
 };

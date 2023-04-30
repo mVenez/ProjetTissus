@@ -104,9 +104,12 @@ travail sur la class Vecteur3D :
 - TextViewer.h et préparation pour le graphisme
 --------------------------------------------------
 ## Semaine 9 :
+// Nous avons décidé de ne pas travailler sur la même semaine du projet, Veneziano : graphisme, Maël : tissus complexes
 24/04, Veneziano:
 - ExerciceP11 avec TextViewer
 - Debut reorganization structure de la directory du projet
+24/04, Maël:
+- Début de la création des Tissus complexes
 
 blabla je doit ajouter ce que j'ai fait j'ai oublié
 
