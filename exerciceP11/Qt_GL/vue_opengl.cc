@@ -10,6 +10,7 @@ using namespace std;
 void VueOpenGL::dessine(Masse const& masse) {
   QMatrix4x4 matrice;
   matrice.translate(masse.position().x(), masse.position().y(), masse.position().z());
+  matrice.scale(0.25);
   dessineCube(matrice);
 };
 
@@ -27,7 +28,7 @@ void VueOpenGL::dessine(Systeme const& systeme) {
     for (auto tissu : systeme.vector_objet()) { cout << tissu << endl; }
     for (auto tissu : systeme.vector_objet()) {
         cout << "on essaie de dessiner un objet" << endl;
-        dessine(*tissu);
+        tissu->dessine_sur(*this);
         cout << "un objet a été dessiné "<< endl;
     }
 };
@@ -95,9 +96,10 @@ void VueOpenGL::initializePosition()
 {
   // position initiale
   matrice_vue.setToIdentity();
-  matrice_vue.translate(0.0, 0.0, -4.0);
-  matrice_vue.rotate(60.0, 0.0, 1.0, 0.0);
-  matrice_vue.rotate(45.0, 0.0, 0.0, 1.0);
+  //matrice_vue.rotate(30.0, 0.0, 1.0, 0.0);
+  matrice_vue.rotate(-90.0, 1.0, 0.0, 0.0);
+  matrice_vue.translate(0.0, 5.0, 2.0);
+
 }
 
 // ======================================================================

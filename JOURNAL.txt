@@ -108,7 +108,10 @@ travail sur la class Vecteur3D :
 - ExerciceP11 avec TextViewer
 - Debut reorganization structure de la directory du projet
 
+blabla je doit ajouter ce que j'ai fait j'ai oublié
 
+28/04, Veneziano:
+- Graphisme operatif, plan des futures ameliorations
 --------------------------------------------------
 ## Semaine 10 :
 

@@ -8,5 +8,11 @@ CHOSES OPTIONELLES
 J'ai oublié de bien tester check(), meme si il semble qu'elle marche bien
 Appeler le check() après le constructeur du systeme?
 
-À faire avant jeudi(J'y pense moi tkt): structure generale de la directory du projet, fichier .pro qui substitue le makefile(j'espere)
+GRAPHISME TO DO:
+Nettoyer un peu ce qui se passe avec evoule() et l'Integrateur
+ameliorer la position de la camera
+remplacer cubes par sphere
+actions pour souris
+grapher les ressorts (lignes qui connectent le masses)
+
 REPONDRE À P9.4
