@@ -12,6 +12,9 @@ SOURCES += \
     Ressort.cc \
     Systeme.cc \
     Tissu.cc \
+    TissuChaine.cc \
+    TissuRectangle.cc \
+    TissuDisque.cc \
     Vecteur3D.cc \
 
 HEADERS += \
@@ -24,4 +27,7 @@ HEADERS += \
     SupportADessin.h \
     Systeme.h \
     Tissu.h \
+    TissuChaine.h \
+    TissuRectangle.h \
+    TissuDisque.h \
     Vecteur3D.h \
