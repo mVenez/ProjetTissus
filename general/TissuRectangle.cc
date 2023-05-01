@@ -40,5 +40,4 @@ TissuRectangle::TissuRectangle(double masse_kg, Vecteur3D Largeur, Vecteur3D Lon
 //destructeur
 TissuRectangle::~TissuRectangle() {
     for (auto masse : vector_masse_) delete masse;
-    Tissu::~Tissu();
 }
