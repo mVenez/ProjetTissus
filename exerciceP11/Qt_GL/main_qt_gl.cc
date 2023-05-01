@@ -33,10 +33,18 @@ int main(int argc, char* argv[])
     TissuChaine tissuChaine(1, 0.3, 20, 1, liste_position);
     tissuChaine.vector_masse()[0]->fixe();
     //tissuChaine.vector_masse().back()->fixe();
-    Systeme systeme(tissuChaine);
+    Systeme systeme(tissuChaine);*/
 
-    TissuDisque tissu(1, Vecteur3D(0,0,0), Vecteur3D(3,3,3), 0.5, 0.3, 20);
-    tissu.vector_masse().back()->fixe();
+    TissuDisque tissu(1, Vecteur3D(0,0,0), Vecteur3D(3,3,3), 0.5, 0.3, 50);
+    for (auto masse : tissu.vector_masse()) {
+        masse->fixe();
+    }
+
+
+    /*TissuRectangle tissu(1, Vecteur3D(3,0,0), Vecteur3D(0,2,0), Vecteur3D(0,0,0), 0.3, 3, 40);
+    for (auto masse : tissu.vector_masse()) {
+        masse->fixe();
+    }*/
     Systeme systeme(tissu);
 
     //Apres cette ligne on touche pas
