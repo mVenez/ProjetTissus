@@ -22,5 +22,4 @@ TissuChaine::TissuChaine(double masse_kg, double coef_frottement, double k, doub
 //destructeur
 TissuChaine::~TissuChaine() {
     for (auto masse : vector_masse_) delete masse;
-    Tissu::~Tissu();
 }
