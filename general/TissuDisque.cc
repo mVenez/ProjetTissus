@@ -26,6 +26,7 @@ TissuDisque::TissuDisque(double masse_kg, Vecteur3D centre, Vecteur3D normale_ra
     //on crée les masses et les ressorts
     for(double rad = 0; rad < 2*M_PI-epsilon; rad += angle){
         cout << rad << endl;
+        vecteur_sur_disque_unitaire = cos(angle)*vecteur_sur_disque_unitaire + (1-cos(angle))*(vecteur_sur_disque_unitaire*normale_rayon)*normale_rayon + sin(angle)*(normale_rayon^vecteur_sur_disque_unitaire);
         for(int n = 1; n < nb_masse_rayon; ++n){
             cout << n << endl;
             Masse* masse = new Masse(masse_kg, coef_frottement, centre + n*pas_radial*~vecteur_sur_disque_unitaire);
