@@ -15,21 +15,14 @@ void VueOpenGL::dessine(Masse const& masse) {
 };
 
 void VueOpenGL::dessine(Tissu const& tissu) {
-    cout << "on commence la boucle sur les masses du tissu" << endl;
     for (auto masse : tissu.vector_masse()) {
-        cout << "on essaie de dessiner la masse "<< endl;
         dessine(*masse);
-        cout << "masse dessiné " << endl;
     }
 };
 
 void VueOpenGL::dessine(Systeme const& systeme) {
-    cout << "on commence la boucle sur le vector_objet du systeme"<< endl;
-    for (auto tissu : systeme.vector_objet()) { cout << tissu << endl; }
     for (auto tissu : systeme.vector_objet()) {
-        cout << "on essaie de dessiner un objet" << endl;
         tissu->dessine_sur(*this);
-        cout << "un objet a été dessiné "<< endl;
     }
 };
 
@@ -124,6 +117,31 @@ void VueOpenGL::rotate(double angle, double dir_x, double dir_y, double dir_z)
 }
 
 // ======================================================================
+/*void VueOpenGL::dessineAxes (QMatrix4x4 const& point_de_vue, bool en_couleur = true) {
+  glBegin(GL_LINES);
+
+  // axe X
+  if (en_couleur) {
+    prog.setAttributeValue(CouleurId, 1.0, 0.0, 0.0); // rouge
+  } else {
+    prog.setAttributeValue(CouleurId, 1.0, 1.0, 1.0); // blanc
+  }    
+  prog.setAttributeValue(SommetId, 0.0, 0.0, 0.0);
+  prog.setAttributeValue(SommetId, 1.0, 0.0, 0.0);
+
+  // axe Y
+  if (en_couleur) prog.setAttributeValue(CouleurId, 0.0, 1.0, 0.0); // vert
+  prog.setAttributeValue(SommetId, 0.0, 0.0, 0.0);
+  prog.setAttributeValue(SommetId, 0.0, 1.0, 0.0);
+
+  // axe Z
+  if (en_couleur) prog.setAttributeValue(CouleurId, 0.0, 0.0, 1.0); // bleu
+  prog.setAttributeValue(SommetId, 0.0, 0.0, 0.0);
+  prog.setAttributeValue(SommetId, 0.0, 0.0, 1.0);
+
+  glEnd();
+}
+*/
 void VueOpenGL::dessineCube (QMatrix4x4 const& point_de_vue)
 {
   prog.setUniformValue("vue_modele", matrice_vue * point_de_vue);
