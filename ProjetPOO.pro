@@ -4,5 +4,7 @@ SUBDIRS += \
    general \
    exerciceP11 \
    main \
-   #testTissusComplexes
+   testTissuComplexe/testTissuChaine \
+   testTissuComplexe/testTissuRectangle \
+   testTissuComplexe/testTissuDisque \
    

@@ -31,7 +31,7 @@ TissuRectangle::TissuRectangle(double masse_kg, Vecteur3D Largeur, Vecteur3D Lon
                 connecte(*vector_masse_[vector_masse_.size() - 2], *vector_masse_.back(), k, l0);
             }
             if(n >= 1){
-                connecte(*vector_masse_[vector_masse_.size() - nb_masse_longueur - 2], *vector_masse_.back(), k, l0);
+                connecte(*vector_masse_[vector_masse_.size() - nb_masse_longueur - 1], *vector_masse_.back(), k, l0);
             }
         }
     }
