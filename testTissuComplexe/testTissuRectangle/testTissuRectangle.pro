@@ -15,10 +15,12 @@ INCLUDEPATH += \
 
 SOURCES += \
     testTissuRectangle.cc \
+    ../../exerciceP11/Qt_GL/glsphere.cc \
     ../../exerciceP11/Qt_GL/glwidget.cc \
     ../../exerciceP11/Qt_GL/vue_opengl.cc
 
 HEADERS += \
+    ../../exerciceP11/Qt_GL/glsphere.h \
     ../../exerciceP11/Qt_GL/glwidget.h \
     ../../exerciceP11/Qt_GL/vertex_shader.h \
     ../../exerciceP11/Qt_GL/vue_opengl.h \
