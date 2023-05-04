@@ -110,11 +110,14 @@ travail sur la class Vecteur3D :
 - Debut reorganization structure de la directory du projet
 24/04, Maël:
 - Début de la création des Tissus complexes
-
-blabla je doit ajouter ce que j'ai fait j'ai oublié
-
+25/04, Veneziano:
+- Terminé reorganization de la directory du projet avec les nouveaux fichiers .pro
+26/04, Veneziano:
+- Affichage graphique de l'exemple 05 du tutoriel QT/openGL 
 28/04, Veneziano:
 - Graphisme operatif, plan des futures ameliorations
+30/04, Veneziano et Maël:
+- Test de graphisme avec tissus complexes
 --------------------------------------------------
 ## Semaine 10 :
 
