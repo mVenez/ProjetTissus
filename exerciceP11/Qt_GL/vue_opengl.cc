@@ -4,13 +4,14 @@
 #include "Tissu.h"
 #include "Systeme.h"
 #include "Objet.h"
+#include "glsphere.h"
 using namespace std;
 // ======================================================================
 
 void VueOpenGL::dessine(Masse const& masse) {
   QMatrix4x4 matrice;
   matrice.translate(masse.position().x(), masse.position().y(), masse.position().z());
-  matrice.scale(0.25);
+  matrice.scale(0.35);
   dessineCube(matrice);
 };
 
@@ -21,15 +22,19 @@ void VueOpenGL::dessine(Tissu const& tissu) {
 };
 
 void VueOpenGL::dessine(Systeme const& systeme) {
-    for (auto tissu : systeme.vector_objet()) {
-        tissu->dessine_sur(*this);
-    }
+  QMatrix4x4 matrice;
+  matrice.scale(2);
+  dessineAxes(matrice); // dessine le repère principal
+  for (auto tissu : systeme.vector_objet()) {
+      tissu->dessine_sur(*this);
+  }
 };
 
-void VueOpenGL::dessine(Objet const& objet) {
+void VueOpenGL::dessine(Objet const& objet) {   //Méthode de Debug
     QMatrix4x4 matrice;
-    dessineCube(matrice);
+    dessineSphere(matrice);
 }
+
 // ======================================================================
 void VueOpenGL::init()
 {
@@ -80,7 +85,8 @@ void VueOpenGL::init()
    */
   glEnable(GL_DEPTH_TEST);
   glEnable(GL_CULL_FACE);
-
+  
+  sphere.initialize();
   initializePosition();
 }
 
@@ -117,7 +123,9 @@ void VueOpenGL::rotate(double angle, double dir_x, double dir_y, double dir_z)
 }
 
 // ======================================================================
-/*void VueOpenGL::dessineAxes (QMatrix4x4 const& point_de_vue, bool en_couleur = true) {
+void VueOpenGL::dessineAxes (QMatrix4x4 const& point_de_vue, bool en_couleur) {
+  prog.setUniformValue("vue_modele", matrice_vue * point_de_vue);
+
   glBegin(GL_LINES);
 
   // axe X
@@ -141,7 +149,7 @@ void VueOpenGL::rotate(double angle, double dir_x, double dir_y, double dir_z)
 
   glEnd();
 }
-*/
+
 void VueOpenGL::dessineCube (QMatrix4x4 const& point_de_vue)
 {
   prog.setUniformValue("vue_modele", matrice_vue * point_de_vue);
@@ -190,4 +198,11 @@ void VueOpenGL::dessineCube (QMatrix4x4 const& point_de_vue)
   prog.setAttributeValue(SommetId, +1.0, -1.0, -1.0);
 
   glEnd();
+}
+
+void VueOpenGL::dessineSphere (QMatrix4x4 const& point_de_vue, double rouge, double vert, double bleu)
+{
+  prog.setUniformValue("vue_modele", matrice_vue * point_de_vue);
+  prog.setAttributeValue(CouleurId, rouge, vert, bleu);  // met la couleur
+  sphere.draw(prog, SommetId);                           // dessine la sphère
 }

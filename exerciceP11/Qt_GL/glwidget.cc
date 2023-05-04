@@ -119,10 +119,9 @@ void GLWidget::timerEvent(QTimerEvent* event)
 
   //double dt = chronometre.restart() / 1000.0;
   double dt = 0.1;
-  std::cout << dt << std::endl;
   IntegrateurEulerCromer integrateur(dt);
 
-  c->evolue(integrateur); //ICI FAIRE EVOLUER NOTRE MASSE
+  c->evolue(integrateur);
   update();
 }
 

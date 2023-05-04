@@ -11,17 +11,19 @@ PRE_TARGETDEPS += ../general/libgeneral.a
 
 INCLUDEPATH += \
  ../general \
- ../exerciceP11/Qt_GL 
+ ../exerciceP11/Qt_GL \
 
 SOURCES += \
     main.cc \
+    ../exerciceP11/Qt_GL/glsphere.cc \
     ../exerciceP11/Qt_GL/glwidget.cc \
-    ../exerciceP11/Qt_GL/vue_opengl.cc
+    ../exerciceP11/Qt_GL/vue_opengl.cc \
 
 HEADERS += \
+    ../exerciceP11/Qt_GL/glsphere.h \
     ../exerciceP11/Qt_GL/glwidget.h \
     ../exerciceP11/Qt_GL/vertex_shader.h \
     ../exerciceP11/Qt_GL/vue_opengl.h \
 
 RESOURCES += \
-    ../exerciceP11/Qt_GL/resource.qrc
+    ../exerciceP11/Qt_GL/resource.qrc \

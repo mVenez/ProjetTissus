@@ -13,10 +13,12 @@ INCLUDEPATH = ../../general
 
 SOURCES += \
     main_qt_gl.cc \
+    glsphere.cc \
     glwidget.cc \
-    vue_opengl.cc
+    vue_opengl.cc \
 
 HEADERS += \
+    glsphere.h \
     glwidget.h \
     vertex_shader.h \
     vue_opengl.h \
