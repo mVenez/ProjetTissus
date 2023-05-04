@@ -80,7 +80,7 @@ ostream& Tissu::affiche(ostream& out) const {
 }
 
 void Tissu::dessine_sur(SupportADessin& support) {
-    support.dessine(*this); 
+    support.dessine(*this);
 }
 
 

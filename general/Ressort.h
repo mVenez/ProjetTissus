@@ -2,7 +2,7 @@
 #include "Masse.h"
 #include <iostream>
 
-class Ressort{
+class Ressort : public Dessinable{
 public:
     //constructeurs, copie, destructeur
     Ressort(Masse& masse1, Masse& masse2, const double k, const double l0);
@@ -13,6 +13,11 @@ public:
     //methodes
     Vecteur3D force_rappel(Masse* masse) const;
     std::ostream& affiche(std::ostream& out, bool affichage_masses_complet = true) const;
+    virtual void dessine_sur(SupportADessin& support) override;
+    
+    //getters
+    Masse* masse1() const;
+    Masse* masse2() const;
 
     //méthodes de check
     void check_masses() const;  //check si les masse d'arrivé et depart sont les mêmes et si le ressort figure dans les listes de ressorts des deux masses
