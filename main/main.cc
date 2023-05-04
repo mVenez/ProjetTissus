@@ -28,6 +28,25 @@ int main(int argc, char* argv[])
     tissu1.check();
     Systeme systeme(tissu1);
     
+
+    /*vector<Vecteur3D> liste_position = {Vecteur3D(0, 0, 0), Vecteur3D(1, 0, 0), Vecteur3D(2, 0, 0), Vecteur3D(3, 0, 0), Vecteur3D(4, 0, 0)};
+    TissuChaine tissuChaine(1, 0.3, 20, 1, liste_position);
+    tissuChaine.vector_masse()[0]->fixe();
+    //tissuChaine.vector_masse().back()->fixe();
+    Systeme systeme(tissuChaine);*/
+
+    /*TissuDisque tissu(1, Vecteur3D(0,0,0), Vecteur3D(3,3,3), 0.5, 0.3, 50);
+    for (auto masse : tissu.vector_masse()) {
+        masse->fixe();
+    }*/
+
+
+    /*TissuRectangle tissu(1, Vecteur3D(3,0,0), Vecteur3D(0,2,0), Vecteur3D(0,0,0), 0.3, 3, 40);
+    for (auto masse : tissu.vector_masse()) {
+        masse->fixe();
+    }*/
+    
+
     //Apres cette ligne on touche pas
     GLWidget w(systeme);
     w.show();
