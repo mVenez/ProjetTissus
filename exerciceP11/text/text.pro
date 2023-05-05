@@ -1,3 +1,4 @@
+QMAKE_CXX = clang++
 QMAKE_CXXFLAGS += -std=c++11
 
 TARGET = exerciceP10
