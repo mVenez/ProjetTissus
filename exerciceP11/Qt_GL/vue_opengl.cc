@@ -1,6 +1,7 @@
 #include "vue_opengl.h"
 #include "vertex_shader.h" // Identifiants Qt de nos différents attributs
 #include "Masse.h"
+#include "Ressort.h"
 #include "Tissu.h"
 #include "Systeme.h"
 #include "Objet.h"
@@ -15,20 +16,31 @@ void VueOpenGL::dessine(Masse const& masse) {
   dessineCube(matrice);
 };
 
-void VueOpenGL::dessine(Tissu const& tissu) {
-    for (auto masse : tissu.vector_masse()) {
-        dessine(*masse);
-    }
-};
-
 void VueOpenGL::dessine(Ressort const& ressort) {
-    //.. Matteo écris cette merde
+  QMatrix4x4 point_de_vue;
+  prog.setUniformValue("vue_modele", matrice_vue * point_de_vue);
+
+  glBegin(GL_LINES);
+
+  glVertex3f(ressort.masse1()->position().x(), ressort.masse1()->position().y(), ressort.masse1()->position().z());
+  glVertex3f(ressort.masse2()->position().x(), ressort.masse2()->position().y(), ressort.masse2()->position().z());
+  glEnd();
+}
+
+void VueOpenGL::dessine(Tissu const& tissu) {
+  for (auto masse : tissu.vector_masse()) {
+    masse->dessine_sur(*this);
+  }
+  for (auto ressort : tissu.vector_ressort()) {
+    ressort->dessine_sur(*this);
+  }
 };
 
 void VueOpenGL::dessine(Systeme const& systeme) {
   QMatrix4x4 matrice;
   matrice.scale(2);
   dessineAxes(matrice); // dessine le repère principal
+  
   for (auto tissu : systeme.vector_objet()) {
       tissu->dessine_sur(*this);
   }
