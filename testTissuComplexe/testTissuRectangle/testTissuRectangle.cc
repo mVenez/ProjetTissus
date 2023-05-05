@@ -4,19 +4,16 @@
 #include "Systeme.h"
 #include "Tissu.h"
 #include "Masse.h"
-#include "TissuChaine.h"
 #include "TissuRectangle.h"
-#include "TissuDisque.h"
 #include <iostream>
 using namespace std;
 
 int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
-    //avant cette ligne on touche pas
     
     //test TissuRectangle
-    TissuRectangle tissuRectangle(1, Vecteur3D(3,0,0), Vecteur3D(0,2,0), Vecteur3D(0,0,0), 0.3, 3, 300);
+    TissuRectangle tissuRectangle(1, Vecteur3D(3,0,0), Vecteur3D(0,2,0), Vecteur3D(0,0,0), 0.3, 3, 30);
     /*for (auto masse : tissuRectangle.vector_masse()) {
         masse->fixe();
     }*/
@@ -26,8 +23,8 @@ int main(int argc, char* argv[])
     tissuRectangle.vector_masse()[tissuRectangle.vector_masse().size()-6]->fixe();
     Systeme systeme(tissuRectangle);
 
-    //Apres cette ligne on touche pas
     GLWidget w(systeme);
+    w.wireframe();
     w.show();
     return a.exec();
     }

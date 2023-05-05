@@ -4,16 +4,12 @@
 #include "Systeme.h"
 #include "Tissu.h"
 #include "Masse.h"
-#include "TissuChaine.h"
-#include "TissuRectangle.h"
-#include "TissuDisque.h"
 #include <iostream>
 using namespace std;
 
 int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
-    //avant cette ligne on touche pas
 
     Masse masseA(0.33, 0.3, Vecteur3D(0, 0, -3), Vecteur3D(0, 0, 0));
     Masse masseB(1, 0.3, Vecteur3D(-0.5, 0, 0), Vecteur3D(0, 0, 0));
@@ -28,7 +24,6 @@ int main(int argc, char* argv[])
     tissu1.check();
     Systeme systeme(tissu1);
     
-    //Apres cette ligne on touche pas
     GLWidget w(systeme);
     w.show();
 

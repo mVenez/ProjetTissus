@@ -15,9 +15,8 @@ public:
     : QOpenGLWidget(parent) , c(&systeme){}
   virtual ~GLWidget() = default;
 
-  void set(Systeme& systeme) {
-    c = &systeme;
-  }
+  void set(Systeme& systeme) {c = &systeme;}
+  void wireframe(bool montre_masse = true) {vue.wireframe(montre_masse);}
 
 private:
   // Les 3 méthodes clés de la classe QOpenGLWidget à réimplémenter

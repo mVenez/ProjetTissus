@@ -12,6 +12,8 @@
 
 class VueOpenGL : public SupportADessin {
  public:
+  VueOpenGL() :wireframe_(false) {}
+
   // méthode(s) de dessin (héritée(s) de SupportADessin)
   virtual void dessine(Masse const&) override;
   virtual void dessine(Ressort const&) override;
@@ -26,6 +28,7 @@ class VueOpenGL : public SupportADessin {
   // méthode set
   void setProjection(QMatrix4x4 const& projection)
   { prog.setUniformValue("projection", projection); }
+  void wireframe(bool montre_masses = true);
 
   // Méthodes set
   void translate(double x, double y, double z);
@@ -39,6 +42,8 @@ class VueOpenGL : public SupportADessin {
  private:
   QOpenGLShaderProgram prog;   // Un shader OpenGL encapsulé dans une classe Qt
   GLSphere sphere;
+
+  bool wireframe_;
 
 
   // Caméra

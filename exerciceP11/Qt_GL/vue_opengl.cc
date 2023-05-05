@@ -21,15 +21,16 @@ void VueOpenGL::dessine(Ressort const& ressort) {
   prog.setUniformValue("vue_modele", matrice_vue * point_de_vue);
 
   glBegin(GL_LINES);
-
   glVertex3f(ressort.masse1()->position().x(), ressort.masse1()->position().y(), ressort.masse1()->position().z());
   glVertex3f(ressort.masse2()->position().x(), ressort.masse2()->position().y(), ressort.masse2()->position().z());
   glEnd();
 }
 
 void VueOpenGL::dessine(Tissu const& tissu) {
-  for (auto masse : tissu.vector_masse()) {
+  if (!wireframe_) {
+    for (auto masse : tissu.vector_masse()) {
     masse->dessine_sur(*this);
+    }
   }
   for (auto ressort : tissu.vector_ressort()) {
     ressort->dessine_sur(*this);
@@ -46,7 +47,7 @@ void VueOpenGL::dessine(Systeme const& systeme) {
   }
 };
 
-void VueOpenGL::dessine(Objet const& objet) {   //Méthode de Debug
+void VueOpenGL::dessine(Objet const& objet) {   //Méthode de Debug, dans le future specifié pour les contraintes
     QMatrix4x4 matrice;
     dessineSphere(matrice);
 }
@@ -116,7 +117,10 @@ void VueOpenGL::initializePosition()
   matrice_vue.translate(0.0, 5.0, 2.0);
 
 }
-
+// ======================================================================
+void VueOpenGL::wireframe(bool montre_masse) {
+    wireframe_ = montre_masse;
+}
 // ======================================================================
 void VueOpenGL::translate(double x, double y, double z)
 {

@@ -10,11 +10,11 @@ class Integrateur;
 class Tissu : public Dessinable, public Objet {
 public:
     //constructeurs, copie, destructeur
-    Tissu(Masse& masse);//constructeur pour initializer un tissu avec une seule masse puis en ajouter après
-    Tissu(std::vector<Masse*> vector_masse = std::vector<Masse*>());//constructeur auquel on passe un vecteur de masses directement, permet également d’initialiser un tissu "vide"
-    Tissu(const Tissu&) = delete; //on interdit la copie
-    Tissu& operator=(const Tissu&) = delete; //affectation aussi interdite car copie interdite
-    ~Tissu();   //faut desallouer la memoire sinon segfault
+    Tissu(Masse& masse);    //constructeur pour initializer un tissu avec une seule masse puis en ajouter après
+    Tissu(std::vector<Masse*> vector_masse = std::vector<Masse*>());    //constructeur auquel on passe un vecteur de masses directement, permet également d’initialiser un tissu "vide"
+    Tissu(const Tissu&) = delete;   //on interdit la copie
+    Tissu& operator=(const Tissu&) = delete;    //affectation aussi interdite car copie interdite
+    ~Tissu();       //faut desallouer la memoire sinon segfault
 
     //getters
     std::vector<Masse*> vector_masse() const;
@@ -25,7 +25,7 @@ public:
     void connecte(Masse& masse1, Masse& masse2, double k, double l0);    //allocation dynamique d'un nouveau ressort qui lie les deux masses
     void mise_a_jour_forces() const override;    //met à jour toutes les masses
     void evolue(const Integrateur& integrateur) const override;  //intègre toutes les masses
-    void check() const override; //check total du tissu
+    void check() const override;    //check total du tissu
     virtual std::ostream& affiche(std::ostream& out) const override;   //affiche les masses et les ressorts du tissu
     virtual void dessine_sur(SupportADessin& support) override;
 
