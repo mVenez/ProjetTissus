@@ -21,6 +21,10 @@ void VueOpenGL::dessine(Tissu const& tissu) {
     }
 };
 
+void VueOpenGL::dessine(Ressort const& ressort) {
+    //.. Matteo écris cette merde
+};
+
 void VueOpenGL::dessine(Systeme const& systeme) {
   QMatrix4x4 matrice;
   matrice.scale(2);

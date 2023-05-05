@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
     //avant cette ligne on touche pas
     
     //test TissuRectangle
-    TissuRectangle tissuRectangle(1, Vecteur3D(3,0,0), Vecteur3D(0,2,0), Vecteur3D(0,0,0), 0.3, 3, 40);
+    TissuRectangle tissuRectangle(1, Vecteur3D(3,0,0), Vecteur3D(0,2,0), Vecteur3D(0,0,0), 0.3, 3, 300);
     /*for (auto masse : tissuRectangle.vector_masse()) {
         masse->fixe();
     }*/

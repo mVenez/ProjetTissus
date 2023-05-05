@@ -14,6 +14,7 @@ class VueOpenGL : public SupportADessin {
  public:
   // méthode(s) de dessin (héritée(s) de SupportADessin)
   virtual void dessine(Masse const&) override;
+  virtual void dessine(Ressort const&) override;
   virtual void dessine(Tissu const&) override;
   virtual void dessine(Systeme const&) override;
   virtual void dessine(Objet const& objet) override;
