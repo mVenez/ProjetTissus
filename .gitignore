@@ -2,3 +2,5 @@
 .DS_Store
 *.user
 .vscode/c_cpp_properties.json
+.vscode/settings.json
+.qmake.stash
