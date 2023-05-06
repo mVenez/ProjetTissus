@@ -100,6 +100,7 @@ void GLWidget::keyPressEvent(QKeyEvent* event)
     vue.rotate(petit_angle, 0.0, 0.0, +1.0);
     break;
 
+  case Qt::Key_0:
   case Qt::Key_Home:
     vue.initializePosition();
     break;
@@ -112,6 +113,36 @@ void GLWidget::keyPressEvent(QKeyEvent* event)
   update(); // redessine
 }
 
+// ======================================================================
+void GLWidget::mousePressEvent(QMouseEvent* event)
+{
+  lastMousePosition = event->pos();
+}
+
+// ======================================================================
+
+void GLWidget::mouseMoveEvent(QMouseEvent* event)
+{
+  /* If mouse tracking is disabled (the default), the widget only receives
+   * mouse move events when at least one mouse button is pressed while the
+   * mouse is being moved.
+   *
+   * Pour activer le "mouse tracking" if faut lancer setMouseTracking(true)
+   * par exemple dans le constructeur de cette classe.
+   */
+
+  if (event->buttons() & Qt::LeftButton) {
+    constexpr double petit_angle(.4); // en degrés
+
+    // Récupère le mouvement relatif par rapport à la dernière position de la souris
+    QPointF d = event->pos() - lastMousePosition;
+    lastMousePosition = event->pos();
+
+    vue.rotate(petit_angle * d.manhattanLength(), d.y(), d.x(), 0);
+
+    update();
+  }
+}
 // ======================================================================
 void GLWidget::timerEvent(QTimerEvent* event)
 {
