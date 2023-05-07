@@ -112,9 +112,10 @@ void VueOpenGL::initializePosition()
 {
   // position initiale
   matrice_vue.setToIdentity();
-  //matrice_vue.rotate(30.0, 0.0, 1.0, 0.0);
-  matrice_vue.rotate(-90.0, 1.0, 0.0, 0.0);
-  matrice_vue.translate(0.0, 5.0, 2.0);
+  matrice_vue.rotate(30, 0, 1, 0.4);
+  matrice_vue.rotate(-60.0, 1.0, 0.0, 0.0);
+
+  matrice_vue.translate(1.5, 5.0, -3.0);
 
 }
 // ======================================================================
