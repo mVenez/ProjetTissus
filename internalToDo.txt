@@ -1,7 +1,5 @@
 CHOSES OPTIONELLES
 - à voir si il y a un moyen plus simple pour coder l’opérateur d’égalité des masses
-- revoir si besoin l’implémentation de l’association des ressorts au masse
-- on pourrait peut etre poser epsilon des petites variations(test egalité double) dans constantes
 - Pour le mmoment j'utilise des runtime_error dans check(), mais il ya peut etre des options meilleurs
 
 
@@ -11,10 +9,6 @@ Appeler le check() après le constructeur du systeme?
 Ecrire les .pro pour les testClasses
 
 GRAPHISME TO DO:
-Nettoyer un peu ce qui se passe avec evoule() et l'Integrateur
-ameliorer la position de la camera
-remplacer cubes par sphere
-actions pour souris
-grapher les ressorts (lignes qui connectent le masses)
+Appuyer une clé pour afficher ou non les masses, ça serait genial
 
 !!!REPONDRE À P9.4

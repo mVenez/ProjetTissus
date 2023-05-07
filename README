@@ -1,1 +1,15 @@
-comment allez vous jeune gens ? prenez vous du chocolat régulièrement
+==== WHAT IS THIS? ====
+This C++ program simulates the movement in 3D space of tissues, modelized by groups of masses connected by springs.
+The simulation is both numerical and graphical, thanks to the Qt OpenGL module.
+
+==== HOW TO COMPILE ====
+Inside the project main directory [faut insérer le nom de la directory], execute "qmake" and then "make" commands.
+Qmake will generate the necessary Makefile and Make will then build all executables.
+
+==== DURING GRAPHIC SIMULATION ====
+Hold Left Click and move the mouse (or use the arrows and QE keys) to look around, and the Home key (or 0) to reset to default view.
+Move in the 3D space using WASD (on the xy plane) and RF (z axis).
+Press Space to pause the simulation.
+
+
+Maël Thoré & Matteo Veneziano, EPFL Section of Physics, BA-2
