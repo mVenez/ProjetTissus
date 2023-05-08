@@ -12,7 +12,7 @@
 
 class VueOpenGL : public SupportADessin {
  public:
-  VueOpenGL() :wireframe_(false) {}
+  VueOpenGL() :wireframe_(false), spherical_(false){}
 
   // méthode(s) de dessin (héritée(s) de SupportADessin)
   virtual void dessine(Masse const&) override;
@@ -28,7 +28,8 @@ class VueOpenGL : public SupportADessin {
   // méthode set
   void setProjection(QMatrix4x4 const& projection)
   { prog.setUniformValue("projection", projection); }
-  void wireframe(bool montre_masses = true);
+  void wireframe(); //alterne entre montrer et cacher les masses
+  void spherical(); //alterne entre visualisation cubique et spherique des masses
 
   // Méthodes set
   void translate(double x, double y, double z);
@@ -44,6 +45,7 @@ class VueOpenGL : public SupportADessin {
   GLSphere sphere;
 
   bool wireframe_;
+  bool spherical_;
 
 
   // Caméra

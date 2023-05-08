@@ -1,5 +1,5 @@
 ==== WHAT IS THIS? ====
-This C++ program simulates the movement in 3D space of tissues, modelized by groups of masses connected by springs.
+This C++ program simulates the movement in 3D space of cloths, modelized by groups of masses connected by springs.
 The simulation is both numerical and graphical, thanks to the Qt OpenGL module.
 
 ==== HOW TO COMPILE ====
@@ -9,7 +9,10 @@ Qmake will generate the necessary Makefile and Make will then build all executab
 ==== DURING GRAPHIC SIMULATION ====
 Hold Left Click and move the mouse (or use the arrows and QE keys) to look around, and the Home key (or 0) to reset to default view.
 Move in the 3D space using WASD (on the xy plane) and RF (z axis).
+Press M to show/hide the masses who form the cloth.
+Press N to switch between a spherical and cubical representation of masses.
 Press Space to pause the simulation.
+
 
 
 Maël Thoré & Matteo Veneziano, EPFL Section of Physics, BA-2

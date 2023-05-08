@@ -108,6 +108,12 @@ void GLWidget::keyPressEvent(QKeyEvent* event)
   case Qt::Key_Space:
 	pause();
 	break;
+
+  case Qt::Key_M:
+    vue.wireframe();
+
+  case Qt::Key_N:
+    vue.spherical();
   };
 
   update(); // redessine

@@ -13,7 +13,8 @@ void VueOpenGL::dessine(Masse const& masse) {
   QMatrix4x4 matrice;
   matrice.translate(masse.position().x(), masse.position().y(), masse.position().z());
   matrice.scale(0.35);
-  dessineCube(matrice);
+  if (spherical_) dessineSphere(matrice, 0.74,0.16,0.33);
+  else dessineCube(matrice);
 };
 
 void VueOpenGL::dessine(Ressort const& ressort) {
@@ -21,6 +22,7 @@ void VueOpenGL::dessine(Ressort const& ressort) {
   prog.setUniformValue("vue_modele", matrice_vue * point_de_vue);
 
   glBegin(GL_LINES);
+  prog.setAttributeValue(CouleurId, 1.0, 0.0, 0.5);
   glVertex3f(ressort.masse1()->position().x(), ressort.masse1()->position().y(), ressort.masse1()->position().z());
   glVertex3f(ressort.masse2()->position().x(), ressort.masse2()->position().y(), ressort.masse2()->position().z());
   glEnd();
@@ -119,8 +121,11 @@ void VueOpenGL::initializePosition()
 
 }
 // ======================================================================
-void VueOpenGL::wireframe(bool montre_masse) {
-    wireframe_ = montre_masse;
+void VueOpenGL::wireframe() {
+    wireframe_ = !wireframe_;
+}
+void VueOpenGL::spherical() {
+    spherical_ = !spherical_;
 }
 // ======================================================================
 void VueOpenGL::translate(double x, double y, double z)

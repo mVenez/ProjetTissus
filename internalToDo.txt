@@ -9,6 +9,6 @@ Appeler le check() après le constructeur du systeme?
 Ecrire les .pro pour les testClasses
 
 GRAPHISME TO DO:
-Appuyer une clé pour afficher ou non les masses, ça serait genial
+Appuyer une clé pour afficher cubes ou spheres.
 
 !!!REPONDRE À P9.4

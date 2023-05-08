@@ -16,7 +16,8 @@ public:
   virtual ~GLWidget() = default;
 
   void set(Systeme& systeme) {c = &systeme;}
-  void wireframe(bool montre_masse = true) {vue.wireframe(montre_masse);}
+  void wireframe() {vue.wireframe();} //montrer ou cacher les masses
+  void sphere() {vue.spherical();} //visualisation cubique ou spherique des masses
 
 private:
   // Les 3 méthodes clés de la classe QOpenGLWidget à réimplémenter
