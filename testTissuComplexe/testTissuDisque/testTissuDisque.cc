@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     
 
     //test TissuDisque
-    TissuDisque tissuDisque(1, Vecteur3D(0,0,0), Vecteur3D(0,0,5), 5, 0.3, 50);
+    TissuDisque tissuDisque(1, Vecteur3D(0,0,0), Vecteur3D(0,0,1), 4, 2, 0.3, 50, M_PI/9);
     for (auto masse : tissuDisque.vector_masse()) {
         masse->fixe();
     }
