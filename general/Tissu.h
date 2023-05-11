@@ -16,9 +16,9 @@ public:
     Tissu& operator=(const Tissu&) = delete;    //affectation aussi interdite car copie interdite
     ~Tissu();       //faut desallouer la memoire sinon segfault
 
-    //getters
-    std::vector<Masse*> vector_masse() const;
-    std::vector<Ressort*> vector_ressort() const;
+    /*//getters
+    std::vector<Masse*> vector_masse() const;   //on est obligés de casser l'encapsulation pour faire marcher le double dispatch
+    std::vector<Ressort*> vector_ressort() const;*/
     
     //methodes
     void ajoute_masse(Masse* m);    //ajoute une masse au tissu

@@ -1,14 +1,16 @@
 CHOSES OPTIONELLES
-- à voir si il y a un moyen plus simple pour coder l’opérateur d’égalité des masses
-- Pour le mmoment j'utilise des runtime_error dans check(), mais il ya peut etre des options meilleurs
-
+- Pour le moment j'utilise des runtime_error dans check(), mais il ya peut etre des options meilleurs
 
 J'ai oublié de bien tester check(), meme si il semble qu'elle marche bien
-Appeler le check() après le constructeur du systeme?
-
+Ecrire Systeme::check()
 Ecrire les .pro pour les testClasses
 
-GRAPHISME TO DO:
-Appuyer une clé pour afficher cubes ou spheres.
+
+Dessine(Tissu) n'existe pas
+Aussi Dessine(Systeme)
+Systeme::Dessine_Sur() va faire la boucle sur les tissus
+Tissu::Dessine_Sur(supportadessin) va faire la boucle et appeller les Dessine_sur des masses et ressorts
+
+modifie textviewer pour que ça marche
 
 !!!REPONDRE À P9.4

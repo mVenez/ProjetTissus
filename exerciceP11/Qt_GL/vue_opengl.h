@@ -6,8 +6,6 @@
 #include "SupportADessin.h"
 #include "Masse.h"
 #include "Tissu.h"
-#include "Systeme.h"
-#include "Objet.h"
 #include "glsphere.h"
 
 class VueOpenGL : public SupportADessin {
@@ -17,9 +15,9 @@ class VueOpenGL : public SupportADessin {
   // méthode(s) de dessin (héritée(s) de SupportADessin)
   virtual void dessine(Masse const&) override;
   virtual void dessine(Ressort const&) override;
-  virtual void dessine(Tissu const&) override;
-  virtual void dessine(Systeme const&) override;
-  virtual void dessine(Objet const& objet) override;
+  //virtual void dessine(Tissu const&) override;
+  //virtual void dessine(Systeme const&) override;
+  //virtual void dessine(Objet const& objet) override;
 
   // méthodes de (ré-)initialisation
   void init();
@@ -28,8 +26,9 @@ class VueOpenGL : public SupportADessin {
   // méthode set
   void setProjection(QMatrix4x4 const& projection)
   { prog.setUniformValue("projection", projection); }
-  void wireframe(); //alterne entre montrer et cacher les masses
-  void spherical(); //alterne entre visualisation cubique et spherique des masses
+  void wireframe() {wireframe_ = !wireframe_;} //alterne entre montrer et cacher les masses
+  //bool is_wireframe() {return wireframe_;};
+  void spherical(){spherical_ = !spherical_;} //alterne entre visualisation cubique et spherique des masses
 
   // Méthodes set
   void translate(double x, double y, double z);

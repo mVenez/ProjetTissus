@@ -14,11 +14,13 @@ Systeme::Systeme(vector<Objet*> vector_objet_)
 Systeme::Systeme(Objet& objet) 
     : Dessinable(), vector_objet_(vector<Objet*>(1, &objet)) {}
 
-//getters
-std::vector<Objet*> Systeme::vector_objet() const {return vector_objet_;}
+/*//getters
+std::vector<Objet*> Systeme::vector_objet() const {return vector_objet_;}*/
 //methodes
 void Systeme::dessine_sur(SupportADessin& support) {
-    support.dessine(*this);
+    for(auto objet : vector_objet_) {
+        objet->dessine_sur(support);
+    }
 }
 
 ostream& Systeme::affiche(ostream& out) const {
