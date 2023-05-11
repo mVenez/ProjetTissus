@@ -7,7 +7,7 @@ using namespace std;
 
 //constructeur
 Integrateur::Integrateur(double dt) : dt_(dt) {
-    if (dt <= 0){
+    if (dt < 0){    //dt<=0 donne un problème lorsqu'on evolue le systeme dans GLWidget::TimerEvent()
         throw invalid_argument("Le pas de temps doit être positif");
     }
 }
