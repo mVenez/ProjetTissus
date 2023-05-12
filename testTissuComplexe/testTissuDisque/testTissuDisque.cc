@@ -13,10 +13,9 @@ int main(int argc, char* argv[])
     
 
     //test TissuDisque
-    TissuDisque tissuDisque(1, Vecteur3D(0,0,0), Vecteur3D(0,0,5), 5, 0.3, 50);
-    /*for (auto masse : tissuDisque.vector_masse()) {
-        masse->fixe();
-    }*/
+
+    TissuDisque tissuDisque(1, Vecteur3D(0,0,-1), Vecteur3D(0,0,1), 10, 2, 0.3, 50, true);
+
     Systeme systeme(tissuDisque);
 
     //Apres cette ligne on touche pas
