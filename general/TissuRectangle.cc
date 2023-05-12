@@ -8,7 +8,11 @@
 using namespace std;
 
 //constructeurs
-TissuRectangle::TissuRectangle(double masse_kg, Vecteur3D Largeur, Vecteur3D Longueur, Vecteur3D Position_origine, double coef_frottement, int densite_lineique, double k, double l0) : Tissu() {//la densité linéique est le nombre de masse par unité de mesure
+TissuRectangle::TissuRectangle(double masse_kg, Vecteur3D Largeur, Vecteur3D Longueur, Vecteur3D Position_origine, double coef_frottement, int densite_lineique, double k, bool fixe, double l0) : Tissu() {
+    /*la densité linéique est le nombre de masse par unité de mesure
+    bool fixe par défaut à false permet de fixer le contour du tissu
+    l0 = 1 convention choisi pour un ressort de longueur à vide égale à la distance entre deux masses, tel que le tissu soit au repos par défaut,*/
+
     if(l0 < 0){
         l0 = (1/densite_lineique);//permet par défaut d’avoir un ressort de longueur à vide égale à la distance entre deux masses
     }
@@ -27,6 +31,9 @@ TissuRectangle::TissuRectangle(double masse_kg, Vecteur3D Largeur, Vecteur3D Lon
         for(int m = 0; m < nb_masse_longueur; ++m){
             Masse* masse = new Masse(masse_kg, coef_frottement, Position_origine + n*~Largeur + m*~Longueur);
             ajoute_masse(masse);
+            if(fixe && (n == 0 || n == nb_masse_largeur - 1 || m == 0 || m == nb_masse_longueur - 1)){//si le parametre fixe est à true on fixe le contour du rectangle
+                vector_masse().back()->fixe();
+            }
             if(m >= 1){
                 connecte(*vector_masse_[vector_masse_.size() - 2], *vector_masse_.back(), k, l0);
             }

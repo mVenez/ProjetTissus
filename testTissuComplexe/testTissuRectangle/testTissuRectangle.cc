@@ -13,14 +13,7 @@ int main(int argc, char* argv[])
     QApplication a(argc, argv);
     
     //test TissuRectangle
-    TissuRectangle tissuRectangle(1, Vecteur3D(3,0,0), Vecteur3D(0,2,0), Vecteur3D(0,0,0), 0.6, 3, 40);
-    /*for (auto masse : tissuRectangle.vector_masse()) {
-        masse->fixe();
-    }*/
-    tissuRectangle.vector_masse().back()->fixe();
-    tissuRectangle.vector_masse()[5]->fixe();
-    tissuRectangle.vector_masse().front()->fixe();
-    tissuRectangle.vector_masse()[tissuRectangle.vector_masse().size()-6]->fixe();
+    TissuRectangle tissuRectangle(1, Vecteur3D(6,0,0), Vecteur3D(0,3,0), Vecteur3D(0,0,0), 0.6, 3, 40, true);
     Systeme systeme(tissuRectangle);
 
     GLWidget w(systeme);
