@@ -129,11 +129,13 @@ travail sur la class Vecteur3D :
 
 --------------------------------------------------
 ## Semaine 11 :
-04/05, Veneziano:
+11/05, Veneziano:
 - Graphisme encore, c’est long
 - compilation sur les VM de l’école
-04/05, Maël:
+11/05, Maël:
 - Tissu Disque, nécessite de revoir les vecteur3D
+12/05, Maël:
+- Tout les tissus complexe terminé et fonctionnel, ajout d’un bool fixe pour choisir de fixer les tissu à la construction ou non
 
 
 --------------------------------------------------
