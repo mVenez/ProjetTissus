@@ -48,7 +48,7 @@ TissuDisque::TissuDisque(double masse_kg, Vecteur3D centre, Vecteur3D normal, do
                 connecte(*vector_masse_[vector_masse_.size() - 2], *vector_masse_.back(), k, pas_entre_deux_masse_sur_rayon);
             }
             if(fixe && m == nb_masse_rayon){//si le parametre fixe est à true on fixe le dernier cercle
-                vector_masse().back()->fixe();
+                vector_masse_.back()->fixe();
             }
             if(n >= 1){
                 connecte(*vector_masse_[vector_masse_.size() - nb_masse_rayon - 1], *vector_masse_.back(), k, 2*sin(angle/2)*pas_entre_deux_masse_sur_rayon*m);
