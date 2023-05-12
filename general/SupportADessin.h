@@ -16,10 +16,10 @@ public:
     SupportADessin& operator=(SupportADessin&&) = default;
 
     //méthodes de dessin
-    virtual void dessine(Tissu const&) = 0;
-    virtual void dessine(Systeme const&) = 0;
+    //virtual void dessine(Tissu const&) = 0;
+    //virtual void dessine(Systeme const&) = 0;
     virtual void dessine(Masse const&) = 0;
     virtual void dessine(Ressort const&) = 0;
-    virtual void dessine(Objet const&) = 0;
+    //virtual void dessine(Objet const&) = 0;
 
 };

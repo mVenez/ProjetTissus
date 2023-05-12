@@ -5,8 +5,6 @@
 #include "Ressort.h"
 #include "Integrateur.h"
 #include "SupportADessin.h"
-#include "Dessinable.h"
-#include "Objet.h"
 using namespace std;
 
 //constructeurs
@@ -21,13 +19,13 @@ Tissu::~Tissu() {
 }
 
 //getters
-vector<Masse*> Tissu::vector_masse() const {
+/*vector<Masse*> Tissu::vector_masse() const {
     return vector_masse_;
 }
 vector<Ressort*> Tissu::vector_ressort() const {
     return vector_ressort_;
 }
-
+*/
 
 //methodes
 void Tissu::ajoute_masse(Masse* m) {
@@ -80,7 +78,8 @@ ostream& Tissu::affiche(ostream& out) const {
 }
 
 void Tissu::dessine_sur(SupportADessin& support) {
-    support.dessine(*this);
+    for (auto masse : vector_masse_) {masse->dessine_sur(support);}
+    for (auto ressort : vector_ressort_) {ressort->dessine_sur(support);}
 }
 
 

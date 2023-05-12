@@ -2,19 +2,18 @@
 #include "vertex_shader.h" // Identifiants Qt de nos différents attributs
 #include "Masse.h"
 #include "Ressort.h"
-#include "Tissu.h"
-#include "Systeme.h"
-#include "Objet.h"
 #include "glsphere.h"
 using namespace std;
 // ======================================================================
 
 void VueOpenGL::dessine(Masse const& masse) {
-  QMatrix4x4 matrice;
-  matrice.translate(masse.position().x(), masse.position().y(), masse.position().z());
-  matrice.scale(0.35);
-  if (spherical_) dessineSphere(matrice, 0.74,0.16,0.33);
-  else dessineCube(matrice);
+  if(!wireframe_) {
+      QMatrix4x4 matrice;
+      matrice.translate(masse.position().x(), masse.position().y(), masse.position().z());
+      matrice.scale(0.35);
+      if (spherical_) dessineSphere(matrice, 0.74,0.16,0.33);
+      else dessineCube(matrice);
+  }
 };
 
 void VueOpenGL::dessine(Ressort const& ressort) {
@@ -28,7 +27,7 @@ void VueOpenGL::dessine(Ressort const& ressort) {
   glEnd();
 }
 
-void VueOpenGL::dessine(Tissu const& tissu) {
+/*void VueOpenGL::dessine(Tissu const& tissu) {
   if (!wireframe_) {
     for (auto masse : tissu.vector_masse()) {
     masse->dessine_sur(*this);
@@ -37,9 +36,9 @@ void VueOpenGL::dessine(Tissu const& tissu) {
   for (auto ressort : tissu.vector_ressort()) {
     ressort->dessine_sur(*this);
   }
-};
+};*/
 
-void VueOpenGL::dessine(Systeme const& systeme) {
+/*void VueOpenGL::dessine(Systeme const& systeme) {
   QMatrix4x4 matrice;
   matrice.scale(2);
   dessineAxes(matrice); // dessine le repère principal
@@ -52,7 +51,7 @@ void VueOpenGL::dessine(Systeme const& systeme) {
 void VueOpenGL::dessine(Objet const& objet) {   //Méthode de Debug, dans le future specifié pour les contraintes
     QMatrix4x4 matrice;
     dessineSphere(matrice);
-}
+}*/
 
 // ======================================================================
 void VueOpenGL::init()
@@ -120,13 +119,7 @@ void VueOpenGL::initializePosition()
   matrice_vue.translate(1.5, 5.0, -3.0);
 
 }
-// ======================================================================
-void VueOpenGL::wireframe() {
-    wireframe_ = !wireframe_;
-}
-void VueOpenGL::spherical() {
-    spherical_ = !spherical_;
-}
+
 // ======================================================================
 void VueOpenGL::translate(double x, double y, double z)
 {
