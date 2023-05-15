@@ -11,6 +11,7 @@ public:
     //constructeurs
     Systeme(std::vector<Objet*> vector_objet, std::vector<Contrainte*> vector_contraintes = std::vector<Contrainte*>());
     Systeme(Objet& objet, Contrainte& contrainte);
+    Systeme(Objet& objet);
     Systeme(const Systeme&) = delete; //on interdit la copie
     Systeme& operator=(const Systeme&) = delete; //affectation aussi interdite
 

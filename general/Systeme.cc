@@ -14,6 +14,8 @@ Systeme::Systeme(vector<Objet*> vector_objet, vector<Contrainte*> vector_contrai
 
 Systeme::Systeme(Objet& objet, Contrainte& contrainte) 
     : Dessinable(), vector_objet_(vector<Objet*>(1, &objet)) , vector_contrainte_(vector<Contrainte*>(1, &contrainte)) {}
+Systeme::Systeme(Objet& objet) 
+    : Dessinable(), vector_objet_(vector<Objet*>(1, &objet)) , vector_contrainte_(vector<Contrainte*>()) {}
 
 
 void Systeme::dessine_sur(SupportADessin& support) {
