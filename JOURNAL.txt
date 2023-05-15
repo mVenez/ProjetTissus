@@ -143,10 +143,11 @@ travail sur la class Vecteur3D :
 12/05, Maël:
 - Tout les tissus complexe terminé et fonctionnel, ajout d’un bool fixe pour choisir de fixer les tissu à la construction ou non
 
-
 --------------------------------------------------
 ## Semaine 12 :
-
+15/05, Veneziano:
+- Crochets
+- Elimination de la classe Objet du projet
 
 
 --------------------------------------------------

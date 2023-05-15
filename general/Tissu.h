@@ -2,15 +2,13 @@
 #include<vector>
 #include <iostream>
 #include "Dessinable.h"
-#include "Objet.h"
 #include "Vecteur3D.h"
-
-class Masse;
-class Ressort;
-class Integrateur;
+#include "Masse.h"
+#include "Ressort.h"
+#include "Integrateur.h"
 class Contrainte;
 
-class Tissu : public Dessinable, public Objet {
+class Tissu : public Dessinable {
 public:
     //constructeurs, copie, destructeur
     Tissu(Masse& masse);    //constructeur pour initializer un tissu avec une seule masse puis en ajouter après
@@ -23,12 +21,12 @@ public:
     void ajoute_masse(Masse* m);    //ajoute une masse au tissu
     void connecte(Masse& masse1, Masse& masse2, double k, double l0);    //allocation dynamique d'un nouveau ressort qui lie les deux masses
     
-    void mise_a_jour_forces() const override;    //met à jour toutes les masses
-    void evolue(const Integrateur& integrateur) const override;  //intègre toutes les masses
+    void mise_a_jour_forces() const ;    //met à jour toutes les masses
+    void evolue(const Integrateur& integrateur) const ;  //intègre toutes les masses
     void applique_crochet(const Contrainte& contrainte) const;  //auxiliare de Crochet::appliquer()
-    void check() const override;    //check total du tissu
+    void check() const ;    //check total du tissu
     
-    virtual std::ostream& affiche(std::ostream& out) const override;   //affiche les masses et les ressorts du tissu
+    virtual std::ostream& affiche(std::ostream& out) const ;   //affiche les masses et les ressorts du tissu
     virtual void dessine_sur(SupportADessin& support) override;
 
 protected:

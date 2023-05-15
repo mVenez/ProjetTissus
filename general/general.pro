@@ -10,7 +10,6 @@ SOURCES += \
     Dessinable.cc \
     Integrateur.cc \
     Masse.cc \
-    Objet.cc \
     Ressort.cc \
     Systeme.cc \
     Tissu.cc \
@@ -25,7 +24,6 @@ HEADERS += \
     Dessinable.h \
     Integrateur.h \
     Masse.h \
-    Objet.h \
     Ressort.h \
     SupportADessin.h \
     Systeme.h \

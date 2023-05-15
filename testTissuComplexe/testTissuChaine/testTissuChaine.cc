@@ -15,9 +15,9 @@ int main(int argc, char* argv[])
     //test TissuChaine
     vector<Vecteur3D> liste_position = {Vecteur3D(0, 0, 0), Vecteur3D(1, 0, 0), Vecteur3D(2, 0, 0), Vecteur3D(3, 0, 0), Vecteur3D(4, 0, 0)};
 
-    TissuChaine tissuChaine(1, 0.3, 20, 1, liste_position, true);
-    Crochet(Vecteur3D(0,0,0), 0.5);
-    Systeme systeme(tissuChaine);
+    TissuChaine tissuChaine(1, 0.3, 20, 1, liste_position);
+    Crochet crochet(Vecteur3D(0,0,0), 0.5);
+    Systeme systeme(tissuChaine, crochet);
     
 
     //Apres cette ligne on touche pas

@@ -1,6 +1,6 @@
 #pragma once
 #include "Dessinable.h"
-#include "Objet.h"
+#include "Tissu.h"
 #include "Integrateur.h"
 #include "Contrainte.h"
 #include <vector>
@@ -9,9 +9,9 @@
 class Systeme : public Dessinable {
 public:
     //constructeurs
-    Systeme(std::vector<Objet*> vector_objet, std::vector<Contrainte*> vector_contraintes = std::vector<Contrainte*>());
-    Systeme(Objet& objet, Contrainte& contrainte);
-    Systeme(Objet& objet);
+    Systeme(std::vector<Tissu*> vector_tissus, std::vector<Contrainte*> vector_contraintes = std::vector<Contrainte*>());
+    Systeme(Tissu& objet, Contrainte& contrainte);
+    Systeme(Tissu& objet);
     Systeme(const Systeme&) = delete; //on interdit la copie
     Systeme& operator=(const Systeme&) = delete; //affectation aussi interdite
 
@@ -19,12 +19,12 @@ public:
     virtual void dessine_sur(SupportADessin& support) override;
     std::ostream& affiche(std::ostream& out) const;
 
-    virtual void evolue(const Integrateur& integrateur) const;
-    virtual void check() const; //lance un check des tous les objets
+    void evolue(const Integrateur& integrateur) const;
+    void check() const; //lance un check des tous les objets
 
 private:
-    std::vector<Objet*> vector_objet_;
-    std::vector<Contrainte*> vector_contrainte_;
+    std::vector<Tissu*> vector_tissus_;
+    std::vector<Contrainte*> vector_contraintes_;
 };
 
 //operateurs
