@@ -27,32 +27,6 @@ void VueOpenGL::dessine(Ressort const& ressort) {
   glEnd();
 }
 
-/*void VueOpenGL::dessine(Tissu const& tissu) {
-  if (!wireframe_) {
-    for (auto masse : tissu.vector_masse()) {
-    masse->dessine_sur(*this);
-    }
-  }
-  for (auto ressort : tissu.vector_ressort()) {
-    ressort->dessine_sur(*this);
-  }
-};*/
-
-/*void VueOpenGL::dessine(Systeme const& systeme) {
-  QMatrix4x4 matrice;
-  matrice.scale(2);
-  dessineAxes(matrice); // dessine le repère principal
-  
-  for (auto tissu : systeme.vector_objet()) {
-      tissu->dessine_sur(*this);
-  }
-};
-
-void VueOpenGL::dessine(Objet const& objet) {   //Méthode de Debug, dans le future specifié pour les contraintes
-    QMatrix4x4 matrice;
-    dessineSphere(matrice);
-}*/
-
 // ======================================================================
 void VueOpenGL::init()
 {

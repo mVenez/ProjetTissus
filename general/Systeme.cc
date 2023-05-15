@@ -3,20 +3,19 @@
 #include "SupportADessin.h"
 #include "Objet.h"
 #include "Integrateur.h"
+#include "Contrainte.h"
 #include <vector>
 #include <iostream>
 using namespace std;
 
 //constructeurs
-Systeme::Systeme(vector<Objet*> vector_objet_) 
-    : Dessinable(), vector_objet_(vector_objet_) {}
+Systeme::Systeme(vector<Objet*> vector_objet, vector<Contrainte*> vector_contraintes) 
+    : Dessinable(), vector_objet_(vector_objet), vector_contrainte_(vector_contraintes) {}
 
-Systeme::Systeme(Objet& objet) 
-    : Dessinable(), vector_objet_(vector<Objet*>(1, &objet)) {}
+Systeme::Systeme(Objet& objet, Contrainte& contrainte) 
+    : Dessinable(), vector_objet_(vector<Objet*>(1, &objet)) , vector_contrainte_(vector<Contrainte*>(1, &contrainte)) {}
 
-/*//getters
-std::vector<Objet*> Systeme::vector_objet() const {return vector_objet_;}*/
-//methodes
+
 void Systeme::dessine_sur(SupportADessin& support) {
     for(auto objet : vector_objet_) {
         objet->dessine_sur(support);
@@ -44,6 +43,9 @@ void Systeme::evolue(const Integrateur& integrateur) const{
         objet->mise_a_jour_forces();
         objet->evolue(integrateur);
     }
+}
+void Systeme::check() const {
+    for (auto objet : vector_objet_) objet->check();
 }
 
 //operateurs

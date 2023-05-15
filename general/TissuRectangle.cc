@@ -32,7 +32,7 @@ TissuRectangle::TissuRectangle(double masse_kg, Vecteur3D Largeur, Vecteur3D Lon
             Masse* masse = new Masse(masse_kg, coef_frottement, Position_origine + n*~Largeur + m*~Longueur);
             ajoute_masse(masse);
             if(fixe && (n == 0 || n == nb_masse_largeur - 1 || m == 0 || m == nb_masse_longueur - 1)){//si le parametre fixe est à true on fixe le contour du rectangle
-                vector_masse().back()->fixe();
+                vector_masse_.back()->fixe();
             }
             if(m >= 1){
                 connecte(*vector_masse_[vector_masse_.size() - 2], *vector_masse_.back(), k, l0);

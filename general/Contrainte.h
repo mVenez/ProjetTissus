@@ -1,3 +1,4 @@
+#pragma once
 #include "Tissu.h"
 #include "Vecteur3D.h"
 
@@ -10,6 +11,7 @@ public:
 
     //méthodes
     virtual void appliquer(Tissu& tissu, double dt) const = 0;
+
     bool concerns(const Masse& masse)const ;
 
 private:

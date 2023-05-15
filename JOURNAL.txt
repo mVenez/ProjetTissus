@@ -121,17 +121,23 @@ travail sur la class Vecteur3D :
 --------------------------------------------------
 ## Semaine 10 :
 04/05, Veneziano:
-- Graphisme encore et toujours
+- Création d'une directory main pour tester simulation complexes
+- Ajouté la possibilité de dessiner des spheres à la place de cubes et affichage des axes de coordonées
 04/05, Maël:
 - Tissu complexe encore et toujours
-
-
+05/05, Veneziano:
+- Affichage graphique des ressorts, mode wireframe
+06/05, Veneziano:
+- Mouvement de la camera avec la souris
+- Ameliorations à la position de la caméra
 
 --------------------------------------------------
 ## Semaine 11 :
+08/05, Veneziano:
+- Possibilité de changer pendant la simulation des options d'affichage
 11/05, Veneziano:
-- Graphisme encore, c’est long
-- compilation sur les VM de l’école
+- Resolution d'un problème de compilation sur les VM du Polytechinque
+- Changement de la hierarchie de méthodes appellées pour le graphisme
 11/05, Maël:
 - Tissu Disque, nécessite de revoir les vecteur3D
 12/05, Maël:

@@ -5,6 +5,7 @@
 #include "Ressort.h"
 #include "Integrateur.h"
 #include "SupportADessin.h"
+#include "Contrainte.h"
 using namespace std;
 
 //constructeurs
@@ -17,15 +18,6 @@ Tissu::Tissu(std::vector<Masse*> vector_masse) : vector_masse_(vector_masse) {}
 Tissu::~Tissu() {
     for (auto ressort : vector_ressort_) delete ressort;
 }
-
-//getters
-/*vector<Masse*> Tissu::vector_masse() const {
-    return vector_masse_;
-}
-vector<Ressort*> Tissu::vector_ressort() const {
-    return vector_ressort_;
-}
-*/
 
 //methodes
 void Tissu::ajoute_masse(Masse* m) {
@@ -82,7 +74,14 @@ void Tissu::dessine_sur(SupportADessin& support) {
     for (auto ressort : vector_ressort_) {ressort->dessine_sur(support);}
 }
 
-
+void Tissu::applique_crochet(const Contrainte& contrainte) const {
+    for (auto masse : vector_masse_) {
+        if (contrainte.concerns(*masse)) {
+            masse->fixe(true);
+        }
+        else masse->fixe(false);
+    }
+} 
 
 //surcharge de l'operateur << pour afficher un tissu
 ostream& operator<<(ostream& out, const Tissu& tissu) {

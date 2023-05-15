@@ -10,8 +10,6 @@ bool Contrainte::concerns(const Masse& masse) const {
 }
 
 void Crochet::appliquer(Tissu& tissu, double dt) const {
-    /*for (auto masse : tissu.vector_masse()) {
-        if (concerns(*masse))
-            masse.
-    }*/
+    tissu.applique_crochet(*this);
 }
+

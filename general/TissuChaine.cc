@@ -1,8 +1,6 @@
 #include <vector>
 #include "Masse.h"
 #include "Ressort.h"
-#include "Integrateur.h"
-#include "SupportADessin.h"
 #include "TissuChaine.h"
 using namespace std;
 

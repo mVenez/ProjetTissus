@@ -5,11 +5,7 @@ J'ai oublié de bien tester check(), meme si il semble qu'elle marche bien
 Ecrire Systeme::check()
 Ecrire les .pro pour les testClasses
 
-
-Dessine(Tissu) n'existe pas
-Aussi Dessine(Systeme)
-Systeme::Dessine_Sur() va faire la boucle sur les tissus
-Tissu::Dessine_Sur(supportadessin) va faire la boucle et appeller les Dessine_sur des masses et ressorts
+On pourrait peut etre changer le constructeur de Systeme pur que ça prenne des vector de objet et non pas des vectors de pointeurs vers objets
 
 modifie textviewer pour que ça marche
 
