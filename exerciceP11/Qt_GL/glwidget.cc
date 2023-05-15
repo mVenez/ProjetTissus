@@ -154,7 +154,8 @@ void GLWidget::timerEvent(QTimerEvent* event)
 {
   Q_UNUSED(event);
 
-  double dt = chronometre.restart() / 400.0;
+  //double dt = chronometre.restart() / 170.0;
+  double dt = 0.005;
   IntegrateurEulerCromer integrateur(dt);
 
   c->evolue(integrateur);
