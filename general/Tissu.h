@@ -7,6 +7,8 @@
 #include "Ressort.h"
 #include "Integrateur.h"
 class Contrainte;
+class Crochet;
+class Impulsion;
 
 class Tissu : public Dessinable {
 public:
@@ -18,12 +20,16 @@ public:
     ~Tissu();       //faut desallouer la memoire sinon segfault
 
     //methodes
-    void ajoute_masse(Masse* m);    //ajoute une masse au tissu
+    void ajoute_masse(Masse* );
     void connecte(Masse& masse1, Masse& masse2, double k, double l0);    //allocation dynamique d'un nouveau ressort qui lie les deux masses
-    
+    bool contient(Masse*) const;
+
+    //simulation
     void mise_a_jour_forces() const ;    //met à jour toutes les masses
     void evolue(const Integrateur& integrateur) const ;  //intègre toutes les masses
-    void applique_crochet(const Contrainte& contrainte) const;  //auxiliare de Crochet::appliquer()
+    void applique_crochet(const Crochet& contrainte) const;  //auxiliare de Crochet::appliquer()
+    std::vector<Masse*> masses_concernes(const Contrainte&) const;
+    void applique_impulsion(const Impulsion& contrainte, Vecteur3D force) const;
     void check() const ;    //check total du tissu
     
     virtual std::ostream& affiche(std::ostream& out) const ;   //affiche les masses et les ressorts du tissu

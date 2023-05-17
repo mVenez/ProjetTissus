@@ -9,16 +9,20 @@
 using namespace std;
 
 //constructeurs
-Systeme::Systeme(vector<Tissu*> vector_tissus, vector<Contrainte*> vector_contraintes) 
-    : vector_tissus_(vector_tissus), vector_contraintes_(vector_contraintes) {}
-
 Systeme::Systeme(Tissu& tissu, Contrainte& contrainte) 
-    : vector_tissus_(vector<Tissu*>(1, &tissu)) , vector_contraintes_(vector<Contrainte*>(1, &contrainte)) {}
+    : vector_contraintes_(vector<Contrainte*>(1, &contrainte)), t_(0) {}
 
-Systeme::Systeme(Tissu& tissu) 
-    : vector_tissus_(vector<Tissu*>(1, &tissu)) , vector_contraintes_(vector<Contrainte*>()) {}
+Systeme::Systeme(Tissu& tissu, std::vector<Contrainte*> vector_contraintes)
+    : vector_tissus_(vector<Tissu*>(1, &tissu)) , vector_contraintes_(vector_contraintes), t_(0) {}
+
+Systeme::Systeme(std::vector<Tissu*> vector_tissus, Contrainte& contrainte) 
+    : vector_tissus_(vector_tissus) , vector_contraintes_(vector<Contrainte*>(1, &contrainte)), t_(0) {}
+
+Systeme::Systeme(vector<Tissu*> vector_tissus, vector<Contrainte*> vector_contraintes) 
+    : vector_tissus_(vector_tissus), vector_contraintes_(vector_contraintes), t_(0) {}
 
 
+//methodes
 void Systeme::dessine_sur(SupportADessin& support) {
     for(auto tissu : vector_tissus_) {
         tissu->dessine_sur(support);
@@ -41,13 +45,15 @@ ostream& Systeme::affiche(ostream& out) const {
     return out;
 }
 
-void Systeme::evolue(const Integrateur& integrateur) const{
+//méthode principale simulation
+void Systeme::evolue(const Integrateur& integrateur) {
     for (auto tissu : vector_tissus_) {
         tissu->mise_a_jour_forces();
         for (auto contrainte : vector_contraintes_) {
-            contrainte->appliquer(*tissu, 30);
+            contrainte->appliquer(*tissu, t_);
         }
         tissu->evolue(integrateur);
+        t_ += integrateur.dt();
     }
 }
 void Systeme::check() const {

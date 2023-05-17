@@ -9,4 +9,6 @@ On pourrait peut etre changer le constructeur de Systeme pur que ça prenne des 
 
 modifie textviewer pour que ça marche
 
+Constructeurs de systeme, je ne sais pas si j'ai ecrit de la merde
+
 !!!REPONDRE À P9.4

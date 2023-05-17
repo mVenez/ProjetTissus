@@ -1,6 +1,6 @@
 QT += core gui opengl widgets
 QMAKE_CXX = clang++
-QMAKE_CXXFLAGS += -std=c++11
+QMAKE_CXXFLAGS += -std=c++11 -Wno-deprecated
 
 win32:LIBS += -lopengl32
 

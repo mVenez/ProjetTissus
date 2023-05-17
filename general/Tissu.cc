@@ -29,6 +29,12 @@ void Tissu::connecte(Masse& masse1, Masse& masse2, double k, double l0) {
     vector_ressort_.push_back(ressort);  
 }
 
+bool Tissu::contient(Masse* m) const {
+    bool trouve(false);
+    for (auto masse : vector_masse_) if(masse == m) {trouve = true;};
+    return trouve;
+}
+
 void Tissu::mise_a_jour_forces() const {
     for (auto masse : vector_masse_) masse->mise_a_jour_forces();
 }
@@ -74,15 +80,30 @@ void Tissu::dessine_sur(SupportADessin& support) {
     for (auto ressort : vector_ressort_) {ressort->dessine_sur(support);}
 }
 
-void Tissu::applique_crochet(const Contrainte& contrainte) const {
+void Tissu::applique_crochet(const Crochet& contrainte) const {
     for (auto masse : vector_masse_) {
         if (contrainte.concerns(*masse)) {
-            masse->fixe(true);
+            masse->set_vitesse(Vecteur3D(0,0,0));
+            masse->ajoute_force(masse->force_subie());
         }
-        else masse->fixe(false);
+        //else masse->fixe(false);
     }
 } 
+    
+std::vector<Masse*> Tissu::masses_concernes(const Contrainte& contrainte) const {
+    std::vector<Masse*> liste_masses_concernes;
+    for (auto masse : vector_masse_) {
+        if (contrainte.concerns(*masse)) liste_masses_concernes.push_back(masse);
+    }
+    return liste_masses_concernes;
+}
 
+
+void Tissu::applique_impulsion(const Impulsion& contrainte, Vecteur3D force ) const {
+    for (auto masse : vector_masse_) {
+        if (contrainte.concerns(*masse)) masse->ajoute_force(force);
+    }
+}
 //surcharge de l'operateur << pour afficher un tissu
 ostream& operator<<(ostream& out, const Tissu& tissu) {
     return tissu.affiche(out);
