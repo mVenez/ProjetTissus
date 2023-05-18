@@ -60,6 +60,8 @@ ostream& Ressort::affiche(ostream& out, bool affichage_masses_complet) const {
 void Ressort::dessine_sur(SupportADessin &support) {
     support.dessine(*this);
 }
+
+//méthodes pour le check() du tissu
 void Ressort::check_masses() const {
     if (masse1_ == masse2_) throw runtime_error("Le ressort est attaché aux deux extremités à la même masse");
 

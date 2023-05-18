@@ -7,7 +7,6 @@ QMAKE_CXXFLAGS += -std=c++11 -fPIE
 SOURCES += \
     Contrainte.cc \
     constantes.cc \
-    Dessinable.cc \
     Integrateur.cc \
     Masse.cc \
     Ressort.cc \
