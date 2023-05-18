@@ -81,10 +81,9 @@ ostream& Masse::affiche(ostream& out) const{
 
 
 void Masse::ajoute_force(Vecteur3D const& df){
-    if (fixe_) {
-        throw runtime_error("On ne peut pas ajouter une force à une masse fixe");
+    if (!fixe_) {
+        force_subie_ += (df);
     }
-    force_subie_ += (df);
 }
 
 Vecteur3D Masse::acceleration() const{
@@ -109,6 +108,7 @@ void Masse::dessine_sur(SupportADessin& support) {
     support.dessine(*this); 
 }
 
+//méthodes pour le check() du tissu
 void Masse::check_attache() const {
     if (liste_ressort_.empty()) throw runtime_error("La masse n'est lié à aucun ressort");
     for (auto ressort : liste_ressort_) ressort->check_masse_connectee(this);
