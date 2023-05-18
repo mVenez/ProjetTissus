@@ -9,9 +9,8 @@
 using namespace std;
 
 //constructeurs
-Tissu::Tissu(Masse& masse) : vector_masse_({&masse}) {}
-
-Tissu::Tissu(std::vector<Masse*> vector_masse) : vector_masse_(vector_masse) {}
+Tissu::Tissu(Masse& masse) : vector_masse_({&masse}), vector_ressort_({}) {}
+Tissu::Tissu(std::vector<Masse*> vector_masse) : vector_masse_(vector_masse), vector_ressort_({}) {}
 
 
 //destructeur

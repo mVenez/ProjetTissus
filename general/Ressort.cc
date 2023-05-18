@@ -73,6 +73,7 @@ void Ressort::check_masse_connectee(const Masse* masse) const {
 //getters
 Masse* Ressort::masse1() const {return masse1_;}
 Masse* Ressort::masse2() const {return masse2_;}
+double Ressort::k() const {return k_;}
 
 //opérateurs
 

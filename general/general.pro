@@ -13,6 +13,7 @@ SOURCES += \
     Systeme.cc \
     Tissu.cc \
     TissuChaine.cc \
+    TissuCompose.cc \
     TissuRectangle.cc \
     TissuDisque.cc \
     Vecteur3D.cc \
@@ -28,6 +29,7 @@ HEADERS += \
     Systeme.h \
     Tissu.h \
     TissuChaine.h \
+    TissuCompose.h \
     TissuRectangle.h \
     TissuDisque.h \
     Vecteur3D.h \

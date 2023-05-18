@@ -11,8 +11,7 @@ int main(int argc, char* argv[])
     QApplication a(argc, argv);
 
 
-    vector<Vecteur3D> liste_position = {Vecteur3D(0, 0, 0), Vecteur3D(1, 0, 0), Vecteur3D(2, 0, 0), Vecteur3D(3, 0, 0), Vecteur3D(4, 0, 0)};
-    TissuChaine tissuChaine(1, 0.3, 20, 1, liste_position);
+    TissuChaine tissuChaine(1, 0.3 ,Vecteur3D(0,0,0), Vecteur3D(4,0,0), 1, 200);
 
     Crochet crochet1(Vecteur3D(0,0,0), 0.5);
     Crochet crochet2(Vecteur3D(4,0,0), 0.5);
