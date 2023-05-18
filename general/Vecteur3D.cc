@@ -110,7 +110,7 @@ double Vecteur3D::norme2() const {
 //vecteur unitaire
 Vecteur3D Vecteur3D::operator~() const{
     double n(norme());
-    if (abs(n) < epsilon) {cout << "Le vecteur est nul" << endl; return Vecteur3D(0,0,0) ;} // retourne le vecteur nul (0,0,0)
+    if (abs(n) < epsilon) {return Vecteur3D(0,0,0) ;} // retourne le vecteur nul (0,0,0)
     Vecteur3D resultat(x_/n, y_/n, z_/n);
     return resultat;
 }

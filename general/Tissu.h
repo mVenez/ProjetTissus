@@ -38,6 +38,8 @@ public:
 protected:
     std::vector<Masse*> vector_masse_;
     std::vector<Ressort*> vector_ressort_;
+
+    friend class TissuCompose; //Il est logique en terme de conception que la class TissuCompse puisse accéder au attributs de Tissu car TissuCompose est très proche de Tissu
 };
 
 //surcharge de l'operateur << pour afficher un tissu

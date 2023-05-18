@@ -9,8 +9,8 @@
 class Systeme : public Dessinable {
 public:
     //constructeurs
-    Systeme(Tissu& objet, Contrainte& contrainte);
-    Systeme(Tissu& objet, std::vector<Contrainte*> vector_contraintes = std::vector<Contrainte*>());
+    Systeme(Tissu& tissu, Contrainte& contrainte);
+    Systeme(Tissu& tissu, std::vector<Contrainte*> vector_contraintes = std::vector<Contrainte*>());
     Systeme(std::vector<Tissu*> vector_tissus, Contrainte& contrainte);
     Systeme(std::vector<Tissu*> vector_tissus, std::vector<Contrainte*> vector_contraintes = std::vector<Contrainte*>());
 

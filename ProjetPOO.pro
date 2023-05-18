@@ -6,6 +6,8 @@ SUBDIRS += \
    main \
    testClasses \
    testTissuComplexe/testTissuChaine \
+   testTissuComplexe/testTissuCompose \
    testTissuComplexe/testTissuRectangle \
    testTissuComplexe/testTissuDisque \
+
    
