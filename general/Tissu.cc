@@ -82,10 +82,9 @@ void Tissu::dessine_sur(SupportADessin& support) {
 void Tissu::applique_crochet(const Crochet& contrainte) const {
     for (auto masse : vector_masse_) {
         if (contrainte.concerns(*masse)) {
-            masse->ajoute_force(-masse->force_subie());
+            masse->ajoute_force(-(masse->force_subie()));
             masse->set_vitesse(Vecteur3D(0,0,0));
         }
-        //else masse->fixe(false);
     }
 } 
     

@@ -11,14 +11,14 @@ public:
     Contrainte& operator=(const Contrainte&) = delete;
 
     //méthodes
-    virtual void appliquer(Tissu& tissu, double t) const = 0;
-
     bool concerns(const Masse& masse)const;
+    virtual void appliquer(Tissu& tissu, double t) const = 0;
 
 private:
     Vecteur3D position_;
     double rayon_;
 };
+
 
 class Crochet : public Contrainte {
 public:
@@ -27,9 +27,12 @@ public:
     virtual void appliquer(Tissu& tissu, double t) const override;
 };
 
+
 class Impulsion : public Contrainte {
 public:
+    //constructeur
     Impulsion(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, std::vector<Tissu*> cibles);
+    Impulsion(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, Tissu& cible);
 
     virtual void appliquer(Tissu& tissu, double t) const override;
 

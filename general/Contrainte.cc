@@ -19,16 +19,20 @@ void Crochet::appliquer(Tissu& tissu, double t) const {
 
 Impulsion::Impulsion(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, std::vector<Tissu*> cibles)
     : Contrainte(position, rayon), debut_(debut), fin_(fin), force_(force), tissus_cibles_(cibles) {
-        vector<Masse*> masse_concernes_total;
+        vector<Masse*> masses_concernes_total;
         for (auto tissu : tissus_cibles_) {
             vector<Masse*> masses_concernes_tissu(tissu->masses_concernes(*this));
-            for (auto masse : masse_concernes_total) masse_concernes_total.push_back(masse);
+            for (auto masse : masses_concernes_tissu) {masses_concernes_total.push_back(masse);}
         }
-        masses_cibles_ = masse_concernes_total;
+        if(masses_concernes_total.empty()) cerr << "L'impulsion " << this << " ne concerne aucune masse" << endl;
+        masses_cibles_ = masses_concernes_total;
     }
 
+Impulsion::Impulsion(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, Tissu& cible)
+    : Impulsion(position, rayon, debut, fin, force, vector<Tissu*>(1, &cible)) {}
+
 void Impulsion::appliquer(Tissu& tissu, double t) const {
-    if (t <= debut_ && t <= fin_) {
+    if (t >= debut_ && t <= fin_) {
         for (auto masse : masses_cibles_) {
             if (tissu.contient(masse)) masse->ajoute_force(force_);
         }

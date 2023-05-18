@@ -5,10 +5,9 @@ J'ai oublié de bien tester check(), meme si il semble qu'elle marche bien
 Ecrire Systeme::check()
 Ecrire les .pro pour les testClasses
 
-On pourrait peut etre changer le constructeur de Systeme pur que ça prenne des vector de objet et non pas des vectors de pointeurs vers objets
 
-modifie textviewer pour que ça marche
-
-Constructeurs de systeme, je ne sais pas si j'ai ecrit de la merde
+Scrivi in modo decente i costruttori di Systeme
+Pourquoi est-ce que c'est necessaire que TissuCompose friend Tissu?
+Dessine les axes
 
 !!!REPONDRE À P9.4

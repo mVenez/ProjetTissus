@@ -149,6 +149,10 @@ travail sur la class Vecteur3D :
 - Crochets
 - Elimination de la classe Objet du projet
 
+18/05, Veneziano:
+- Resolution erreurs dans la classe Crochet
+- classe Impulsion
+
 
 --------------------------------------------------
 ## Semaine 13 :
