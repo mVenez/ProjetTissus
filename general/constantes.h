@@ -3,3 +3,4 @@
 
 extern const Vecteur3D g;
 extern const double epsilon;
+extern const double dt_const;

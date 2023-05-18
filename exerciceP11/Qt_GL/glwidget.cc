@@ -3,6 +3,7 @@
 #include <QMatrix4x4>
 #include "glwidget.h"
 #include "Integrateur.h"
+#include "constantes.h"
 
 // ======================================================================
 void GLWidget::initializeGL()
@@ -154,8 +155,10 @@ void GLWidget::timerEvent(QTimerEvent* event)
 {
   Q_UNUSED(event);
 
+  //nous avons choisi d’avoir un dt constant pour une meilleur stabilité de la simulation, il suffis d’inverser la ligne commenté sur les deux ligne ci-dessous pour avoir un dt dynamique
   //double dt = chronometre.restart() / 170.0;
-  double dt = 0.03;
+  double dt = dt_const;
+  
   IntegrateurEulerCromer integrateur(dt);
 
   c->evolue(integrateur);
