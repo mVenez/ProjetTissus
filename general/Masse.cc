@@ -82,7 +82,7 @@ ostream& Masse::affiche(ostream& out) const{
 
 void Masse::ajoute_force(Vecteur3D const& df){
     if (fixe_) {
-        throw runtime_error("La masse est fixe");
+        throw runtime_error("On ne peut pas ajouter une force à une masse fixe");
     }
     force_subie_ += (df);
 }
