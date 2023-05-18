@@ -13,6 +13,8 @@ bool Contrainte::concerns(const Masse& masse) const {
 
 void Crochet::appliquer(Tissu& tissu, double t) const {
     tissu.applique_crochet(*this);
+    //peut etre c'est plus simple une boucle sur Tissu.masses_concernés() qui fait la meme chose que applique_crochet()
+    //ça serait une methode en moins
 }
 
 Impulsion::Impulsion(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, std::vector<Tissu*> cibles)
