@@ -160,7 +160,7 @@ void GLWidget::timerEvent(QTimerEvent* event)
   double dt = dt_const;
   
   IntegrateurEulerCromer integrateur(dt);
-
+  c->check();
   c->evolue(integrateur);
   update();
 }

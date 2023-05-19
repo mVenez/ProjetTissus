@@ -33,3 +33,5 @@ HEADERS += \
     TissuRectangle.h \
     TissuDisque.h \
     Vecteur3D.h \
+
+OBJECTS_DIR = ../tmp

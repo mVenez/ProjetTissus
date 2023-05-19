@@ -6,9 +6,9 @@ Ecrire Systeme::check()
 Ecrire les .pro pour les testClasses
 
 
-Scrivi in modo decente i costruttori di Systeme
-Scrivi tutte le exception da lanciare per i copstruttori delle contraintes
+Transforme tous les fichiers qt opengl dans une librairie
+Est-ce qu'il faut etre strictes avec les parametres passés en argument dans les constructeurs? (ex: aucune cible pour une Impulsion)
 Pourquoi est-ce que c'est necessaire que TissuCompose friend Tissu?
-Dessine les axes
+
 
 !!!REPONDRE À P9.4

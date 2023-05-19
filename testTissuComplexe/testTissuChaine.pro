@@ -5,7 +5,7 @@ QMAKE_CXXFLAGS += -std=c++11
 win32:LIBS += -lopengl32
 
 
-TARGET = testTissuRectangle
+TARGET = testTissuChaine
 
 LIBS += -L../../general -lgeneral
 PRE_TARGETDEPS += ../../general/libgeneral.a
@@ -15,10 +15,10 @@ INCLUDEPATH += \
  ../../exerciceP11/Qt_GL 
 
 SOURCES += \
-    testTissuRectangle.cc \
+    testTissuChaine.cc \
     ../../exerciceP11/Qt_GL/glsphere.cc \
     ../../exerciceP11/Qt_GL/glwidget.cc \
-    ../../exerciceP11/Qt_GL/vue_opengl.cc
+    ../../exerciceP11/Qt_GL/vue_opengl.cc \
 
 HEADERS += \
     ../../exerciceP11/Qt_GL/glsphere.h \
@@ -28,3 +28,5 @@ HEADERS += \
 
 RESOURCES += \
     ../../exerciceP11/Qt_GL/resource.qrc
+
+OBJECTS_DIR = ../tmp

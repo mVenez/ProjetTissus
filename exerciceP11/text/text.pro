@@ -16,3 +16,5 @@ SOURCES += \
 
 HEADERS += \
     TextViewer.h
+
+OBJECTS_DIR = ../../tmp

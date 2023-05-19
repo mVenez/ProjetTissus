@@ -10,7 +10,9 @@ TARGET = exerciceP11
 LIBS += -L../../general -lgeneral
 PRE_TARGETDEPS += ../../general/libgeneral.a
 
-INCLUDEPATH = ../../general
+INCLUDEPATH += \
+ ../../general \
+ ../exerciceP11/Qt_GL \
 
 SOURCES += \
     main_qt_gl.cc \
@@ -26,3 +28,5 @@ HEADERS += \
 
 RESOURCES += \
     resource.qrc
+
+OBJECTS_DIR = ../../tmp
