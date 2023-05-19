@@ -6,7 +6,9 @@ using namespace std;
 
 //classe Contrainte
 Contrainte::Contrainte(const Vecteur3D& position, double rayon)
-    : position_(position), rayon_(rayon) {}
+    : position_(position), rayon_(rayon) {
+        if (rayon < 0) throw invalid_argument("Contrainte avec rayon negatif");
+    }
 
 bool Contrainte::concerns(const Masse& masse) const {
     bool dans_sphere_action((position_ - masse.position()).norme() <= rayon_);
@@ -18,12 +20,19 @@ void Crochet::appliquer(Tissu& tissu, double t) const {
     for (auto masse : tissu.masses_concernes(*this)) {
         masse->ajoute_force(-(masse->force_subie()));
         masse->set_vitesse(Vecteur3D(0,0,0));
+        masse->fixe();
     }
 }
 
 //classe Impulsion
 Impulsion::Impulsion(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, std::vector<Tissu*> cibles)
     : Contrainte(position, rayon), debut_(debut), fin_(fin), force_(force), tissus_cibles_(cibles) {
+        //On controle les parametres passés
+        if (debut < 0) throw invalid_argument("Impulsion avec instant t de debut negatif");
+        if (fin < debut) {debut_ = fin; fin_ = debut;}
+        if (force == Vecteur3D(0,0,0)) cerr<< "L'Impulsion" << this << "a force nulle" << endl;
+
+        //L'Impulsion memorise toutes les masses concernés à la construction
         for (auto tissu : tissus_cibles_) {
             for (auto masse : tissu->masses_concernes(*this)) {masses_cibles_.push_back(masse);}
         }
@@ -43,7 +52,9 @@ void Impulsion::appliquer(Tissu& tissu, double t) const {
 
 //classe ImpulsionSin
 ImpulsionSin::ImpulsionSin(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, double frequence, std::vector<Tissu*> cibles)
-    : Impulsion(position, rayon, debut, fin, force, cibles), f_(frequence) {}
+    : Impulsion(position, rayon, debut, fin, force, cibles), f_(frequence) {
+        if (frequence <= 0) throw invalid_argument("Fréquence d'impulsion sinusoidale negative ou nulle");
+    }
 
 ImpulsionSin::ImpulsionSin(const Vecteur3D &position, double rayon, double debut, double fin, Vecteur3D force, double frequence, Tissu &cible)
     : ImpulsionSin(position, rayon, debut, fin, force, frequence, vector<Tissu*>(1, &cible)) {}

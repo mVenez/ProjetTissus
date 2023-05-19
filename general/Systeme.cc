@@ -8,18 +8,18 @@
 #include <iostream>
 using namespace std;
 
-//constructeurs
-Systeme::Systeme(Tissu& tissu, Contrainte& contrainte) 
-    : vector_tissus_(vector<Tissu*>(1, &tissu)), vector_contraintes_(vector<Contrainte*>(1, &contrainte)), t_(0) {}
-
-Systeme::Systeme(Tissu& tissu, std::vector<Contrainte*> vector_contraintes)
-    : vector_tissus_(vector<Tissu*>(1, &tissu)) , vector_contraintes_(vector_contraintes), t_(0) {}
-
-Systeme::Systeme(std::vector<Tissu*> vector_tissus, Contrainte& contrainte) 
-    : vector_tissus_(vector_tissus) , vector_contraintes_(vector<Contrainte*>(1, &contrainte)), t_(0) {}
-
+//constructeurs 
 Systeme::Systeme(vector<Tissu*> vector_tissus, vector<Contrainte*> vector_contraintes) 
     : vector_tissus_(vector_tissus), vector_contraintes_(vector_contraintes), t_(0) {}
+
+Systeme::Systeme(Tissu& tissu, Contrainte& contrainte) 
+    : Systeme(vector<Tissu*>(1, &tissu), vector<Contrainte*>(1, &contrainte)) {}
+
+Systeme::Systeme(Tissu& tissu, std::vector<Contrainte*> vector_contraintes)
+    : Systeme(vector<Tissu*>(1, &tissu), vector_contraintes) {}
+
+Systeme::Systeme(std::vector<Tissu*> vector_tissus, Contrainte& contrainte) 
+    : Systeme(vector_tissus, vector<Contrainte*>(1, &contrainte)) {}
 
 
 //methodes
