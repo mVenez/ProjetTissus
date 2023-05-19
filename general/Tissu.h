@@ -27,9 +27,7 @@ public:
     //simulation
     void mise_a_jour_forces() const ;    //met à jour toutes les masses
     void evolue(const Integrateur& integrateur) const ;  //intègre toutes les masses
-    void applique_crochet(const Crochet& contrainte) const;  //auxiliare de Crochet::appliquer()
     std::vector<Masse*> masses_concernes(const Contrainte&) const;  //renvoie une liste des masses concernées par uen contrainte
-    void applique_impulsion(const Impulsion& contrainte, Vecteur3D force) const;
     void check() const ;    //check total du tissu
     
     virtual std::ostream& affiche(std::ostream& out) const ;   //affiche les masses et les ressorts du tissu

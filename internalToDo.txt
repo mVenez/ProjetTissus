@@ -7,6 +7,7 @@ Ecrire les .pro pour les testClasses
 
 
 Scrivi in modo decente i costruttori di Systeme
+Scrivi tutte le exception da lanciare per i copstruttori delle contraintes
 Pourquoi est-ce que c'est necessaire que TissuCompose friend Tissu?
 Dessine les axes
 

@@ -11,12 +11,16 @@ int main(int argc, char* argv[])
     QApplication a(argc, argv);
 
 
-    TissuChaine tissuChaine(0.5, 0.7, Vecteur3D(0,0,0), Vecteur3D(0,0,-6), 0.5, 30);
+    TissuChaine tissuChaine1(0.5, 0.7, Vecteur3D(0,0,0), Vecteur3D(0,0,-6), 0.5, 30);
+    TissuChaine tissuChaine2(0.5, 0.7, Vecteur3D(1,0,0), Vecteur3D(0,0,-6), 0.5, 30);
+    TissuChaine tissuChaine3(0.5, 0.7, Vecteur3D(-1,0,0), Vecteur3D(0,0,-6), 0.5, 30);
 
     Crochet crochet1(Vecteur3D(0,0,0), 0.2);
-    Impulsion impulsion1(Vecteur3D(0,0,-3.5), 2, 0, 60, Vecteur3D(1, 0, 0), tissuChaine);
-    vector<Contrainte*> contraintes{&crochet1, &impulsion1};
-    Systeme systeme(tissuChaine, contraintes);
+    Crochet crochet2(Vecteur3D(1,0,0), 0.2);
+    Crochet crochet3(Vecteur3D(-1,0,0), 0.2);
+    ImpulsionSin impulsion1(Vecteur3D(0,0,-3.5), 3, 0, 60, Vecteur3D(20, 0, 0), 0.5 , vector<Tissu*>{&tissuChaine1, &tissuChaine2, &tissuChaine3});
+    vector<Contrainte*> contraintes{&crochet1, &crochet2, &crochet3, &impulsion1};
+    Systeme systeme(vector<Tissu*>{&tissuChaine1, &tissuChaine2, &tissuChaine3}, contraintes);
     systeme.check();
 
     GLWidget w(systeme);

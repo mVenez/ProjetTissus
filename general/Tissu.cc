@@ -78,15 +78,6 @@ void Tissu::dessine_sur(SupportADessin& support) {
     for (auto masse : vector_masse_) {masse->dessine_sur(support);}
     for (auto ressort : vector_ressort_) {ressort->dessine_sur(support);}
 }
-
-void Tissu::applique_crochet(const Crochet& contrainte) const {
-    for (auto masse : vector_masse_) {
-        if (contrainte.concerns(*masse)) {
-            masse->ajoute_force(-(masse->force_subie()));
-            masse->set_vitesse(Vecteur3D(0,0,0));
-        }
-    }
-} 
     
 std::vector<Masse*> Tissu::masses_concernes(const Contrainte& contrainte) const {
     std::vector<Masse*> liste_masses_concernes;
@@ -96,12 +87,6 @@ std::vector<Masse*> Tissu::masses_concernes(const Contrainte& contrainte) const 
     return liste_masses_concernes;
 }
 
-
-void Tissu::applique_impulsion(const Impulsion& contrainte, Vecteur3D force ) const {
-    for (auto masse : vector_masse_) {
-        if (contrainte.concerns(*masse)) masse->ajoute_force(force);
-    }
-}
 //surcharge de l'operateur << pour afficher un tissu
 ostream& operator<<(ostream& out, const Tissu& tissu) {
     return tissu.affiche(out);

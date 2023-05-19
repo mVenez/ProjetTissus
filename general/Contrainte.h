@@ -36,10 +36,19 @@ public:
 
     virtual void appliquer(Tissu& tissu, double t) const override;
 
-private:
+protected:
     double debut_;
     double fin_;
     Vecteur3D force_;
     std::vector<Tissu*> tissus_cibles_;
     std::vector<Masse*> masses_cibles_;
+};
+
+class ImpulsionSin : public Impulsion {
+public:
+    ImpulsionSin(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, double frequence, std::vector<Tissu*> cibles);
+    ImpulsionSin(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, double frequence, Tissu& cible);
+    virtual void appliquer(Tissu& tissu, double t) const override;
+private:
+    double f_;
 };
