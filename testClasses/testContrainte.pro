@@ -30,3 +30,5 @@ HEADERS += \
 
 RESOURCES += \
     ../exerciceP11/Qt_GL/resource.qrc \
+
+OBJECTS_DIR = ../tmp

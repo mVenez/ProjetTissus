@@ -7,26 +7,26 @@ win32:LIBS += -lopengl32
 
 TARGET = testTissuCompose
 
-LIBS += -L../../general -lgeneral
-PRE_TARGETDEPS += ../../general/libgeneral.a
+LIBS += -L../general -lgeneral
+PRE_TARGETDEPS += ../general/libgeneral.a
 
 INCLUDEPATH += \
- ../../general \
- ../../exerciceP11/Qt_GL 
+ ../general \
+ ../exerciceP11/Qt_GL 
 
 SOURCES += \
     testTissuCompose.cc \
-    ../../exerciceP11/Qt_GL/glsphere.cc \
-    ../../exerciceP11/Qt_GL/glwidget.cc \
-    ../../exerciceP11/Qt_GL/vue_opengl.cc \
+    ../exerciceP11/Qt_GL/glsphere.cc \
+    ../exerciceP11/Qt_GL/glwidget.cc \
+    ../exerciceP11/Qt_GL/vue_opengl.cc \
 
 HEADERS += \
-    ../../exerciceP11/Qt_GL/glsphere.h \
-    ../../exerciceP11/Qt_GL/glwidget.h \
-    ../../exerciceP11/Qt_GL/vertex_shader.h \
-    ../../exerciceP11/Qt_GL/vue_opengl.h \
+    ../exerciceP11/Qt_GL/glsphere.h \
+    ../exerciceP11/Qt_GL/glwidget.h \
+    ../exerciceP11/Qt_GL/vertex_shader.h \
+    ../exerciceP11/Qt_GL/vue_opengl.h \
 
 RESOURCES += \
-    ../../exerciceP11/Qt_GL/resource.qrc
+    ../exerciceP11/Qt_GL/resource.qrc
 
 OBJECTS_DIR = ../tmp

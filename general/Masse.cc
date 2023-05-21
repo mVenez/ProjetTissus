@@ -43,11 +43,11 @@ Vecteur3D Masse::force_subie() const{
 void Masse::fixe(bool fixe){
     fixe_ = fixe;
 }
-void Masse::set_ressort(Ressort* ressort){// ajoute un ressort à la liste actuelle de ressorts
+void Masse::set_ressort(Ressort* ressort){  // ajoute un ressort à la liste actuelle de ressorts
     liste_ressort_.push_back(ressort);
 }
-void Masse::unset_ressort(Ressort* ressort, bool gestion_suppresion_ressort){ // bool par défaut à true
-    if (gestion_suppresion_ressort){
+void Masse::unset_ressort(Ressort* ressort, bool gestion_suppression_ressort){ // bool par défaut à true
+    if (gestion_suppression_ressort){
         delete ressort;
         ressort = nullptr;
     }else{

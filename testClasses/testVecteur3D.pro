@@ -12,3 +12,5 @@ INCLUDEPATH = ../general
 
 SOURCES += \
     testVecteur3D.cc \
+
+OBJECTS_DIR = ../tmp
