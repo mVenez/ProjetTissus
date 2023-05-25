@@ -31,6 +31,7 @@ public:
     void check() const ;    //check total du tissu
     
     virtual std::ostream& affiche(std::ostream& out) const ;   //affiche les masses et les ressorts du tissu
+    std::ostream& affiche_positions(std::ostream& out) const;
     virtual void dessine_sur(SupportADessin& support) override;
 
 protected:

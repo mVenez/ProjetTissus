@@ -45,7 +45,10 @@ Impulsion::Impulsion(const Vecteur3D& position, double rayon, double debut, doub
 void Impulsion::appliquer(Tissu& tissu, double t) const {
     if (t >= debut_ && t <= fin_) {
         for (auto masse : masses_cibles_) {
-            if (tissu.contient(masse)) masse->ajoute_force(force_);
+            if (tissu.contient(masse)){
+                masse->ajoute_force( -(masse->masse() * g));
+                masse->ajoute_force(force_);
+            }
         }
     }
 }
@@ -62,7 +65,9 @@ ImpulsionSin::ImpulsionSin(const Vecteur3D &position, double rayon, double debut
 void ImpulsionSin::appliquer(Tissu& tissu, double t) const {
     if (t >= debut_ && t <= fin_) {
         for (auto masse : masses_cibles_) {
-            if (tissu.contient(masse)) {masse->ajoute_force(force_ * sin(2*M_PI * f_ * (t - debut_)));}
+            if (tissu.contient(masse)) {
+                masse->ajoute_force( -(masse->masse() * g));
+                masse->ajoute_force(force_ * sin(2*M_PI * f_ * (t - debut_)));}
         }
     }
 }

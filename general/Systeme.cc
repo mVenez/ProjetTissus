@@ -47,6 +47,11 @@ ostream& Systeme::affiche(ostream& out) const {
     return out;
 }
 
+ostream& Systeme::affiche_positions(ostream& out) const {
+    out << "## (position) Systeme au temps : " << t_ << endl;
+    for (auto tissu : vector_tissus_) {tissu->affiche_positions(out);}
+    return out;
+}
 //méthode principale simulation
 void Systeme::evolue(const Integrateur& integrateur) {
     for (auto tissu : vector_tissus_) {
@@ -54,8 +59,8 @@ void Systeme::evolue(const Integrateur& integrateur) {
         for (auto contrainte : vector_contraintes_) {
             contrainte->appliquer(*tissu, t_);
         }
-        tissu->evolue(integrateur);
         t_ += integrateur.dt();
+        tissu->evolue(integrateur);
     }
 }
 void Systeme::check() const {

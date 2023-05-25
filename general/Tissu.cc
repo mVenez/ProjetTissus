@@ -74,6 +74,13 @@ ostream& Tissu::affiche(ostream& out) const {
     return out;
 }
 
+ostream& Tissu::affiche_positions(ostream& out) const{
+    for (auto masse : vector_masse_) {
+        out << masse->position() << " # position" << endl;
+    }
+    return out;
+}
+
 void Tissu::dessine_sur(SupportADessin& support) {
     for (auto masse : vector_masse_) {masse->dessine_sur(support);}
     for (auto ressort : vector_ressort_) {ressort->dessine_sur(support);}
