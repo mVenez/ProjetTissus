@@ -8,9 +8,9 @@ TissuCompose::TissuCompose(Tissu& tissu) : Tissu() {
     this->ajoute_tissu(tissu);
 }
 
-TissuCompose::TissuCompose(Tissu& tissu1, Tissu& tissu2, double delta) : Tissu() {
+TissuCompose::TissuCompose(Tissu& tissu1, Tissu& tissu2, double delta, double k) : Tissu() {
     this->ajoute_tissu(tissu1);
-    this->ajoute_tissu(tissu2, delta);
+    this->ajoute_tissu(tissu2, delta, k);
 }
 
 /*TissuCompose::TissuCompose(vector<Tissu*> vector_tissu, double delta) {
@@ -20,16 +20,9 @@ TissuCompose::TissuCompose(Tissu& tissu1, Tissu& tissu2, double delta) : Tissu()
 }*/
 
 
-void TissuCompose::ajoute_tissu(Tissu& tissu, double delta) {
+void TissuCompose::ajoute_tissu(Tissu& tissu, double delta, double k) {
 
     vector_ressort_.insert(vector_ressort_.end(), tissu.vector_ressort_.begin(), tissu.vector_ressort_.end()); //ajoute les ressorts du tissu à la suite de ceux du tissu composé
-
-    //calcul la raideur k moyenne au seins des tissus
-    double k_ressort_de_couture(0); //raideur des ressorts de "couture" c’est à dire la raideur des ressorts qui relient les deux tissus
-    for (auto ressort : vector_ressort_) {
-        k_ressort_de_couture += ressort->k();
-    }
-    k_ressort_de_couture /= vector_ressort_.size();
 
     //on connecte les masses des deux tissus qui sont distantes de moins de delta
     for (auto masse1 : vector_masse_) {
