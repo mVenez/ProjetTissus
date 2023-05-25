@@ -15,9 +15,6 @@ class VueOpenGL : public SupportADessin {
   // méthode(s) de dessin (héritée(s) de SupportADessin)
   virtual void dessine(Masse const&) override;
   virtual void dessine(Ressort const&) override;
-  //virtual void dessine(Tissu const&) override;
-  //virtual void dessine(Systeme const&) override;
-  //virtual void dessine(Objet const& objet) override;
 
   // méthodes de (ré-)initialisation
   void init();
@@ -27,7 +24,6 @@ class VueOpenGL : public SupportADessin {
   void setProjection(QMatrix4x4 const& projection)
   { prog.setUniformValue("projection", projection); }
   void wireframe() {wireframe_ = !wireframe_;} //alterne entre montrer et cacher les masses
-  //bool is_wireframe() {return wireframe_;};
   void spherical(){spherical_ = !spherical_;} //alterne entre visualisation cubique et spherique des masses
 
   // Méthodes set
