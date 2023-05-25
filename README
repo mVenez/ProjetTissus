@@ -1,23 +1,34 @@
-instruction : =============
-En tête de votre fichier README (un simple fichier texte, sans extension) commencez par répondre aux trois questions suivantes :
+------------------------ Français --------------------------------------------
+==== LE PROJET ====         
+Le projet a été terminé: tous les modules jusqu'au P14 ont été completés dans le détail.
+Ceci veut dire que le programme est capable de simuler tissus complexes, de façon numerique et graphqiue.
+La version graphique a été construite avec Qt5, en travaillant avec OpenGL.
+Chaque composant du binôme a travaillé environ 7 heures par semaine sur le projet, de manière assez regulière le long du sémestre
 
-jusqu'où avez-vous été ? qu'est-ce que vous avez fait/pas fait ?
+==== INSTALLATION ====
+Ouvrir le Terminal dans la directory principale du projet, {!}, et lancer les commandes "qmake" et puis "make".
+"qmake" va génerer les Makefile nécessaires à la construction du programme, effectué après par "make".
+Une fois ces deux commandes lancées, la simulation est prêt.
 
-avez-vous une version graphique ? Si oui, avec quelle bibliothèque graphique (Qt (quelle version ?), WxWidget, SDL, Glut, autre [précisez]) ?
+==== CARTE DU PROJET ====
 
-combien d'heures en moyenne par personne par semaine estimez vous avoir passé sur le projet ? (essayez d'être objectif : n'oubliez pas qu'au début vous n'avez peut être pas fait grand chose, comptez sur 14 semaines, c.-à-d. la première semaine incluse, ne comptez pas le cours ni les exercices hors projet, n'oubliez pas de diviser le total par 2 car je veux une estimation moyenne par personne.)
+==== DANS LA SIMULATION GRAPHIQUE ====
+Appuyer ???
 
-Continuez ensuite votre fichier README en expliquant comment « rentrer » dans votre projet, comment le lancer, comment il est organisé. Et tout message important que vous devez faire passer avant que l'on aille plus loin dans votre projet. Ce fichier README doit rester assez court (maximum 2 pages). Ce n'est pas une documentation exhaustive, mais un simple « premier contact » avec votre projet.
-====================
+------------------------ English --------------------------------------------
 
+==== THE PROJECT ====
+The project is complete: every module until P14 has been made in detail.
+The program is therefore capable of simulating complex cloths, both numerically and graphically.
+The graphics are built on OpenGL, thanks to the Qt5 library.
+Both members of the team worked about 7 hours every week on the project, quite regularly over the course of the semester. 
 
-==== WHAT IS THIS? ====
-This C++ program simulates the movement in 3D space of cloths, modelized by groups of masses connected by springs.
-The simulation is both numerical and graphical, thanks to the Qt OpenGL module.
+==== INSTALLATION ====
+Open the Terminal inside the project main directory [faut insérer le nom de la directory] and execute commands "qmake" and then "make".
+"qmake" will generate the Makefiles necessary for the build, executed by "make".
+After these two commands the simulation is ready. 
 
-==== HOW TO COMPILE ====
-Inside the project main directory [faut insérer le nom de la directory], execute "qmake" and then "make" commands.
-Qmake will generate the necessary Makefile and Make will then build all executables.
+==== PROJECT MAP ====
 
 ==== DURING GRAPHIC SIMULATION ====
 Hold Left Click and move the mouse (or use the arrows and QE keys) to look around, and the Home key (or 0) to reset to default view.
@@ -25,7 +36,5 @@ Move in the 3D space using WASD (on the xy plane) and RF (z axis).
 Press M to show/hide the masses who form the cloth.
 Press N to switch between a spherical and cubical representation of masses.
 Press Space to pause the simulation.
-
-
 
 Maël Thoré & Matteo Veneziano, EPFL Section of Physics, 2023
