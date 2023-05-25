@@ -1,4 +1,5 @@
 #pragma once
+#include "constantes.h"
 class Masse;
 
 class Integrateur {
@@ -22,4 +23,15 @@ public:
 
     //méthodes
     virtual void evolue (Masse& masse) const override;
+};
+
+class IntegrateurNewmark : public Integrateur {
+public:
+    //constructeur
+    IntegrateurNewmark(double dt, double epsilon_ = epsilon);
+
+    //méthodes
+    virtual void evolue (Masse& masse) const override;
+private:
+    double epsilon_;
 };
