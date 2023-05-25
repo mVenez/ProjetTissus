@@ -14,6 +14,7 @@ public:
     //TissuCompose(vector<Tissu*> vector_tissu, double delta = delta_tissu_recompose); //constructeur auquel on passe un vecteur de tissus directement qui sont tout de suite cousu ensemble
     TissuCompose(const Tissu&) = delete; //on interdit la copie
     TissuCompose& operator=(const Tissu&) = delete; //affectation aussi interdite car copie interdite
+    //~TissuCompose();
 
     //méthodes
     void ajoute_tissu(Tissu& tissu, double delta = delta_tissu_recompose, double k = k_ressort_de_couture); //permet de rajouter un tissu au tissu composé 
