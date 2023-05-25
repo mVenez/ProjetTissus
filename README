@@ -1,3 +1,16 @@
+instruction : =============
+En tête de votre fichier README (un simple fichier texte, sans extension) commencez par répondre aux trois questions suivantes :
+
+jusqu'où avez-vous été ? qu'est-ce que vous avez fait/pas fait ?
+
+avez-vous une version graphique ? Si oui, avec quelle bibliothèque graphique (Qt (quelle version ?), WxWidget, SDL, Glut, autre [précisez]) ?
+
+combien d'heures en moyenne par personne par semaine estimez vous avoir passé sur le projet ? (essayez d'être objectif : n'oubliez pas qu'au début vous n'avez peut être pas fait grand chose, comptez sur 14 semaines, c.-à-d. la première semaine incluse, ne comptez pas le cours ni les exercices hors projet, n'oubliez pas de diviser le total par 2 car je veux une estimation moyenne par personne.)
+
+Continuez ensuite votre fichier README en expliquant comment « rentrer » dans votre projet, comment le lancer, comment il est organisé. Et tout message important que vous devez faire passer avant que l'on aille plus loin dans votre projet. Ce fichier README doit rester assez court (maximum 2 pages). Ce n'est pas une documentation exhaustive, mais un simple « premier contact » avec votre projet.
+====================
+
+
 ==== WHAT IS THIS? ====
 This C++ program simulates the movement in 3D space of cloths, modelized by groups of masses connected by springs.
 The simulation is both numerical and graphical, thanks to the Qt OpenGL module.

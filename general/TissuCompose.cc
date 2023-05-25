@@ -19,10 +19,16 @@ TissuCompose::TissuCompose(Tissu& tissu1, Tissu& tissu2, double delta, double k)
     }
 }*/
 
+/*TissuCompose::~TissuCompose() {
+    for (auto ressort : vector_ressort_couture_) {
+        delete ressort;
+    }
+}*/
 
 void TissuCompose::ajoute_tissu(Tissu& tissu, double delta, double k) {
 
     vector_ressort_.insert(vector_ressort_.end(), tissu.vector_ressort_.begin(), tissu.vector_ressort_.end()); //ajoute les ressorts du tissu à la suite de ceux du tissu composé
+    tissu.give_gestion_ressort(); //on donne la gestion des ressorts au tissu composé
 
     //on connecte les masses des deux tissus qui sont distantes de moins de delta
     for (auto masse1 : vector_masse_) {

@@ -35,6 +35,8 @@ public:
     virtual void dessine_sur(SupportADessin& support) override;
 
 protected:
+    void give_gestion_ressort(); //methodes pour délégué la gestion des ressorts à une classe fille
+
     std::vector<Masse*> vector_masse_;
     std::vector<Ressort*> vector_ressort_;
 

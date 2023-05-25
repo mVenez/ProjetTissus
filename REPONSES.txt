@@ -52,3 +52,4 @@ dessine_sur() est une méthode virtuelle pure, cas elle nécessite une definitio
 Un Systeme est un ensemble d'Objets, une superclasse virtuelle qui pour le moment ne forme que des Tissus. Dans le futur on jugera si garder la superclasse Objet, si par exemple les contraintes ou des autres futures objets y sont appropriés.
 Le système est le vrai coeur de la simulation, contenant tous les objets qu'il faut dessiner et les méthodes necessaires pour ceci. Le systeme est donc un Dessinable (et présente alors la méthode dessine_sur())
 Dans le specifique pour l'instant Systeme possède en attribut une liste de pointeurs vers des Objets
+edit : finalement comme les contraines ne sont pas comme on l’imaginais, les contraintes ne sont pas des "Objets" et donc on a décidé de ne pas garder la superclasse Objet qui ne contenais que Tissu.

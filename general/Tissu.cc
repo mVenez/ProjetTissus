@@ -94,6 +94,11 @@ std::vector<Masse*> Tissu::masses_concernes(const Contrainte& contrainte) const 
     return liste_masses_concernes;
 }
 
+void Tissu::give_gestion_ressort() {
+    vector_ressort_.clear();
+}
+
+
 //surcharge de l'operateur << pour afficher un tissu
 ostream& operator<<(ostream& out, const Tissu& tissu) {
     return tissu.affiche(out);
