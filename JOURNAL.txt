@@ -141,17 +141,21 @@ travail sur la class Vecteur3D :
 11/05, Maël:
 - Tissu Disque, nécessite de revoir les vecteur3D
 12/05, Maël:
-- Tout les tissus complexe terminé et fonctionnel, ajout d’un bool fixe pour choisir de fixer les tissu à la construction ou non
+- Tout les tissus complexe (sauf composé) terminé et fonctionnel, ajout d’un bool fixe pour choisir de fixer les tissu à la construction ou non
 
 --------------------------------------------------
 ## Semaine 12 :
 15/05, Veneziano:
 - Crochets
 - Elimination de la classe Objet du projet
+15/05, Maël:
+- Tissu composé terminé et fonctionnel
 
 18/05, Veneziano:
 - Resolution erreurs dans la classe Crochet
 - classe Impulsion
+18/05, Maël:
+- legère modification de la classe TissuCompose
 
 
 --------------------------------------------------
