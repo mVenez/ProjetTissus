@@ -9,7 +9,6 @@ public:
 
     //méthodes
     virtual void evolue (Masse& masse) const;
-
     double dt() const {return dt_;} // temps à ajouter au timer du systeme
     
 protected:

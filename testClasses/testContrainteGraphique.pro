@@ -1,21 +1,23 @@
 QT += core gui opengl widgets
+
+
 QMAKE_CXX = clang++
 QMAKE_CXXFLAGS += -std=c++11
 
 win32:LIBS += -lopengl32
 
-
-TARGET = main
+TARGET = testContrainteGraphique
 
 LIBS += -L../general -lgeneral
 PRE_TARGETDEPS += ../general/libgeneral.a
+
 
 INCLUDEPATH += \
  ../general \
  ../exerciceP11/Qt_GL \
 
 SOURCES += \
-    main.cc \
+    testContrainteGraphique.cc \
     ../exerciceP11/Qt_GL/glsphere.cc \
     ../exerciceP11/Qt_GL/glwidget.cc \
     ../exerciceP11/Qt_GL/vue_opengl.cc \

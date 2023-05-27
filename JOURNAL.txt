@@ -160,7 +160,12 @@ travail sur la class Vecteur3D :
 
 --------------------------------------------------
 ## Semaine 13 :
-
+25/05, Maël :
+- CONCEPTION.txt
+- Debug TissuCompose
+- IntegrateurNewmark
+25/05, Veneziano:
+- Debug des ImpulsionSin, terminés testContrainte et testContrainteGraphique
 
 --------------------------------------------------
 ## Semaine 14 :

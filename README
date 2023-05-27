@@ -1,7 +1,7 @@
 ------------------------ Français --------------------------------------------
 ==== LE PROJET ====         
 Le projet a été terminé: tous les modules jusqu'au P14 ont été completés dans le détail.
-Ceci veut dire que le programme est capable de simuler tissus complexes, de façon numerique et graphqiue.
+Ceci veut dire que le programme est capable de simuler tissus complexes, de façon numerique et graphqi ue.
 La version graphique a été construite avec Qt5, en travaillant avec OpenGL.
 Chaque composant du binôme a travaillé environ 7 heures par semaine sur le projet, de manière assez regulière le long du sémestre
 
@@ -11,6 +11,22 @@ Ouvrir le Terminal dans la directory principale du projet, {!}, et lancer les co
 Une fois ces deux commandes lancées, la simulation est prêt.
 
 ==== CARTE DU PROJET ====
+/archive -> Contient les fichiers qui ne sont pas utilisés dans la version finale du projet
+/exerciceP11/Qt_GL -> Fichiers nécessaires au graphisme (P11)
+/exerciceP11/text -> Visualisation textuelle (P10)
+/general -> Librairie principale pour la simulation des tissus
+/main -> Simulation libre (vous pouvez preparer et visualiser ici tout système qui vous intéresse)
+/plots -> Plots utilisés au cours du projet pour tester la simulation, réalisés avec Gnuplot
+/testClasses -> Tous les tests effectuées sur les principales classes du projet
+/testTissuComplexe -> Tous les tests effectués pour les classes TissuChaine, TissuRectangle, TissuDisque et TissuCompose
+/tmp -> Les fichiers .o sont construits ici
+
+==== EXECUTABLES ==== 
+/exerciceP11/Qt_GL/exerciceP11 -> Simulation graphique pour P11 (même systeme que testIntegrateur3)
+/exerciceP11/text/exerciceP10 -> Simulation textuelle pour P10 (même système que testIntegrateur3)
+/main/main -> [QUELLO CHE CI PARE]
+/testClasses/
+
 
 ==== DANS LA SIMULATION GRAPHIQUE ====
 Appuyer ???
