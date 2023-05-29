@@ -10,6 +10,13 @@ Ouvrir le Terminal dans la directory principale du projet, {!}, et lancer les co
 "qmake" va génerer les Makefile nécessaires à la construction du programme, effectué après par "make".
 Une fois ces deux commandes lancées, la simulation est prêt.
 
+==== DANS LA SIMULATION GRAPHIQUE ====
+Maintenez le clic gauche enfoncé et déplacez la souris (ou utilisez les flèches et les touches QE) pour regarder autour de vous, et la touche Home (ou 0) pour revenir à la vue par défaut.
+Déplacez-vous dans l'espace 3D à l'aide des touches WASD (sur le plan xy) et RF (axe z).
+Appuyez sur M pour afficher/masquer les masses qui forment le tissu.
+Appuyez sur N pour passer d'une représentation sphérique à une représentation cubique des masses.
+Appuyez sur Espace pour interrompre la simulation.
+
 ==== CARTE DU PROJET ====
 /archive -> Contient les fichiers qui ne sont pas utilisés dans la version finale du projet
 /exerciceP11/Qt_GL -> Fichiers nécessaires au graphisme (P11)
@@ -22,14 +29,29 @@ Une fois ces deux commandes lancées, la simulation est prêt.
 /tmp -> Les fichiers .o sont construits ici
 
 ==== EXECUTABLES ==== 
+- Simulation graphiques:
+/main/main -> [FAUT CHOISIR]
+/testTissuComplexe/testTissuChaine -> affichage d'une chaine/corde
+/testTissuComplexe/testTissuRectangle -> affichage d'un tissu rectangulaire
+/testTissuComplexe/testTissuDisque -> affichage d'un tissu circulaire 
+/testTissuComplexe/testTissuCompose -> [FAUT CHOISIR]
+/testClasses/testContrainteGraphique -> [FAUT CHOISIR]
 /exerciceP11/Qt_GL/exerciceP11 -> Simulation graphique pour P11 (même systeme que testIntegrateur3)
+
+- Simulation textuelles:
 /exerciceP11/text/exerciceP10 -> Simulation textuelle pour P10 (même système que testIntegrateur3)
-/main/main -> [QUELLO CHE CI PARE]
-/testClasses/
+/testClasses/testContrainte -> test de fonctionnement des impulsions sinusoidales
 
-
-==== DANS LA SIMULATION GRAPHIQUE ====
-Appuyer ???
+- Tests:
+/testClasses/exerciceP9
+/testClasses/testVecteur3D
+/testClasses/testMasse
+/testClasses/testRessort
+/testClasses/testTissu1
+/testClasses/testTissu2
+/testClasses/testIntegrateur1
+/testClasses/testIntegrateur2
+/testClasses/testIntegrateur3
 
 ------------------------ English --------------------------------------------
 
