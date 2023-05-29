@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
 #include "Tissu.h"
-#include "Masse.h"
-#include "Ressort.h"
 #include "Integrateur.h"
 #include "SupportADessin.h"
 #include "Contrainte.h"
@@ -12,11 +10,11 @@ using namespace std;
 Tissu::Tissu(Masse& masse) : vector_masse_({&masse}), vector_ressort_({}) {}
 Tissu::Tissu(std::vector<Masse*> vector_masse) : vector_masse_(vector_masse), vector_ressort_({}) {}
 
-
 //destructeur
 Tissu::~Tissu() {
     for (auto ressort : vector_ressort_) delete ressort;
 }
+
 
 //methodes
 void Tissu::ajoute_masse(Masse* m) {

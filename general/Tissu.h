@@ -1,8 +1,6 @@
 #pragma once
-#include<vector>
+#include <vector>
 #include <iostream>
-#include "Dessinable.h"
-#include "Vecteur3D.h"
 #include "Masse.h"
 #include "Ressort.h"
 #include "Integrateur.h"
@@ -31,11 +29,11 @@ public:
     void check() const ;    //check total du tissu
     
     virtual std::ostream& affiche(std::ostream& out) const ;   //affiche les masses et les ressorts du tissu
-    std::ostream& affiche_positions(std::ostream& out) const;
+    std::ostream& affiche_positions(std::ostream& out) const;   //affiche les positions de toutes les masses du tissu
     virtual void dessine_sur(SupportADessin& support) override;
 
 protected:
-    void give_gestion_ressort(); //methodes pour délégué la gestion des ressorts à une classe fille
+    void give_gestion_ressort(); //methodes pour déléguer la gestion des ressorts à une classe fille
 
     std::vector<Masse*> vector_masse_;
     std::vector<Ressort*> vector_ressort_;

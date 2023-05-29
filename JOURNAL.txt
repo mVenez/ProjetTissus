@@ -166,6 +166,9 @@ travail sur la class Vecteur3D :
 - IntegrateurNewmark
 25/05, Veneziano:
 - Debug des ImpulsionSin, terminés testContrainte et testContrainteGraphique
-
+26/06, Veneziano:
+- README, debut
 --------------------------------------------------
 ## Semaine 14 :
+29/05, Veneziano:
+- Debut revision su code du projet

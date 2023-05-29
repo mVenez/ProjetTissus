@@ -3,7 +3,6 @@
 #include <iostream>
 #include "Dessinable.h"
 #include "constantes.h"
-
 class Ressort;
 
 class Masse : public Dessinable {
@@ -19,6 +18,7 @@ public:
     Vecteur3D position() const;
     Vecteur3D vitesse() const;
     Vecteur3D force_subie() const;
+    Vecteur3D acceleration() const;
 
     // setters
     void fixe(bool fixe = true);
@@ -28,10 +28,9 @@ public:
     void set_vitesse(const Vecteur3D& nouvelle_vitesse);
 
     // méthodes
-    std::ostream& affiche(std::ostream&) const;
     void ajoute_force(Vecteur3D const& df);
-    Vecteur3D acceleration() const;
     void mise_a_jour_forces();
+    std::ostream& affiche(std::ostream&) const;
     virtual void dessine_sur(SupportADessin& support) override;
 
     //méthodes de check

@@ -1,14 +1,10 @@
-#include "Systeme.h"
-#include "Dessinable.h"
-#include "SupportADessin.h"
-#include "Tissu.h"
-#include "Integrateur.h"
-#include "Contrainte.h"
 #include <vector>
 #include <iostream>
+#include "Systeme.h"
+#include "Contrainte.h"
 using namespace std;
 
-//constructeurs 
+//constructeurs (tous les combinaisons)
 Systeme::Systeme(vector<Tissu*> vector_tissus, vector<Contrainte*> vector_contraintes) 
     : vector_tissus_(vector_tissus), vector_contraintes_(vector_contraintes), t_(0) {}
 
@@ -22,7 +18,7 @@ Systeme::Systeme(std::vector<Tissu*> vector_tissus, Contrainte& contrainte)
     : Systeme(vector_tissus, vector<Contrainte*>(1, &contrainte)) {}
 
 
-//methodes
+//affichage
 void Systeme::dessine_sur(SupportADessin& support) {
     for(auto tissu : vector_tissus_) {
         tissu->dessine_sur(support);
@@ -47,22 +43,25 @@ ostream& Systeme::affiche(ostream& out) const {
     return out;
 }
 
-ostream& Systeme::affiche_positions(ostream& out) const {
+ostream& Systeme::affiche_positions(ostream& out) const {   
     out << "## (position) Systeme au temps : " << t_ << endl;
     for (auto tissu : vector_tissus_) {tissu->affiche_positions(out);}
     return out;
 }
-//méthode principale simulation
+
+//méthode principale de la simulation
 void Systeme::evolue(const Integrateur& integrateur) {
     for (auto tissu : vector_tissus_) {
-        tissu->mise_a_jour_forces();
+        tissu->mise_a_jour_forces();    //on calcule toutes les forces exercées sur chaque masse
         for (auto contrainte : vector_contraintes_) {
-            contrainte->appliquer(*tissu, t_);
+            contrainte->appliquer(*tissu, t_);  //on applique toutes les contraintes
         }
-        t_ += integrateur.dt();
-        tissu->evolue(integrateur);
+        t_ += integrateur.dt(); //le temps est mis à jour
+        tissu->evolue(integrateur); //le systeme evolue
     }
 }
+
+//check complet du système
 void Systeme::check() const {
     for (auto tissu : vector_tissus_) tissu->check();
 }

@@ -10,7 +10,7 @@ using namespace std;
 
 // constructeur
 Masse::Masse(double masse, double coefficient_frottement, Vecteur3D position, Vecteur3D vitesse, Vecteur3D acceleration, std::vector<Ressort*> liste_ressort, bool fixe)
-    : Dessinable(), masse_(masse), coefficient_frottement_(coefficient_frottement), position_(position), vitesse_(vitesse), force_subie_(masse * acceleration), liste_ressort_(liste_ressort), fixe_(fixe) {
+    : masse_(masse), coefficient_frottement_(coefficient_frottement), position_(position), vitesse_(vitesse), force_subie_(masse * acceleration), liste_ressort_(liste_ressort), fixe_(fixe) {
     if (masse <= 0){
         throw invalid_argument("La masse doit être positive");
     }
@@ -38,14 +38,19 @@ Vecteur3D Masse::force_subie() const{
     return force_subie_;
 }
 
+Vecteur3D Masse::acceleration() const{
+    return (force_subie_ * (1/masse_));
+}
 
 // setters
 void Masse::fixe(bool fixe){
     fixe_ = fixe;
 }
+
 void Masse::set_ressort(Ressort* ressort){  // ajoute un ressort à la liste actuelle de ressorts
     liste_ressort_.push_back(ressort);
 }
+
 void Masse::unset_ressort(Ressort* ressort, bool gestion_suppression_ressort){ // bool par défaut à true
     if (gestion_suppression_ressort){
         delete ressort;
@@ -54,6 +59,7 @@ void Masse::unset_ressort(Ressort* ressort, bool gestion_suppression_ressort){ /
         liste_ressort_.erase(remove(liste_ressort_.begin(), liste_ressort_.end(), ressort), liste_ressort_.end());
     }
 }
+
 void Masse::set_position(const Vecteur3D& nouvelle_position) {
     position_ = nouvelle_position;
 }
@@ -62,6 +68,26 @@ void Masse::set_vitesse(const Vecteur3D& nouvelle_vitesse) {
 }
 
 // méthodes
+void Masse::ajoute_force(Vecteur3D const& df){
+    if (!fixe_) {
+        force_subie_ += (df);
+    }
+}
+
+void Masse::mise_a_jour_forces(){
+    if (fixe_) {
+        force_subie_ = Vecteur3D(0,0,0);
+        return;
+    }
+    Vecteur3D force_rappel;
+    for(Ressort* ressort : liste_ressort_){
+        force_rappel += (ressort->force_rappel(this));
+    }
+    Vecteur3D frottement = vitesse_ * (-coefficient_frottement_);
+    Vecteur3D poids = masse_ * g;
+    force_subie_ = force_rappel + frottement + poids;
+}
+
 ostream& Masse::affiche(ostream& out) const{
     out << "===== Masse " << this << " =====" << endl;
     out << "Fixe : " << (fixe_ ? "oui" : "non") << endl;
@@ -77,31 +103,6 @@ ostream& Masse::affiche(ostream& out) const{
     } else {out << endl;}
     out << "===== Masse " << this << " =====" << endl ;
     return out;
-}
-
-
-void Masse::ajoute_force(Vecteur3D const& df){
-    if (!fixe_) {
-        force_subie_ += (df);
-    }
-}
-
-Vecteur3D Masse::acceleration() const{
-    return (force_subie_ * (1/masse_));
-}
-
-void Masse::mise_a_jour_forces(){
-    if (fixe_) {
-        force_subie_ = Vecteur3D(0,0,0);
-        return;
-    }
-    Vecteur3D force_rappel;
-    for(Ressort* ressort : liste_ressort_){
-        force_rappel += (ressort->force_rappel(this));
-    }
-    Vecteur3D frottement = vitesse_ * (-coefficient_frottement_);
-    Vecteur3D poids = masse_ * g;
-    force_subie_ = force_rappel + frottement + poids;
 }
 
 void Masse::dessine_sur(SupportADessin& support) {

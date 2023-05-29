@@ -20,7 +20,7 @@ public:
     //méthodes
     virtual void dessine_sur(SupportADessin& support) override;
     std::ostream& affiche(std::ostream& out) const;
-    std::ostream& affiche_positions(std::ostream& out) const;
+    std::ostream& affiche_positions(std::ostream& out) const; //affiche les positions de toutes les masses du système à l'instant t
 
     void evolue(const Integrateur& integrateur);
     void check() const; //lance un check des tous les objets

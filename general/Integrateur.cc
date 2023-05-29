@@ -20,8 +20,8 @@ void Integrateur::evolue(Masse& masse) const {
 //class IntegrateurEulerCromer
 
 //constructeur
-IntegrateurEulerCromer::IntegrateurEulerCromer(double dt) : Integrateur(dt) {}
-
+IntegrateurEulerCromer::IntegrateurEulerCromer(double dt) 
+    : Integrateur(dt) {}
 
 void IntegrateurEulerCromer::evolue(Masse& masse) const{
     masse.set_vitesse(masse.vitesse() + (dt_ * masse.acceleration()));
@@ -31,7 +31,8 @@ void IntegrateurEulerCromer::evolue(Masse& masse) const{
 //class IntegrateurNewmark
 
 //constructeur
-IntegrateurNewmark::IntegrateurNewmark(double dt, double epsilon) : Integrateur(dt), epsilon_(epsilon) {}
+IntegrateurNewmark::IntegrateurNewmark(double dt, double epsilon) 
+    : Integrateur(dt), epsilon_(epsilon) {}
 
 void IntegrateurNewmark::evolue(Masse& masse) const{
     //pour comprendre ce qui se passe ici voir section 2.3 du complément mathématique du projet

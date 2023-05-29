@@ -31,12 +31,12 @@ Vecteur3D Ressort::force_rappel(Masse* masse) const{
     double longueur = vecteur_rappel.norme();
     force_rappel = ~vecteur_rappel * (-k_ * (longueur - l0_));
     //par défaut le calcul de la force de rappel est fait du point de vue de la masse 1, le if ci-dessous permet le changement de signe si l’appel à été fait du point de vue da la masse 2
-    if(masse == masse1_){//égalité de pointeur
+    if(masse == masse1_) {   //égalité de pointeur
         return force_rappel;
-    }else if(masse == masse2_){//égalité de pointeur
+    } else if(masse == masse2_) { //égalité de pointeur
         return -force_rappel;
-    }else{
-        throw invalid_argument("La masse n'est pas reliée au ressort"); // ici on pourrait renvoyer le vecteur nul, ça depend de la façon dans laquelle on construit le tissu
+    } else {
+        throw invalid_argument("La masse n'est pas reliée au ressort");
     }
 }
 
@@ -61,22 +61,21 @@ void Ressort::dessine_sur(SupportADessin &support) {
     support.dessine(*this);
 }
 
-//méthodes pour le check() du tissu
-void Ressort::check_masses() const {
-    if (masse1_ == masse2_) throw runtime_error("Le ressort est attaché aux deux extremités à la même masse");
-
-}
-void Ressort::check_masse_connectee(const Masse* masse) const {
-    if (masse != masse1_ && masse!= masse2_ ) throw runtime_error("La masse n'est pas connecté au ressort choisi");
-}
-
 //getters
 Masse* Ressort::masse1() const {return masse1_;}
 Masse* Ressort::masse2() const {return masse2_;}
 double Ressort::k() const {return k_;}
 
-//opérateurs
+//méthodes pour le check() du tissu
+void Ressort::check_masses() const {
+    if (masse1_ == masse2_) throw runtime_error("Le ressort est attaché aux deux extremités à la même masse");
+}
+void Ressort::check_masse_connectee(const Masse* masse) const {
+    if (masse != masse1_ && masse!= masse2_ ) throw runtime_error("La masse n'est pas connecté au ressort choisi");
+}
 
+
+//opérateurs
 ostream& operator<<(ostream& out, const Ressort& res) {
     res.affiche(out);
     return out;

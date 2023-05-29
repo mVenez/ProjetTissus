@@ -30,7 +30,7 @@ Impulsion::Impulsion(const Vecteur3D& position, double rayon, double debut, doub
         //On controle les parametres passés
         if (debut < 0) throw invalid_argument("Impulsion avec instant t de debut negatif");
         if (fin < debut) {debut_ = fin; fin_ = debut;}
-        if (force == Vecteur3D(0,0,0)) cerr<< "L'Impulsion" << this << "a force nulle" << endl;
+        if (force == Vecteur3D(0,0,0)) cerr << "L'Impulsion" << this << "a force nulle" << endl;
 
         //L'Impulsion memorise toutes les masses concernés à la construction
         for (auto tissu : tissus_cibles_) {
