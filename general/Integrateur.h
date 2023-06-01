@@ -15,6 +15,7 @@ protected:
     double dt_;
 };
 
+
 class IntegrateurEulerCromer : public Integrateur {
 public:
     //constructeur
@@ -31,6 +32,7 @@ public:
 
     //méthodes
     virtual void evolue (Masse& masse) const override;
+
 private:
     double epsilon_;
 };

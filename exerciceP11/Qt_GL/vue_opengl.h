@@ -21,16 +21,15 @@ class VueOpenGL : public SupportADessin {
   void initializePosition();
 
   // méthode set
-  void setProjection(QMatrix4x4 const& projection)
-  { prog.setUniformValue("projection", projection); }
+  void setProjection(QMatrix4x4 const& projection) { prog.setUniformValue("projection", projection); }
   void wireframe() {wireframe_ = !wireframe_;} //alterne entre montrer et cacher les masses
   void spherical(){spherical_ = !spherical_;} //alterne entre visualisation cubique et spherique des masses
 
-  // Méthodes set
+  // Transformations
   void translate(double x, double y, double z);
   void rotate(double angle, double dir_x, double dir_y, double dir_z);
   
-  //dessin de formes géometriques
+  // Dessin de formes géometriques
   void dessineAxes(QMatrix4x4 const& point_de_vue, bool en_couleur = true);
   void dessineCube(QMatrix4x4 const& point_de_vue = QMatrix4x4() );
   void dessineSphere(QMatrix4x4 const& point_de_vue, double rouge = 1.0, double vert = 1.0, double bleu = 1.0);

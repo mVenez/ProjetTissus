@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
     tissu1.check();
     Systeme systeme(tissu1);
     
-    GLWidget w(systeme);
+    GLWidget w(systeme, 0.05);
     w.show();
 
     return a.exec();

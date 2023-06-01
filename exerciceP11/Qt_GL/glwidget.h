@@ -1,23 +1,19 @@
 #pragma once
-
 #include <QOpenGLWidget>        // Classe pour faire une fenêtre OpenGL
 #include <QTime>            // Classe pour gérer le temps
 #include "vue_opengl.h"
 #include "Systeme.h"
 
-class GLWidget : public QOpenGLWidget
-/* La fenêtre hérite de QOpenGLWidget ;
- * les événements (clavier, souris, temps) sont des méthodes virtuelles à redéfinir.
- */
-{
+class GLWidget : public QOpenGLWidget {
 public:
-  GLWidget(Systeme& systeme, QWidget* parent = nullptr)
-    : QOpenGLWidget(parent) , c(&systeme){}
+  GLWidget(Systeme& systeme, double dt = dt_const, QWidget* parent = nullptr)
+    : QOpenGLWidget(parent) , sys(&systeme), dt_(dt) {}
   virtual ~GLWidget() = default;
 
-  void set(Systeme& systeme) {c = &systeme;}
-  void wireframe() {vue.wireframe();} //montrer ou cacher les masses
-  void sphere() {vue.spherical();} //visualisation cubique ou spherique des masses
+  void set(Systeme& systeme) {sys = &systeme;}
+  void wireframe() {vue.wireframe();}  //montrer ou cacher les masses
+  void sphere() {vue.spherical();}  //visualisation cubique ou spherique des masses
+  void use_newmark() {use_newmark_ = true;}  //utiliser l'integrateur de Newmark à la place de EulerCromer
 
 private:
   // Les 3 méthodes clés de la classe QOpenGLWidget à réimplémenter
@@ -45,5 +41,8 @@ private:
   QPoint lastMousePosition;
 
   // objets à dessiner, faire évoluer
-  Systeme* c;
+  Systeme* sys;
+
+  double dt_;
+  bool use_newmark_;
 };

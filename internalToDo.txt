@@ -1,4 +1,3 @@
 Donner un nom à la directory  finale du projet
 
-
-Ecrire les .pro pour les testClasses
+Créer les simulations cools
