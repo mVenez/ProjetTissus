@@ -4,7 +4,7 @@
 #include "Tissu.h"
 #include "Masse.h"
 #include "Integrateur.h"
-#include "Constantes.h"
+#include "constantes.h"
 using namespace std;
 
 void test();

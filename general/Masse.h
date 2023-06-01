@@ -8,7 +8,7 @@ class Ressort;
 class Masse : public Dessinable {
 public:
     // constructeur
-    Masse(double masse, double coefficient_frottement = 0, Vecteur3D position = Vecteur3D(0,0,0), Vecteur3D vitesse = Vecteur3D(0,0,0), Vecteur3D acceleration=g, std::vector<Ressort*> liste_ressort = std::vector<Ressort*>(), bool fixe = false);
+    Masse(double masse, double coefficient_frottement = 0, Vecteur3D position = Vecteur3D(0,0,0), Vecteur3D vitesse = Vecteur3D(0,0,0), Vecteur3D acceleration=g, std::vector<Ressort*> liste_ressort = std::vector<Ressort*>(), bool fixe = false, bool gravite = true);
     Masse(Masse const& masse) = delete; // copie interdite
     Masse& operator=(Masse const& masse) = delete; //on interdit l’affectation par copie car la copie est interdite
     
@@ -22,6 +22,7 @@ public:
 
     // setters
     void fixe(bool fixe = true);
+    void gravite(bool gravite = true);
     void set_ressort(Ressort* ressort); // pour ajouter un ressort a la liste de ressorts
     void unset_ressort(Ressort* ressort, bool gestion_suppresion_ressort = true); // pour supprimer un ressort de la liste de ressorts
     void set_position(const Vecteur3D& nouvelle_position);
@@ -45,6 +46,7 @@ private:
     Vecteur3D force_subie_; // la somme des forces subies (F=ma)
     std::vector<Ressort*> liste_ressort_;
     bool fixe_; // si la masse est fixe ou non
+    bool gravite_; //est-ce que la gravité affecte la masse?
 };
 
 //operateurs

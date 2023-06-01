@@ -34,8 +34,11 @@ Impulsion::Impulsion(const Vecteur3D& position, double rayon, double debut, doub
 
         //L'Impulsion memorise toutes les masses concernés à la construction
         for (auto tissu : tissus_cibles_) {
-            for (auto masse : tissu->masses_concernes(*this)) {masses_cibles_.push_back(masse);}
-        }
+            for (auto masse : tissu->masses_concernes(*this)) {
+                masses_cibles_.push_back(masse); 
+                masse->gravite(false);
+            }
+        } 
         if(masses_cibles_.empty()) cerr << "L'impulsion " << this << " ne concerne aucune masse" << endl;
     }
 
@@ -46,7 +49,7 @@ void Impulsion::appliquer(Tissu& tissu, double t) const {
     if (t >= debut_ && t <= fin_) {
         for (auto masse : masses_cibles_) {
             if (tissu.contient(masse)){
-                masse->ajoute_force( -(masse->masse() * g));
+                //masse->ajoute_force( -(masse->masse() * g));
                 masse->ajoute_force(force_);
             }
         }
@@ -66,7 +69,7 @@ void ImpulsionSin::appliquer(Tissu& tissu, double t) const {
     if (t >= debut_ && t <= fin_) {
         for (auto masse : masses_cibles_) {
             if (tissu.contient(masse)) {
-                masse->ajoute_force( -(masse->masse() * g));
+                //masse->ajoute_force( -(masse->masse() * g));
                 masse->ajoute_force(force_ * sin(2*M_PI * f_ * (t - debut_)));}
         }
     }

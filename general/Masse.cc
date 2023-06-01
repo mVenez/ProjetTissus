@@ -9,8 +9,8 @@
 using namespace std;
 
 // constructeur
-Masse::Masse(double masse, double coefficient_frottement, Vecteur3D position, Vecteur3D vitesse, Vecteur3D acceleration, std::vector<Ressort*> liste_ressort, bool fixe)
-    : masse_(masse), coefficient_frottement_(coefficient_frottement), position_(position), vitesse_(vitesse), force_subie_(masse * acceleration), liste_ressort_(liste_ressort), fixe_(fixe) {
+Masse::Masse(double masse, double coefficient_frottement, Vecteur3D position, Vecteur3D vitesse, Vecteur3D acceleration, std::vector<Ressort*> liste_ressort, bool fixe, bool gravite)
+    : masse_(masse), coefficient_frottement_(coefficient_frottement), position_(position), vitesse_(vitesse), force_subie_(masse * acceleration), liste_ressort_(liste_ressort), fixe_(fixe), gravite_(gravite)  {
     if (masse <= 0){
         throw invalid_argument("La masse doit être positive");
     }
@@ -45,6 +45,9 @@ Vecteur3D Masse::acceleration() const{
 // setters
 void Masse::fixe(bool fixe){
     fixe_ = fixe;
+}
+void Masse::gravite(bool gravite) {
+    gravite_ = gravite;
 }
 
 void Masse::set_ressort(Ressort* ressort){  // ajoute un ressort à la liste actuelle de ressorts
@@ -84,8 +87,10 @@ void Masse::mise_a_jour_forces(){
         force_rappel += (ressort->force_rappel(this));
     }
     Vecteur3D frottement = vitesse_ * (-coefficient_frottement_);
+    force_subie_ = force_rappel + frottement;
+
     Vecteur3D poids = masse_ * g;
-    force_subie_ = force_rappel + frottement + poids;
+    if (gravite_) force_subie_+= poids;
 }
 
 ostream& Masse::affiche(ostream& out) const{
