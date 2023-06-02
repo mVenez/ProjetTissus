@@ -14,6 +14,7 @@ public:
   void wireframe() {vue.wireframe();}  //montrer ou cacher les masses
   void sphere() {vue.spherical();}  //visualisation cubique ou spherique des masses
   void use_newmark() {use_newmark_ = true;}  //utiliser l'integrateur de Newmark à la place de EulerCromer
+  void set_dt(double new_dt) {dt_ = new_dt;}
 
 private:
   // Les 3 méthodes clés de la classe QOpenGLWidget à réimplémenter
