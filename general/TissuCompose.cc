@@ -37,7 +37,7 @@ void TissuCompose::ajoute_tissu(Tissu& tissu, double delta, double k) {
             if(distance < 0.1){
             }
             if ( distance < delta ){
-                connecte(*masse1, *masse2, k_ressort_de_couture, distance);
+                connecte(*masse1, *masse2, k, distance);
             }
         }
     }
