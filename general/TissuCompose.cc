@@ -3,7 +3,7 @@
 #include "constantes.h"
 #include "TissuCompose.h"
 using namespace std;
-
+//constructeurs
 TissuCompose::TissuCompose(Tissu& tissu) : Tissu() {
     this->ajoute_tissu(tissu);
 }
@@ -13,18 +13,7 @@ TissuCompose::TissuCompose(Tissu& tissu1, Tissu& tissu2, double delta, double k)
     this->ajoute_tissu(tissu2, delta, k);
 }
 
-/*TissuCompose::TissuCompose(vector<Tissu*> vector_tissu, double delta) {
-    for (auto tissu : vector_tissu) {
-        this->ajoute_tissu(*tissu, delta);
-    }
-}*/
-
-/*TissuCompose::~TissuCompose() {
-    for (auto ressort : vector_ressort_couture_) {
-        delete ressort;
-    }
-}*/
-
+//méthode d'ajout
 void TissuCompose::ajoute_tissu(Tissu& tissu, double delta, double k) {
 
     vector_ressort_.insert(vector_ressort_.end(), tissu.vector_ressort_.begin(), tissu.vector_ressort_.end()); //ajoute les ressorts du tissu à la suite de ceux du tissu composé

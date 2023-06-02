@@ -30,7 +30,7 @@ public:
 
 class Impulsion : public Contrainte {
 public:
-    //constructeur
+    //constructeurs
     Impulsion(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, std::vector<Tissu*> cibles);
     Impulsion(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, Tissu& cible);
 
@@ -46,9 +46,12 @@ protected:
 
 class ImpulsionSin : public Impulsion {
 public:
+    //constructeurs
     ImpulsionSin(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, double frequence, std::vector<Tissu*> cibles);
     ImpulsionSin(const Vecteur3D& position, double rayon, double debut, double fin, Vecteur3D force, double frequence, Tissu& cible);
+
     virtual void appliquer(Tissu& tissu, double t) const override;
+
 private:
     double f_;
 };

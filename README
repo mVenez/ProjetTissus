@@ -30,7 +30,7 @@ Appuyez sur Espace pour interrompre la simulation.
 
 ==== EXECUTABLES ==== 
 - Simulation graphiques:
-/main/main -> [FAUT CHOISIR]
+/main/main -> drapeu
 /testTissuComplexe/testTissuChaine -> affichage d'une chaine/corde
 /testTissuComplexe/testTissuRectangle -> affichage d'un tissu rectangulaire
 /testTissuComplexe/testTissuDisque -> affichage d'un tissu circulaire 
