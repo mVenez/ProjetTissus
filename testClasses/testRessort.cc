@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Ressort.h"
 #include "Masse.h"
-#include "Constantes.h"
+#include "constantes.h"
 using namespace std;
 
 void test1();
