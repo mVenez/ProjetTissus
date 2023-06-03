@@ -3,13 +3,14 @@
 #include "Masse.h"
 #include "Ressort.h"
 #include "glsphere.h"
+#include "constantes.h"
 using namespace std;
 // ======================================================================
 void VueOpenGL::dessine(Masse const& masse) {
   if(!wireframe_) {
       QMatrix4x4 matrice;
       matrice.translate(masse.position().x(), masse.position().y(), masse.position().z());
-      matrice.scale(0.35);
+      matrice.scale(taille_affichage_masse);
       if (spherical_) dessineSphere(matrice, 0.74,0.16,0.33);
       else dessineCube(matrice);
   }

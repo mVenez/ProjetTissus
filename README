@@ -1,31 +1,32 @@
 ------------------------ Français --------------------------------------------
 ==== LE PROJET ====         
-Le projet a été terminé: tous les modules jusqu'au P14 ont été completés dans le détail.
-Ceci veut dire que le programme est capable de simuler tissus complexes, de façon numerique et graphique.
+Le projet a été terminé : tous les modules jusqu'au P14 ont été complétés dans le détail.
+Autrement dit le programme est capable de simuler des tissus simples, complexes, de façon textuelle et graphique.
 La version graphique a été construite avec Qt5, en travaillant avec OpenGL.
-Chaque composant du binôme a travaillé environ 7 heures par semaine sur le projet, de manière assez regulière le long du sémestre
+Chaque membre du binôme a travaillé environ 7 heures par semaine sur le projet, de manière assez régulière sur le long du semestre.
 
 ==== INSTALLATION ====
-Ouvrir le Terminal dans la directory principale du projet, Projet034, et lancer les commandes "qmake" et puis "make".
-"qmake" va génerer les Makefile nécessaires à la construction du programme, effectué après par "make".
-Une fois ces deux commandes lancées, vous êtez prets pour ouvrir les executables construits.
+Ouvrir le Terminal dans le dossier principal du projet, "Projet034", exécuter la commande "qmake" puis "make".
+"qmake" va générer les Makefile nécessaires à la construction du programme, exécutés après par "make".
+Une fois ces deux commandes exécutées, vous pouvez ouvrir les différents exécutables construits dans tous les sous-dossier du projet.
 
 ==== DANS LA SIMULATION GRAPHIQUE ====
-Maintenez le clic gauche enfoncé et déplacez la souris (ou utilisez les flèches et les touches QE) pour regarder autour de vous, et la touche Home (ou 0) pour revenir à la vue par défaut.
+Maintenez le clic gauche enfoncé et déplacez la souris (ou utilisez les flèches et les touches QE) pour regarder autour de vous, et la touche Home (ou 0) pour revenir à la vue de départ.
 Déplacez-vous dans l'espace 3D à l'aide des touches WASD (sur le plan xy) et RF (axe z).
 Appuyez sur Espace pour interrompre la simulation.
 Appuyez sur M pour afficher/masquer les masses qui forment le tissu.
-Appuyez sur N pour passer d'une représentation sphérique à une représentation cubique des masses.
+Appuyez sur N pour passer d'une représentation sphérique à une représentation cubique des masses (La représentation sphérique est très vorace en ressources). 
 Appuyez sur I pour changer entre un integrateur de Euler-Cromer et un de Newmark (default c'est Euler-Cromer)
+
 
 ==== CARTE DU PROJET ====
 /archive -> Contient les fichiers qui ne sont pas utilisés dans la version finale du projet
 /exerciceP11/Qt_GL -> Fichiers nécessaires au graphisme (P11)
 /exerciceP11/text -> Visualisation textuelle (P10)
 /general -> Librairie principale pour la simulation des tissus
-/main -> Demonstration des capabilités du projet et simulation libre (vous pouvez preparer et visualiser ici tout système qui vous intéresse)
+/main -> Démonstration des capacités du projet et simulation libre (vous pouvez coder et visualiser ici tout système qui vous intéresse)
 /plots -> Plots utilisés au cours du projet pour tester la simulation, réalisés avec Gnuplot
-/testClasses -> Tous les tests effectuées sur les principales classes du projet
+/testClasses -> Tous les tests effectuées pour les principales classes du projet
 /testTissuComplexe -> Tous les tests effectués pour les classes TissuChaine, TissuRectangle, TissuDisque et TissuCompose
 /tmp -> Les fichiers .o sont construits ici
 
@@ -54,6 +55,9 @@ Appuyez sur I pour changer entre un integrateur de Euler-Cromer et un de Newmark
 /testClasses/testIntegrateur2
 /testClasses/testIntegrateur3
 
+
+Maël Thoré & Matteo Veneziano, EPFL Section Physique, 2023
+
 ------------------------ English --------------------------------------------
 
 ==== THE PROJECT ====
@@ -72,7 +76,7 @@ Hold Left Click and move the mouse (or use the arrows and QE keys) to look aroun
 Move in the 3D space using WASD (on the xy plane) and RF (z axis).
 Press Space to pause the simulation.
 Press M to show/hide the masses who form the cloth.
-Press N to switch between a spherical and cubical representation of masses.
+Press N to switch between a spherical and cubical representation of masses (spherical is more resource-intensive).
 Press I to switch between an Euler-Cromer and a Newmark integrator (default is Euler-Cromer)
 
 ==== PROJECT MAP ====
