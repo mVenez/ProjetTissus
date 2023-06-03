@@ -65,6 +65,8 @@ void Ressort::dessine_sur(SupportADessin &support) {
 Masse* Ressort::masse1() const {return masse1_;}
 Masse* Ressort::masse2() const {return masse2_;}
 double Ressort::k() const {return k_;}
+double Ressort::l0() const {return l0_;}
+double Ressort::l() const {return (masse1_->position() - masse2_->position()).norme();}
 
 //méthodes pour le check() du tissu
 void Ressort::check_masses() const {

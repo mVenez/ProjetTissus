@@ -18,7 +18,9 @@ public:
     //getters
     Masse* masse1() const;
     Masse* masse2() const;
+    double l0() const;
     double k() const;
+    double l() const;
 
     //méthodes de check
     void check_masses() const;  //check si les masse d'arrivé et depart sont les mêmes et si le ressort figure dans les listes de ressorts des deux masses

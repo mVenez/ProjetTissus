@@ -10,7 +10,7 @@ void GLWidget::initializeGL()
 {
   vue.init();
   timerId = startTimer(20);
-  glClearColor(0.9, 0.9, 0.95, 1);
+  glClearColor(rouge, vert, bleu, 1);
 }
 
 // ======================================================================
