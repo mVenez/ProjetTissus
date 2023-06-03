@@ -10,7 +10,7 @@
 
 class VueOpenGL : public SupportADessin {
  public:
-  VueOpenGL() :wireframe_(false), spherical_(false){}
+  VueOpenGL() :wireframe_(false), spherical_(false), couleur_ressort_dynamique_(true) {}
 
   // méthode(s) de dessin (héritée(s) de SupportADessin)
   virtual void dessine(Masse const&) override;
@@ -24,6 +24,7 @@ class VueOpenGL : public SupportADessin {
   void setProjection(QMatrix4x4 const& projection) { prog.setUniformValue("projection", projection); }
   void wireframe() {wireframe_ = !wireframe_;} //alterne entre montrer et cacher les masses
   void spherical() {spherical_ = !spherical_;} //alterne entre visualisation cubique et spherique des masses
+  void ressort_dynamique() {couleur_ressort_dynamique_ = !couleur_ressort_dynamique_;} //alterne entre l’affichage dynamique/non dynamique de la couleur des ressorts
 
   // Transformations
   void translate(double x, double y, double z);
@@ -40,6 +41,7 @@ class VueOpenGL : public SupportADessin {
 
   bool wireframe_;
   bool spherical_;
+  bool couleur_ressort_dynamique_;
 
   // Caméra
   QMatrix4x4 matrice_vue;

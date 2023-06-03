@@ -40,7 +40,7 @@ TissuDisque::TissuDisque(double masse_kg, Vecteur3D centre, Vecteur3D normal, do
      
     //on crée les masses et les ressorts
     for(double n = 0; n < nb_angle_tour; ++n){
-        u = (cos(angle)*u + sin(angle)*(normal^u));//formule de rotation d'angle "angle" autour de l'axe "normal"
+        u = ~(cos(angle)*u + sin(angle)*(normal^u));//formule de rotation d'angle "angle" autour de l'axe "normal"
         for(int m = 1; m <= nb_masse_rayon; ++m){
             Masse* masse = new Masse(masse_kg, coef_frottement, centre + m*pas_entre_deux_masse_sur_rayon*~u);
             ajoute_masse(masse);

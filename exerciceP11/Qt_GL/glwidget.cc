@@ -109,6 +109,10 @@ void GLWidget::keyPressEvent(QKeyEvent* event)
   case Qt::Key_I:
     use_newmark();
     break;
+  
+  case Qt::Key_K:
+    vue.ressort_dynamique();
+    break;
   };
 
   update(); // redessine

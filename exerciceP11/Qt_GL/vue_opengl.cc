@@ -21,12 +21,19 @@ void VueOpenGL::dessine(Ressort const& ressort) {
   QMatrix4x4 point_de_vue;
   prog.setUniformValue("vue_modele", matrice_vue * point_de_vue);
   glBegin(GL_LINES);
-  // affichage dynamique de la couleur du ressort
-  double coef_ettirement = ressort.l() / ressort.l0();
-  double coef_coloration = (-1/(1 + pow(coef_ettirement, 4)) + 1);
-  double rouge = coef_coloration;
-  double bleu = 1 - coef_coloration;
-  double vert = 1 - abs(rouge - bleu);
+  
+  double rouge, vert, bleu;
+  if(couleur_ressort_dynamique_){// affichage dynamique de la couleur du ressort
+    double coef_ettirement = ressort.l() / ressort.l0();
+    double coef_coloration = (-1/(1 + pow(coef_ettirement, 4)) + 1);
+    rouge = coef_coloration;
+    bleu = 1 - coef_coloration;
+    vert = 1 - abs(rouge - bleu);
+  } else {
+    rouge = 1;
+    vert = 0;
+    bleu = 0.5;
+  }
   prog.setAttributeValue(CouleurId, rouge, vert, bleu);
   glVertex3f(ressort.masse1()->position().x(), ressort.masse1()->position().y(), ressort.masse1()->position().z());
   glVertex3f(ressort.masse2()->position().x(), ressort.masse2()->position().y(), ressort.masse2()->position().z());

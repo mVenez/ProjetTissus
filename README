@@ -17,7 +17,7 @@ Appuyez sur Espace pour interrompre la simulation.
 Appuyez sur M pour afficher/masquer les masses qui forment le tissu.
 Appuyez sur N pour passer d'une représentation sphérique à une représentation cubique des masses (La représentation sphérique est très vorace en ressources). 
 Appuyez sur I pour changer entre un integrateur de Euler-Cromer et un de Newmark (par défaut Euler-Cromer)
-
+Appuyer sur K pour passer d’un affichage dynamique de la couleur des ressorts selon leurs longueurs à une couleur statique (et vice versa)
 
 ==== CARTE DU PROJET ====
 /archive -> Contient les fichiers qui ne sont pas utilisés dans la version finale du projet
@@ -78,6 +78,7 @@ Press Space to pause the simulation.
 Press M to show/hide the masses who form the cloth.
 Press N to switch between a spherical and cubical representation of masses (spherical is more resource-intensive).
 Press I to switch between an Euler-Cromer and a Newmark integrator (default is Euler-Cromer)
+Press K to switch from dynamic color display of springs by length to static color (and vice versa).
 
 ==== PROJECT MAP ====
 /archive -> All files not used in the final version of the project
