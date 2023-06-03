@@ -1,14 +1,14 @@
 ------------------------ Français --------------------------------------------
 ==== LE PROJET ====         
 Le projet a été terminé: tous les modules jusqu'au P14 ont été completés dans le détail.
-Ceci veut dire que le programme est capable de simuler tissus complexes, de façon numerique et graphqi ue.
+Ceci veut dire que le programme est capable de simuler tissus complexes, de façon numerique et graphique.
 La version graphique a été construite avec Qt5, en travaillant avec OpenGL.
 Chaque composant du binôme a travaillé environ 7 heures par semaine sur le projet, de manière assez regulière le long du sémestre
 
 ==== INSTALLATION ====
 Ouvrir le Terminal dans la directory principale du projet, Projet034, et lancer les commandes "qmake" et puis "make".
 "qmake" va génerer les Makefile nécessaires à la construction du programme, effectué après par "make".
-Une fois ces deux commandes lancées, la simulation est prêt.
+Une fois ces deux commandes lancées, vous êtez prets pour ouvrir les executables construits.
 
 ==== DANS LA SIMULATION GRAPHIQUE ====
 Maintenez le clic gauche enfoncé et déplacez la souris (ou utilisez les flèches et les touches QE) pour regarder autour de vous, et la touche Home (ou 0) pour revenir à la vue par défaut.
@@ -34,7 +34,7 @@ Appuyez sur Espace pour interrompre la simulation.
 /testTissuComplexe/testTissuChaine -> affichage d'une chaine/corde
 /testTissuComplexe/testTissuRectangle -> affichage d'un tissu rectangulaire
 /testTissuComplexe/testTissuDisque -> affichage d'un tissu circulaire 
-/testTissuComplexe/testTissuCompose -> [FAUT CHOISIR]
+/testTissuComplexe/testTissuCompose -> affichage d'une composition de tissus
 /testClasses/testContrainteGraphique -> affichage d'une chaine affecté par une impulsion
 /exerciceP11/Qt_GL/exerciceP11 -> Simulation graphique pour P11 (même systeme que testIntegrateur3)
 
@@ -64,7 +64,7 @@ Both members of the team worked about 7 hours every week on the project, quite r
 ==== INSTALLATION ====
 Open the Terminal inside the project main directory, Projet034, and execute commands "qmake" and then "make".
 "qmake" will generate the Makefiles necessary for the build, executed by "make".
-After these two commands the simulation is ready. 
+After these two commands you're ready to open the executables built. 
 
 ==== DURING GRAPHIC SIMULATION ====
 Hold Left Click and move the mouse (or use the arrows and QE keys) to look around, and the Home key (or 0) to reset to default view.
@@ -90,7 +90,7 @@ Press Space to pause the simulation.
 /testTissuComplexe/testTissuChaine -> chain/rope simulation
 /testTissuComplexe/testTissuRectangle -> rectangular cloth simulation
 /testTissuComplexe/testTissuDisque -> circular cloth simulation 
-/testTissuComplexe/testTissuCompose -> [FAUT CHOISIR]
+/testTissuComplexe/testTissuCompose -> cloth composition simulation
 /testClasses/testContrainteGraphique -> chain/rope simulation, with sinusoidal impulsion
 /exerciceP11/Qt_GL/exerciceP11 -> Graphical simulation for P11 (same system as testIntegrateur3)
 
