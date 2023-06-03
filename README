@@ -16,7 +16,7 @@ Déplacez-vous dans l'espace 3D à l'aide des touches WASD (sur le plan xy) et R
 Appuyez sur Espace pour interrompre la simulation.
 Appuyez sur M pour afficher/masquer les masses qui forment le tissu.
 Appuyez sur N pour passer d'une représentation sphérique à une représentation cubique des masses (La représentation sphérique est très vorace en ressources). 
-Appuyez sur I pour changer entre un integrateur de Euler-Cromer et un de Newmark (default c'est Euler-Cromer)
+Appuyez sur I pour changer entre un integrateur de Euler-Cromer et un de Newmark (par défaut Euler-Cromer)
 
 
 ==== CARTE DU PROJET ====
