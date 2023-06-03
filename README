@@ -6,7 +6,7 @@ La version graphique a été construite avec Qt5, en travaillant avec OpenGL.
 Chaque composant du binôme a travaillé environ 7 heures par semaine sur le projet, de manière assez regulière le long du sémestre
 
 ==== INSTALLATION ====
-Ouvrir le Terminal dans la directory principale du projet, {!}, et lancer les commandes "qmake" et puis "make".
+Ouvrir le Terminal dans la directory principale du projet, Projet034, et lancer les commandes "qmake" et puis "make".
 "qmake" va génerer les Makefile nécessaires à la construction du programme, effectué après par "make".
 Une fois ces deux commandes lancées, la simulation est prêt.
 
@@ -30,17 +30,17 @@ Appuyez sur Espace pour interrompre la simulation.
 
 ==== EXECUTABLES ==== 
 - Simulation graphiques:
-/main/main -> DEMO: Simulation du mouvement d'un tissu (un drapeau, p.ex.) formé d'un grand nombre de masses sous effect de plusieurs impulsions complexes.
+/main/main -> DEMO: Simulation du mouvement d'un tissu (similaire à un drapeau) formé d'un grand nombre de masses sous effect de plusieurs impulsions complexes.
 /testTissuComplexe/testTissuChaine -> affichage d'une chaine/corde
 /testTissuComplexe/testTissuRectangle -> affichage d'un tissu rectangulaire
 /testTissuComplexe/testTissuDisque -> affichage d'un tissu circulaire 
 /testTissuComplexe/testTissuCompose -> [FAUT CHOISIR]
-/testClasses/testContrainteGraphique -> [FAUT CHOISIR]
+/testClasses/testContrainteGraphique -> affichage d'une chaine affecté par une impulsion
 /exerciceP11/Qt_GL/exerciceP11 -> Simulation graphique pour P11 (même systeme que testIntegrateur3)
 
 - Simulation textuelles:
 /exerciceP11/text/exerciceP10 -> Simulation textuelle pour P10 (même système que testIntegrateur3)
-/testClasses/testContrainte -> test de fonctionnement des impulsions sinusoidales
+/testClasses/testContrainte -> test de fonctionnement des impulsions sinusoidales pour P13
 
 - Tests:
 /testClasses/exerciceP9
@@ -62,11 +62,9 @@ The graphics are built on OpenGL, thanks to the Qt5 library.
 Both members of the team worked about 7 hours every week on the project, quite regularly over the course of the semester. 
 
 ==== INSTALLATION ====
-Open the Terminal inside the project main directory [faut insérer le nom de la directory] and execute commands "qmake" and then "make".
+Open the Terminal inside the project main directory, Projet034, and execute commands "qmake" and then "make".
 "qmake" will generate the Makefiles necessary for the build, executed by "make".
 After these two commands the simulation is ready. 
-
-==== PROJECT MAP ====
 
 ==== DURING GRAPHIC SIMULATION ====
 Hold Left Click and move the mouse (or use the arrows and QE keys) to look around, and the Home key (or 0) to reset to default view.
@@ -74,5 +72,42 @@ Move in the 3D space using WASD (on the xy plane) and RF (z axis).
 Press M to show/hide the masses who form the cloth.
 Press N to switch between a spherical and cubical representation of masses.
 Press Space to pause the simulation.
+
+==== PROJECT MAP ====
+/archive -> All files not used in the final version of the project
+/exerciceP11/Qt_GL -> Files necessary for the graphics (P11)
+/exerciceP11/text -> Text visualisation (P10)
+/general -> Main library for cloth simulation
+/main -> Demonstration of the project's capabilities and free simulation (you can prepare and visualise any system that interests you here)
+/plots -> Plots used during testing, made with Gnuplot
+/testClasses -> All tests carried out on the project's main classes
+/testTissuComplexe -> All tests carried out for classes TissuChaine, TissuRectangle, TissuDisque et TissuCompose
+/tmp -> .o files are built here
+
+==== EXECUTABLES ==== 
+- Graphical simulations:
+/main/main -> DEMO: simulation of the movement of a cloth (similar to a flag) formed by a great number of masses, under multiple complex impulsions
+/testTissuComplexe/testTissuChaine -> chain/rope simulation
+/testTissuComplexe/testTissuRectangle -> rectangular cloth simulation
+/testTissuComplexe/testTissuDisque -> circular cloth simulation 
+/testTissuComplexe/testTissuCompose -> [FAUT CHOISIR]
+/testClasses/testContrainteGraphique -> chain/rope simulation, with sinusoidal impulsion
+/exerciceP11/Qt_GL/exerciceP11 -> Graphical simulation for P11 (same system as testIntegrateur3)
+
+- Simulation textuelles:
+/exerciceP11/text/exerciceP10 -> text simulation for P10 (same system as testIntegrateur3)
+/testClasses/testContrainte -> sinusoidal impulsions test for P13
+
+- Tests:
+/testClasses/exerciceP9
+/testClasses/testVecteur3D
+/testClasses/testMasse
+/testClasses/testRessort
+/testClasses/testTissu1
+/testClasses/testTissu2
+/testClasses/testIntegrateur1
+/testClasses/testIntegrateur2
+/testClasses/testIntegrateur3
+
 
 Maël Thoré & Matteo Veneziano, EPFL Section of Physics, 2023
