@@ -1,30 +1,30 @@
 ------------------------ Français --------------------------------------------
 ==== LE PROJET ====         
 Le projet a été terminé: tous les modules jusqu'au P14 ont été completés dans le détail.
-Ceci veut dire que le programme est capable de simuler tissus complexes, de façon numerique et graphique.
+Autrement dit le programme est capable de simuler des tissus simple, complexes, de façon numerique et graphique.
 La version graphique a été construite avec Qt5, en travaillant avec OpenGL.
-Chaque composant du binôme a travaillé environ 7 heures par semaine sur le projet, de manière assez regulière le long du sémestre
+Chaque membre du binôme a travaillé environ 7 heures par semaine sur le projet, de manière assez regulière sur le long du semestre
 
 ==== INSTALLATION ====
-Ouvrir le Terminal dans la directory principale du projet, Projet034, et lancer les commandes "qmake" et puis "make".
-"qmake" va génerer les Makefile nécessaires à la construction du programme, effectué après par "make".
-Une fois ces deux commandes lancées, vous êtez prets pour ouvrir les executables construits.
+Ouvrir le Terminal dans le dossier principale du projet, "Projet034", executer la commande "qmake" puis "make".
+"qmake" va génerer les Makefile nécessaires à la construction du programme, executés après par "make".
+Une fois ces deux commandes executées, vous pouvez ouvrir les différents executables construits dans tout les sous-dossier du projet.
 
 ==== DANS LA SIMULATION GRAPHIQUE ====
-Maintenez le clic gauche enfoncé et déplacez la souris (ou utilisez les flèches et les touches QE) pour regarder autour de vous, et la touche Home (ou 0) pour revenir à la vue par défaut.
+Maintenez le clic gauche enfoncé et déplacez la souris (ou utilisez les flèches et les touches QE) pour regarder autour de vous, et la touche Home (ou 0) pour revenir à la vue de départ.
 Déplacez-vous dans l'espace 3D à l'aide des touches WASD (sur le plan xy) et RF (axe z).
 Appuyez sur M pour afficher/masquer les masses qui forment le tissu.
-Appuyez sur N pour passer d'une représentation sphérique à une représentation cubique des masses.
-Appuyez sur Espace pour interrompre la simulation.
+Appuyez sur N pour passer d'une représentation sphérique à une représentation cubique des masses. (La représentation sphérique est très vorace en ressources)
+Appuyez sur Espace pour mettre en pause/reprendre la simulation.
 
 ==== CARTE DU PROJET ====
 /archive -> Contient les fichiers qui ne sont pas utilisés dans la version finale du projet
 /exerciceP11/Qt_GL -> Fichiers nécessaires au graphisme (P11)
 /exerciceP11/text -> Visualisation textuelle (P10)
 /general -> Librairie principale pour la simulation des tissus
-/main -> Demonstration des capabilités du projet et simulation libre (vous pouvez preparer et visualiser ici tout système qui vous intéresse)
+/main -> Démonstration des capacités du projet et simulation libre (vous pouvez coder et visualiser ici tout système qui vous intéresse)
 /plots -> Plots utilisés au cours du projet pour tester la simulation, réalisés avec Gnuplot
-/testClasses -> Tous les tests effectuées sur les principales classes du projet
+/testClasses -> Tous les tests effectuées pour les principales classes du projet
 /testTissuComplexe -> Tous les tests effectués pour les classes TissuChaine, TissuRectangle, TissuDisque et TissuCompose
 /tmp -> Les fichiers .o sont construits ici
 
@@ -53,6 +53,9 @@ Appuyez sur Espace pour interrompre la simulation.
 /testClasses/testIntegrateur2
 /testClasses/testIntegrateur3
 
+
+Maël Thoré & Matteo Veneziano, EPFL Section Physique, 2023
+
 ------------------------ English --------------------------------------------
 
 ==== THE PROJECT ====
@@ -70,8 +73,8 @@ After these two commands you're ready to open the executables built.
 Hold Left Click and move the mouse (or use the arrows and QE keys) to look around, and the Home key (or 0) to reset to default view.
 Move in the 3D space using WASD (on the xy plane) and RF (z axis).
 Press M to show/hide the masses who form the cloth.
-Press N to switch between a spherical and cubical representation of masses.
-Press Space to pause the simulation.
+Press N to switch between a spherical and cubical representation of masses. (the spherical view is heavier than the cubical one)
+Press Space to pause/run the simulation.
 
 ==== PROJECT MAP ====
 /archive -> All files not used in the final version of the project
