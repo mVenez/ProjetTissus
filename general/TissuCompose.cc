@@ -3,18 +3,25 @@
 #include "constantes.h"
 #include "TissuCompose.h"
 using namespace std;
+
 //constructeurs
 TissuCompose::TissuCompose(Tissu& tissu) : Tissu() {
     this->ajoute_tissu(tissu);
 }
 
-TissuCompose::TissuCompose(Tissu& tissu1, Tissu& tissu2, double delta, double k) : Tissu() {
+TissuCompose::TissuCompose(Tissu& tissu1, Tissu& tissu2, double k, double delta) : Tissu() {
     this->ajoute_tissu(tissu1);
-    this->ajoute_tissu(tissu2, delta, k);
+    this->ajoute_tissu(tissu2, k, delta);
+}
+
+TissuCompose::TissuCompose(vector<Tissu*> vector_tissu, double k, double delta) : Tissu() {
+    for (auto tissu : vector_tissu) {
+        this->ajoute_tissu(*tissu, k, delta);
+    }
 }
 
 //méthode d'ajout
-void TissuCompose::ajoute_tissu(Tissu& tissu, double delta, double k) {
+void TissuCompose::ajoute_tissu(Tissu& tissu, double k, double delta) {
 
     vector_ressort_.insert(vector_ressort_.end(), tissu.vector_ressort_.begin(), tissu.vector_ressort_.end()); //ajoute les ressorts du tissu à la suite de ceux du tissu composé
     tissu.give_gestion_ressort(); //on donne la gestion des ressorts au tissu composé

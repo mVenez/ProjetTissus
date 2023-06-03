@@ -39,14 +39,7 @@ int main(int argc, char* argv[])
     TissuChaine TissuChaine_liaison4(0.1, 0.6, Vecteur3D(-15,-10,10) + origine_tour, Vecteur3D(-15,-10,-10) + origine_tour, 5, 50, true, 0.5);
     TissuChaine tissuChaine_liaison6(0.1, 0.6, Vecteur3D(-15,0,10) + origine_tour, Vecteur3D(-15,0,0) + origine_tour, 5, 50, false, 1.0);
 
-    TissuCompose tissuCompose_Cylindre(TissuDisque_haut);
-    tissuCompose_Cylindre += TissuDisque_millieu;
-    tissuCompose_Cylindre += TissuDisque_bas;
-    tissuCompose_Cylindre += TissuChaine_liaison1;
-    tissuCompose_Cylindre += TissuChaine_liaison2;
-    tissuCompose_Cylindre += TissuChaine_liaison3;
-    tissuCompose_Cylindre += TissuChaine_liaison4;
-    tissuCompose_Cylindre += tissuChaine_liaison6;
+    TissuCompose tissuCompose_Cylindre({&TissuDisque_haut, &TissuDisque_millieu, &TissuDisque_bas, &TissuChaine_liaison1, &TissuChaine_liaison2, &TissuChaine_liaison3, &TissuChaine_liaison4, &tissuChaine_liaison6});
     
     vector<Tissu*> liste_tissu = {&tissuCompose_pave, &tissuCompose_Cylindre};
     Systeme systeme(liste_tissu);
