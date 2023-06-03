@@ -10,7 +10,7 @@ TissuChaine::TissuChaine(double masse_kg, double coef_frottement, Vecteur3D debu
     l0 = -1 convention choisi pour un ressort de longueur à vide égale à la distance entre deux masses, tel que le tissu soit au repos par défaut,*/
 
     if(l0 < 0){
-        l0 = pas_entre_masses;//permet par défaut d’avoir un ressort de longueur à vide égale à la distance entre deux masses
+        l0 = pas_entre_masses;  //permet par défaut d’avoir un ressort de longueur à vide égale à la distance entre deux masses
     }
 
     //on calcul le vecteur qui parcours la chaines

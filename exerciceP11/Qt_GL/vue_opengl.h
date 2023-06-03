@@ -41,7 +41,6 @@ class VueOpenGL : public SupportADessin {
   bool wireframe_;
   bool spherical_;
 
-
   // Caméra
   QMatrix4x4 matrice_vue;
 };

@@ -22,7 +22,7 @@ Appuyez sur Espace pour interrompre la simulation.
 /exerciceP11/Qt_GL -> Fichiers nécessaires au graphisme (P11)
 /exerciceP11/text -> Visualisation textuelle (P10)
 /general -> Librairie principale pour la simulation des tissus
-/main -> Simulation libre (vous pouvez preparer et visualiser ici tout système qui vous intéresse)
+/main -> Demonstration des capabilités du projet et simulation libre (vous pouvez preparer et visualiser ici tout système qui vous intéresse)
 /plots -> Plots utilisés au cours du projet pour tester la simulation, réalisés avec Gnuplot
 /testClasses -> Tous les tests effectuées sur les principales classes du projet
 /testTissuComplexe -> Tous les tests effectués pour les classes TissuChaine, TissuRectangle, TissuDisque et TissuCompose
@@ -30,7 +30,7 @@ Appuyez sur Espace pour interrompre la simulation.
 
 ==== EXECUTABLES ==== 
 - Simulation graphiques:
-/main/main -> drapeu
+/main/main -> DEMO: Simulation du mouvement d'un tissu (un drapeau, p.ex.) formé d'un grand nombre de masses sous effect de plusieurs impulsions complexes.
 /testTissuComplexe/testTissuChaine -> affichage d'une chaine/corde
 /testTissuComplexe/testTissuRectangle -> affichage d'un tissu rectangulaire
 /testTissuComplexe/testTissuDisque -> affichage d'un tissu circulaire 

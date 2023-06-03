@@ -118,14 +118,6 @@ void GLWidget::mousePressEvent(QMouseEvent* event)
 
 void GLWidget::mouseMoveEvent(QMouseEvent* event)
 {
-  /* If mouse tracking is disabled (the default), the widget only receives
-   * mouse move events when at least one mouse button is pressed while the
-   * mouse is being moved.
-   *
-   * Pour activer le "mouse tracking" if faut lancer setMouseTracking(true)
-   * par exemple dans le constructeur de cette classe.
-   */
-
   if (event->buttons() & Qt::LeftButton) {
     constexpr double petit_angle(.4); // en degrés
 

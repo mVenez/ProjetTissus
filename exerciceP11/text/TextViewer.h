@@ -14,8 +14,6 @@ public:
     TextViewer& operator=(TextViewer&&) = default;
 
     //méthodes de dessin
-    //virtual void dessine(Tissu const& tissu) override;
-   // virtual void dessine(Systeme const& systeme) override;
     virtual void dessine(Masse const& masse) override;
     virtual void dessine(Ressort const& masse) override;
 

@@ -1,6 +1,6 @@
 #pragma once
-#include <QOpenGLWidget>        // Classe pour faire une fenêtre OpenGL
-#include <QTime>            // Classe pour gérer le temps
+#include <QOpenGLWidget>
+#include <QTime>
 #include "vue_opengl.h"
 #include "Systeme.h"
 
