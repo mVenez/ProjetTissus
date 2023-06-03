@@ -1,8 +1,0 @@
--décidé de ne pas utilisé les tissu chaine pour faire les tissu rectangle et tissu disque
--dt constant pour une simulation plus stable
--hiéarchie de toute les classe à faire
--choix de mettre une raideur k moyenne pour les liasion de tissu dans TissuCompose
-
--on fait le choix de faire le tissu Chaine autrement que dans le sujet, au lieu d’une liste de position à donner en argument au constructeur, on a remplacer par une masse de départ, de fin, et un pas de distance entre les masses
-
--l0 = -1 convention pour calculer le l0 de repos
