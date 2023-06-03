@@ -13,9 +13,10 @@ Une fois ces deux commandes lancées, vous êtez prets pour ouvrir les executabl
 ==== DANS LA SIMULATION GRAPHIQUE ====
 Maintenez le clic gauche enfoncé et déplacez la souris (ou utilisez les flèches et les touches QE) pour regarder autour de vous, et la touche Home (ou 0) pour revenir à la vue par défaut.
 Déplacez-vous dans l'espace 3D à l'aide des touches WASD (sur le plan xy) et RF (axe z).
+Appuyez sur Espace pour interrompre la simulation.
 Appuyez sur M pour afficher/masquer les masses qui forment le tissu.
 Appuyez sur N pour passer d'une représentation sphérique à une représentation cubique des masses.
-Appuyez sur Espace pour interrompre la simulation.
+Appuyez sur I pour changer entre un integrateur de Euler-Cromer et un de Newmark (default c'est Euler-Cromer)
 
 ==== CARTE DU PROJET ====
 /archive -> Contient les fichiers qui ne sont pas utilisés dans la version finale du projet
@@ -69,9 +70,10 @@ After these two commands you're ready to open the executables built.
 ==== DURING GRAPHIC SIMULATION ====
 Hold Left Click and move the mouse (or use the arrows and QE keys) to look around, and the Home key (or 0) to reset to default view.
 Move in the 3D space using WASD (on the xy plane) and RF (z axis).
+Press Space to pause the simulation.
 Press M to show/hide the masses who form the cloth.
 Press N to switch between a spherical and cubical representation of masses.
-Press Space to pause the simulation.
+Press I to switch between an Euler-Cromer and a Newmark integrator (default is Euler-Cromer)
 
 ==== PROJECT MAP ====
 /archive -> All files not used in the final version of the project

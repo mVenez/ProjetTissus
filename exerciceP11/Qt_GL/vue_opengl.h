@@ -23,7 +23,7 @@ class VueOpenGL : public SupportADessin {
   // méthode set
   void setProjection(QMatrix4x4 const& projection) { prog.setUniformValue("projection", projection); }
   void wireframe() {wireframe_ = !wireframe_;} //alterne entre montrer et cacher les masses
-  void spherical(){spherical_ = !spherical_;} //alterne entre visualisation cubique et spherique des masses
+  void spherical() {spherical_ = !spherical_;} //alterne entre visualisation cubique et spherique des masses
 
   // Transformations
   void translate(double x, double y, double z);

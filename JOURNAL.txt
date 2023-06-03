@@ -174,3 +174,6 @@ travail sur la class Vecteur3D :
 - Debut revision su code du projet
 01/06, Veneziano:
 - Debug des Impulsions
+03/06, Veneziano:
+- README finale
+- Terminé revision du code

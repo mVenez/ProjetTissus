@@ -103,6 +103,9 @@ void GLWidget::keyPressEvent(QKeyEvent* event)
 
   case Qt::Key_N:
     vue.spherical();
+
+  case Qt::Key_I:
+    use_newmark();
   };
 
   update(); // redessine
