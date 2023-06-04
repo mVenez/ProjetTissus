@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
     }
 
     // ================= ICI  =================
-    Impulsion impuls8(position_trampoline1, 30, 0, 120, g, trampoline1_base);
+    Impulsion impuls8(position_trampoline1, 30, 0, 120, 0.4*g, trampoline1_base);
     toutes_les_contraintes.push_back(&impuls8);
     // ================= ICI  =================
 
