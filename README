@@ -32,7 +32,7 @@ Appuyer sur K pour passer d’un affichage dynamique de la couleur des ressorts 
 
 ==== EXECUTABLES ==== 
 - Simulation graphiques:
-/main/main -> DEMO: Simulation du mouvement d'un tissu (similaire à un drapeau) formé d'un grand nombre de masses sous effect de plusieurs impulsions complexes.
+/main/main -> DEMO: Simulation du mouvement de tissus formé d'un grand nombre de masses sous effect de plusieurs impulsions complexes.
 /testTissuComplexe/testTissuChaine -> affichage d'une chaine/corde
 /testTissuComplexe/testTissuRectangle -> affichage d'un tissu rectangulaire
 /testTissuComplexe/testTissuDisque -> affichage d'un tissu circulaire 
@@ -93,7 +93,7 @@ Press K to switch from dynamic color display of springs by length to static colo
 
 ==== EXECUTABLES ==== 
 - Graphical simulations:
-/main/main -> DEMO: simulation of the movement of a cloth (similar to a flag) formed by a great number of masses, under multiple complex impulsions
+/main/main -> DEMO: simulation of the movement of cloths formed by a great number of masses, under multiple complex impulsions
 /testTissuComplexe/testTissuChaine -> chain/rope simulation
 /testTissuComplexe/testTissuRectangle -> rectangular cloth simulation
 /testTissuComplexe/testTissuDisque -> circular cloth simulation 
