@@ -1,3 +1,5 @@
+This is a numerical cloth simulation, made for our Object-Oriented Programming course and written in C++. You will need C++11 and Qt5 to build the executables. Below are all indications necessary.
+
 ------------------------ Français --------------------------------------------
 ==== LE PROJET ====         
 Le projet a été terminé : tous les modules jusqu'au P14 ont été complétés dans le détail.
