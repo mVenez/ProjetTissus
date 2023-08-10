@@ -8,7 +8,7 @@
 - Definition de la classe Vecteur3D, écriture des premières methodes et tests de compilation separée pour la future modularization
 04/03, Veneziano:
 - Ajouté toutes les methodes indiqué de la semaine 2
-05/03, Maël Thoré:
+05/03, Miguel:
 travail sur la class Vecteur3D :
 -correction methodes compare() qui considère maintenant comme égale deux coordonées dont la différence est inférieur à 1e-10
 -prise en compte du cas vecteur nul dans la methode unitaire()
@@ -19,7 +19,7 @@ travail sur la class Vecteur3D :
 --------------------------------------------------
 ## Semaine 3 :
 
-06/03, Veneziano & Maël Thoré:
+06/03, Veneziano & Miguel:
 - Mise à jour du Makefile (petit message fancy et mise en place d’un make clean et make wclean (pour unix et windows))
 09/03, Veneziano:
 - Constructeurs, test du constructeur de copie de default, réponse aux questions P4.1-2.
@@ -30,11 +30,11 @@ travail sur la class Vecteur3D :
 16/03, Veneziano:
 - Surcharge des operateurs de Vecteur3D.cc, test
 - Elimination des methodes obsoletes
-16/03, Maël Thoré:
+16/03, Miguel:
 - Création de la classe Masse
 - Création de la classe Ressort
 - Coder toutes les méthodes de la semaine 4&5 pour la classe Masse et Ressort
-17/03, Maël Thoré:
+17/03, Miguel:
 - Début des test de la classe Masse
 - Début des test de la classe Ressort
 17/03, Veneziano:
@@ -48,29 +48,29 @@ travail sur la class Vecteur3D :
 - Modifications à testVecteur3D.cc, multiplication par un scalaire amelioré
 - testRessort.cc, première écriture
 - Affichage du ressort
-23/03, Veneziano & Maël:
+23/03, Veneziano & Miguel:
 - Conception et realisation de la dependance masse-ressort
 - Modification du constructeur de la classe ressort pour automatiquement ajouté aux masses les ressorts qui les concernent
-23/03, Maël:
+23/03, Miguel:
 - Finalisation des classes Ressort et Masse
 - Test de la classe Masse terminé
 - Correction de bugs
 24/04, Veneziano:
 - Amelioration de l'affichage
-24/03, Veneziano & Maël:
+24/03, Veneziano & Miguel:
 - Correction d’une erreur dans la gestion des pointeur (on ne peut pas faire de delete sur un pointeur qui n’a pas été alloué)
-24/03, Maël:
+24/03, Miguel:
 - Réponse question P5.1
 25/03, Veneziano:
 - Derniers tests sur les ressorts et modification de la methode Ressort::mise_a_jour_forces()
 
 --------------------------------------------------
 ## Semaine 6 :
-30/03, Veneziano & Maël:
+30/03, Veneziano & Miguel:
 - Ecriture de la classe Integrateur et de la sousclasse IntegrateurEulerCromer;
 30/03, Veneziano:
 - testIntegrateur2, premiers affichages echoués. Simulation et plot d'un oscillateur harmonique amorti reussi.
-30/03, Maël:
+30/03, Miguel:
 - écriture testIntegrateur1, tout fonctionne
 - écriture testIntegrateur3, tout fonctionne
 31/03, Veneziano:
@@ -78,14 +78,14 @@ travail sur la class Vecteur3D :
 
 --------------------------------------------------
 ## Semaine 7 :
-04/04, Veneziano & Maël:
+04/04, Veneziano & Miguel:
 - Conception/codage classe Tissu
 - codage testTissu1/2
-04/04, Maël:
+04/04, Miguel:
 - reconception du destructeur du tissu, maintenant toutes les masses et ressort sont bien détruit et les pointeur désalloués correctement
 07/04, Veneziano:
 - classes Dessinable et SupportADessin
-08/04, Maël:
+08/04, Miguel:
 - Réponses aux questions P7.1-2 et P8.1
 10/04, Veneziano:
 - Réorganisation des #include
@@ -94,21 +94,21 @@ travail sur la class Vecteur3D :
 - classe Systeme, première version
 --------------------------------------------------
 ## Semaine 8 :
-16/04, Maël:
+16/04, Miguel:
 - reconception/codage de la méthodes unset_ressort() de la classe Masse
 17/04, Veneziano:
 - exerciceP9 complet
-17/04, Maël:
+17/04, Miguel:
 - update des méthode affiche() de toutes les classes pour avoir un affichage dans le terminal propre et lisible
 19/04, Veneziano:
 - TextViewer.h et préparation pour le graphisme
 --------------------------------------------------
 ## Semaine 9 :
-// Nous avons décidé de ne pas travailler sur la même semaine du projet, Veneziano : graphisme, Maël : tissus complexes
+// Nous avons décidé de ne pas travailler sur la même semaine du projet, Veneziano : graphisme, Miguel : tissus complexes
 24/04, Veneziano:
 - ExerciceP11 avec TextViewer
 - Debut reorganization structure de la directory du projet
-24/04, Maël:
+24/04, Miguel:
 - Début de la création des Tissus complexes
 25/04, Veneziano:
 - Terminé reorganization de la directory du projet avec les nouveaux fichiers .pro
@@ -116,14 +116,14 @@ travail sur la class Vecteur3D :
 - Affichage graphique de l'exemple 05 du tutoriel QT/openGL 
 28/04, Veneziano:
 - Graphisme operatif, plan des futures ameliorations
-30/04, Veneziano et Maël:
+30/04, Veneziano et Miguel:
 - Test de graphisme avec tissus complexes
 --------------------------------------------------
 ## Semaine 10 :
 04/05, Veneziano:
 - Création d'une directory main pour tester simulation complexes
 - Ajouté la possibilité de dessiner des spheres à la place de cubes et affichage des axes de coordonées
-04/05, Maël:
+04/05, Miguel:
 - Tissu complexe encore et toujours
 05/05, Veneziano:
 - Affichage graphique des ressorts, mode wireframe
@@ -138,9 +138,9 @@ travail sur la class Vecteur3D :
 11/05, Veneziano:
 - Resolution d'un problème de compilation sur les VM du Polytechinque
 - Changement de la hierarchie de méthodes appellées pour le graphisme
-11/05, Maël:
+11/05, Miguel:
 - Tissu Disque, nécessite de revoir les vecteur3D
-12/05, Maël:
+12/05, Miguel:
 - Tout les tissus complexe (sauf composé) terminé et fonctionnel, ajout d’un bool fixe pour choisir de fixer les tissu à la construction ou non
 
 --------------------------------------------------
@@ -148,19 +148,19 @@ travail sur la class Vecteur3D :
 15/05, Veneziano:
 - Crochets
 - Elimination de la classe Objet du projet
-15/05, Maël:
+15/05, Miguel:
 - Tissu composé terminé et fonctionnel
 
 18/05, Veneziano:
 - Resolution erreurs dans la classe Crochet
 - classe Impulsion
-18/05, Maël:
+18/05, Miguel:
 - legère modification de la classe TissuCompose
 
 
 --------------------------------------------------
 ## Semaine 13 :
-25/05, Maël :
+25/05, Miguel :
 - CONCEPTION.txt
 - Debug TissuCompose
 - IntegrateurNewmark
@@ -174,13 +174,13 @@ travail sur la class Vecteur3D :
 - Debut revision su code du projet
 01/06, Veneziano:
 - Debug des Impulsions
-01/06, Maël:
+01/06, Miguel:
 - CONCEPTION.txt -> CONCEPTION.pdf
 03/06, Veneziano:
 - README finale
 - préparation simulation main finale
 - Terminé revision du code
-03/06, Maël:
+03/06, Miguel:
 - CONCEPTION.pdf finalisé
 - Couleur des ressort dynamique
 - ajout constructeur TissuCompose avec vector de tissu
